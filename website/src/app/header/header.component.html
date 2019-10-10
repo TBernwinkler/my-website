@@ -1,0 +1,23 @@
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li (click)="selectPage('home')" [class.selected]="isHome"><a routerLink="/">{{labelHome}}</a></li>
+        <li (click)="selectPage('music')" [class.selected]="isMusic"><a routerLink="/music">{{labelMusic}}</a></li>
+        <li (click)="selectPage('projects')" [class.selected]="isProjects"><a routerLink="/projects">{{labelProjects}}</a></li>
+        <li (click)="selectPage('contact')" [class.selected]="isContact"><a routerLink="/contact">{{labelContact}}</a></li>
+
+        <!--        <li><a routerLink="/legal">legalinfo</a></li> TODO: footer-->
+      </ul>
+    </nav>
+
+    <nav class="lang">
+      <ul>
+        <li (click)="selectLanguage('DE')" [class.selected]="lang.selectedGerman"><a routerLink="">{{labelGerman}}</a></li>
+        <li (click)="selectLanguage('EN')" [class.selected]="!lang.selectedGerman"><a routerLink="">{{labelEnglish}}</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+</header>
