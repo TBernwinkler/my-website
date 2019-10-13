@@ -1,3 +1,42 @@
 .gray {
-  color: gray;
+  color: dimgray;
+}
+
+.container {
+  img {
+    width: 100%;
+    @media only screen and (min-width: 992px) {
+      border-radius: 5%;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
+  margin-bottom: 2rem;
+}
+
+.col-lg-6 {
+  padding-left: 0;
+  padding-right: 0;
+
+  &.text {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media only screen and (max-width: 992px) {
+      border: black solid 1px;
+    }
+
+  }
+}
+
+h2{
+  margin: 1.5rem 0 2rem;
+  text-decoration: underline;
+}
+
+a {
+  color: blue;
 }

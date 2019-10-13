@@ -1,0 +1,12 @@
+{
+    "header" : {
+    "home" : "Home",
+    "music" : "Musik",
+    "projects" : "Projekte",
+    "contact" : "Kontakt"
+  },
+    "home" : {
+      "headline" : "Willkommen auf meiner Homepage",
+      "techChallengesHeading" : "Ich lebe für technische Herausforderungen"
+  }
+}

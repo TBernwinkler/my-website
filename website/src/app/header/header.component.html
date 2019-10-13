@@ -1,23 +1,42 @@
 <header>
-  <div class="container">
-    <nav>
-      <ul>
-        <li (click)="selectPage('home')" [class.selected]="isHome"><a routerLink="/">{{labelHome}}</a></li>
-        <li (click)="selectPage('music')" [class.selected]="isMusic"><a routerLink="/music">{{labelMusic}}</a></li>
-        <li (click)="selectPage('projects')" [class.selected]="isProjects"><a routerLink="/projects">{{labelProjects}}</a></li>
-        <li (click)="selectPage('contact')" [class.selected]="isContact"><a routerLink="/contact">{{labelContact}}</a></li>
 
-        <!--        <li><a routerLink="/legal">legalinfo</a></li> TODO: footer-->
+  <!--Navbar -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+    <a translate i18n="@@headerHome" (click)="selectPage('home')" [class.selected]="isHome" class="navbar-brand" routerLink="/">header.home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav mr-auto">
+        <li i18n="@@headerMusic" (click)="selectPage('music')" [class.active]="isMusic" class="nav-item">
+          <a translate class="nav-link" routerLink="/music">header.music
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li i18n="@@headerProjects" (click)="selectPage('projects')" [class.active]="isProjects" class="nav-item">
+          <a translate class="nav-link" routerLink="/projects">header.projects</a>
+        </li>
+        <li i18n="@@headerContact" (click)="selectPage('contact')" [class.active]="isContact" class="nav-item">
+          <a translate class="nav-link" routerLink="/contact">header.contact</a>
+        </li>
       </ul>
-    </nav>
-
-    <nav class="lang">
-      <ul>
-        <li (click)="selectLanguage('DE')" [class.selected]="lang.selectedGerman"><a routerLink="">{{labelGerman}}</a></li>
-        <li (click)="selectLanguage('EN')" [class.selected]="!lang.selectedGerman"><a routerLink="">{{labelEnglish}}</a></li>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            <fa-icon [icon]="faLanguage" size="lg"></fa-icon>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+               aria-labelledby="navbarDropdownMenuLink-333">
+            <a (click)="useLanguage('de')" [class.selected]="selectedGerman" class="dropdown-item" routerLink="">{{labelGerman}}</a>
+            <a (click)="useLanguage('en')" [class.selected]="!selectedGerman" class="dropdown-item" routerLink="">{{labelEnglish}}</a>
+<!--            <a class="dropdown-item" href="#">Something else here</a>-->
+          </div>
+        </li>
       </ul>
-    </nav>
-  </div>
-
+    </div>
+  </nav>
+  <!--/.Navbar -->
 
 </header>

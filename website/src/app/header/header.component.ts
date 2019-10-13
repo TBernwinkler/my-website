@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LanguageService} from '../language.service';
+import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-header',
@@ -8,19 +9,9 @@ import {LanguageService} from '../language.service';
 })
 export class HeaderComponent implements OnInit {
 
-  keyGer = 'DE';
-  keyEng = 'EN';
+  faLanguage = faLanguage;
 
-  labelsHome = this.defineLabels('Home', 'Home');
-  labelsMusic = this.defineLabels('Musik', 'Music');
-  labelsContact = this.defineLabels('Kontakt', 'Contact');
-  labelsProjects = this.defineLabels('Projekte', 'Projects');
-
-  labelHome = this.retrieveLabel(this.labelsHome);
-  labelMusic = this.retrieveLabel(this.labelsMusic);
-  labelContact = this.retrieveLabel(this.labelsContact);
-  labelProjects = this.retrieveLabel(this.labelsProjects);
-
+  selectedGerman = false;
   labelGerman = 'Deutsch';
   labelEnglish = 'English';
 
@@ -29,25 +20,9 @@ export class HeaderComponent implements OnInit {
   isProjects = false;
   isContact = false;
 
-  constructor(private lang: LanguageService) {}
-
-  defineLabels(labelDE, labelEN) {
-    const obj = {};
-    obj[this.keyGer] = labelDE;
-    obj[this.keyEng] = labelEN;
-    return obj;
-  }
+  constructor(public app: AppComponent) {}
 
   ngOnInit() {
-  }
-
-  selectLanguage(lang) {
-    this.lang.changeLanguage(lang)
-
-    this.labelHome = this.retrieveLabel(this.labelsHome);
-    this.labelMusic = this.retrieveLabel(this.labelsMusic);
-    this.labelContact = this.retrieveLabel(this.labelsContact);
-    this.labelProjects = this.retrieveLabel(this.labelsProjects);
   }
 
   selectPage(name) {
@@ -57,11 +32,9 @@ export class HeaderComponent implements OnInit {
     this.isContact = (name === 'contact');
   }
 
-  retrieveLabel(labels) {
-    if (this.lang.selectedGerman) {
-      return labels[this.keyGer];
-    }
-    return labels[this.keyEng];
+  useLanguage(language: string) {
+    this.selectedGerman = language === 'de';
+    this.app.useLanguage(language);
   }
 
 }

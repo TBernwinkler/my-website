@@ -1,17 +1,70 @@
-<h1 [class.gray]="h1Style">Home</h1>
+<!--  <button type="button" class="btn btn-primary">Primary</button>-->
+<!--  <button type="button" class="btn btn-secondary">Secondary</button>-->
+<!--  <button type="button" class="btn btn-success">Success</button>-->
+<!--  <button type="button" class="btn btn-danger">Danger</button>-->
+<!--  <button type="button" class="btn btn-warning">Warning</button>-->
+<!--  <button type="button" class="btn btn-info">Info</button>-->
+<!--  <button type="button" class="btn btn-light">Light</button>-->
+<!--  <button type="button" class="btn btn-dark">Dark</button>-->
+<!--  <button type="button" class="btn btn-link">Link</button>-->
 
-<p>todo: German Vs. English in start page</p>
+  <h1 translate>home.headline</h1>
 
-<p>Think about adding bootstrap to global style files - try to figure out how to maybe add JS as well - script tag in app.component.html? </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <a target="_blank" href="https://unsplash.com/@zoltantasi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          <img src="assets/img/time-travel-800.jpg"
+               srcset="assets/img/time-travel-280.jpg 280w, assets/img/time-travel-440.jpg 440w, assets/img/time-travel-800.jpg 800w" alt="time-travel image">
+        </a>
+      </div>
+      <div class="col-lg-6 text">
+        <h2 translate class="gray">home.techChallengesHeading</h2>
+        <p class="gray">To me it is important to constantly improve. This includes</p>
+        <ul class="gray" style="list-style-type:square">
+          <li>exploring new technologies and frameworks</li>
+          <li>having a look at other areas of development</li>
+          <li>trying to constantly challenge myself</li>
+          <li>implementing private projects like this website</li>
+          <li>supporting research by contributing to (open source) projects</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 text">
+        <h2 class="gray">my music heading</h2>
+      </div>
+      <div class="col-lg-6">
+        <a target="_blank" href="https://unsplash.com/@creativesimonn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+          <img src="assets/img/music-life-800.jpg"
+               srcset="assets/img/music-life-280.jpg 280w, assets/img/music-life-440.jpg 440w, assets/img/music-life-800.jpg 800w" alt="time-travel image">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
 
-<p>TODO: Think about Pokémon UI Telegram Support</p>
+        <p>todo: ng xi18n</p>
+        <p>todo: German Vs. English in start page</p>
 
-<p>json+ld</p>
+        <p>Think about adding bootstrap to global style files - try to figure out how to maybe add JS as well - script tag in app.component.html? </p>
 
-<p>social sharing stuff with open graph meta tags</p>
+        <p>TODO: Think about Pokémon UI Telegram Support</p>
 
-<p>reopen project using terminal ng serve -o</p>
+        <p>json+ld</p>
 
-<p>get final files using ng build --prod</p>
+        <p>social sharing stuff with open graph meta tags</p>
 
-<button (click)="firstClick()">Click me</button>
+        <p>reopen project using terminal ng serve -o</p>
+
+        <p>get final files using ng build --prod</p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<!--  <button (click)="firstClick()">Click me</button>-->
+
