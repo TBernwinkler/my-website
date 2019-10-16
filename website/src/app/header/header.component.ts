@@ -35,6 +35,14 @@ export class HeaderComponent implements OnInit {
   useLanguage(language: string) {
     this.selectedGerman = language === 'de';
     this.app.useLanguage(language);
+    this.reset();
+  }
+
+  reset() {
+    this.isHome = true;
+    this.isMusic = false;
+    this.isProjects = false;
+    this.isContact = false;
   }
 
 }
