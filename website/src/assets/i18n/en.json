@@ -3,10 +3,14 @@
     "home" : "Home",
     "music" : "Music",
     "projects" : "Projects",
-    "contact" : "Contact"
+    "contact" : "Contact",
+    "language" : "Language"
   },
   "home" : {
     "headline" : "Welcome to my Homepage",
     "techChallengesHeading" : "Living for Technical Challenges"
+  },
+  "footer" : {
+    "legal" : "Legal Information"
   }
 }

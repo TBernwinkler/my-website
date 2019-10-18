@@ -1,12 +1,16 @@
 {
-    "header" : {
+  "header" : {
     "home" : "Home",
     "music" : "Musik",
     "projects" : "Projekte",
-    "contact" : "Kontakt"
+    "contact" : "Kontakt",
+    "language" : "Sprache"
   },
-    "home" : {
-      "headline" : "Willkommen auf meiner Homepage",
-      "techChallengesHeading" : "Ich lebe für technische Herausforderungen"
+  "home" : {
+    "headline" : "Willkommen auf meiner Homepage",
+    "techChallengesHeading" : "Ich lebe für technische Herausforderungen"
+  },
+  "footer" : {
+    "legal" : "Impressum"
   }
 }

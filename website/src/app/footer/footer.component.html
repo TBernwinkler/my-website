@@ -1,7 +1,13 @@
 <footer>
   <p>Future footer!</p>
-  <p>TODO: ADD LEGAL: https://www.bplaced.net/privacy</p>
-  <p>last edited date: angular-today? 11/10/2019</p>
 
+  <div>
+    last edited date: {{dateLastEdited}}
+
+    <a routerLink="/legal">
+      <fa-icon [icon]="faFileContract" size="lg"></fa-icon>
+      <span class="link-text" translate>footer.legal</span>
+    </a>
+  </div>
 </footer>
 

@@ -7,68 +7,108 @@
 <!--  <button type="button" class="btn btn-light">Light</button>-->
 <!--  <button type="button" class="btn btn-dark">Dark</button>-->
 <!--  <button type="button" class="btn btn-link">Link</button>-->
-
-<h1 translate>home.headline</h1>
-
-<div class="container blue">
-  <div class="flex-child custom-flex-img">
-      <a target="_blank" href="https://www.pexels.com/@negativespace">
-        <img srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
-      </a>
+<div>
+  <div id="hero">
+    <div class="bg-image"></div>
+    <div class="heading">
+      <h1 translate>home.headline</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci eum error earum soluta voluptatum nisi laboriosam eos saepe asperiores dolorum.</p>
+    </div>
   </div>
-  <div class="flex-child custom-flex-text">
+
+  <div class="light">
     <h2 translate>home.techChallengesHeading</h2>
-    <p>To me it is important to constantly improve. This includes</p>
-    <ul style="list-style-type:square">
-      <li>exploring new technologies and frameworks</li>
-      <li>having a look at other areas of development</li>
-      <li>trying to constantly challenge myself</li>
-      <li>implementing private projects like this website</li>
-      <li>supporting research by contributing to (open source) projects</li>
+    <p class="dark subline">To me it is important to constantly improve. This includes ...</p>
+    <div class="full-size">
+        <p>exploring new technologies and frameworks</p>
+        <p class="dark">having a look at other areas of development</p>
+        <p>trying to constantly challenge myself</p>
+        <p>implementing private projects like this website</p>
+        <p class="dark">supporting (open source) research</p>
+        <p>find something else</p>
+    </div>
+  </div>
+
+  <section id="section-b">
+    <ul>
+      <li>
+        <div class="card blue">
+          <a target="_blank" href="https://www.pexels.com/@negativespace">
+            <img srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
+          </a>
+          <div class="card-content">
+            <h3 class="card-title">test</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum cum maiores exercitationem.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card light">
+          <a target="_blank" href="https://www.pexels.com/@snapwire">
+            <img srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="time-travel image">
+          </a>
+          <div class="card-content">
+            <h3 class="card-title" translate>header.music</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum cum maiores exercitationem.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card blue">
+          <a target="_blank" href="https://www.pexels.com/@brett-sayles?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">
+            <img srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w" alt="time-travel image">
+          </a>
+          <div class="card-content">
+            <h3 class="card-title" translate>header.projects</h3>
+            <p>paragraph text</p>
+          </div>
+        </div>
+      </li>
     </ul>
+  </section>
+
+  <div class="light">
+    <h2 translate>header.contact</h2>
+    <p class="dark subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
+    <div class="full-size">
+      <p class="center">alpha</p>
+      <p class="dark center">beta</p>
+      <p class="center">gamma</p>
+      <p class="center">delta</p>
+      <p class="dark center">epsilon</p>
+      <p class="center">zeta</p>
+    </div>
   </div>
+
+  <div class="blue">
+    <h2 translate>japanese stuff?</h2>
+    <p class="light-blue subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
+    <div class="full-size">
+      <p class="center">alpha</p>
+      <p class="light-blue center">beta</p>
+      <p class="center">gamma</p>
+      <p class="center">delta</p>
+      <p class="light-blue center">epsilon</p>
+      <p class="center">zeta</p>
+    </div>
+  </div>
+
+  <div class="light">
+    <h2 translate>header.contact</h2>
+    <p class="dark subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
+    <div class="full-size">
+      <p class="center">Created to improve CSS and Angular skills</p>
+      <p class="center">Made with love <3</p>
+    </div>
+  </div>
+
+<!--    <p>TODO: Think about Pokémon UI Telegram Support</p>-->
+<!--    <p>json+ld</p>-->
+<!--    <p>social sharing stuff with open graph meta tags</p>-->
+<!--    <p>get final files using ng build &#45;&#45;prod</p>-->
+
+  <!--  <button (click)="firstClick()">Click me</button>-->
 </div>
-<div class="container light">
-  <div class="flex-child custom-flex-text">
-    <h2>my music heading</h2>
-  </div>
-  <div class="flex-child custom-flex-img">
-    <a target="_blank" href="https://www.pexels.com/@snapwire">
-      <img srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="time-travel image">
-    </a>
-  </div>
-</div>
-<div class="container blue">
-  <div class="flex-child custom-flex-img">
-    <a target="_blank" href="https://www.pexels.com/@brett-sayles?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">
-      <img srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w" alt="time-travel image">
-    </a>
-  </div>
-  <div class="flex-child custom-flex-text">
-    <h2>home.someOtherHeading</h2>
-    <p>paragraph text</p>
-
-  </div>
-</div>
-<div style="width: 100%; margin-top: 100px">
-
-  <p>Think about adding bootstrap to global style files - try to figure out how to maybe add JS as well - script tag in app.component.html? </p>
-
-  <p>TODO: Think about Pokémon UI Telegram Support</p>
-
-  <p>json+ld</p>
-
-  <p>social sharing stuff with open graph meta tags</p>
-
-  <p>reopen project using terminal ng serve -o</p>
-
-  <p>get final files using ng build --prod</p>
-</div>
 
 
-
-
-
-
-<!--  <button (click)="firstClick()">Click me</button>-->
 
