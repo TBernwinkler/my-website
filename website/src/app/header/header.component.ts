@@ -1,12 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faMusic } from '@fortawesome/free-solid-svg-icons';
-import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faLanguage } from '@fortawesome/free-solid-svg-icons';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
 import { AppComponent } from '../app.component';
+import { faHome, faMusic, faProjectDiagram, faAddressBook, faBars, faLanguage, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -39,7 +33,13 @@ export class HeaderComponent implements OnInit {
   constructor(public app: AppComponent) {}
 
   ngOnInit() {
+    // "@context": "http://schema.org",
+    // "@type": "Website",
+    // "name": "Website, Thomas Bernwinkler",
+    // "description": "This website gives an overview about Thomas as a person.
+    // This also includes software projects and music (i.e. song recommendations)."
   }
+
 
   selectPage(name) {
     this.isHome = (name === 'home');
@@ -53,14 +53,6 @@ export class HeaderComponent implements OnInit {
     this.selectedGerman = language === 'de';
     this.app.useLanguage(language);
     this.toggleDropDown();
-    this.reset();
-  }
-
-  reset() {
-    this.isHome = true;
-    this.isMusic = false;
-    this.isProjects = false;
-    this.isContact = false;
   }
 
   toggleNav() {
@@ -68,8 +60,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleDropDown() {
-    this.isHidden = !this.isHidden;
-    this.isShown = !this.isShown;
+      this.isHidden = !this.isHidden;
+      this.isShown = !this.isShown;
   }
 
 }

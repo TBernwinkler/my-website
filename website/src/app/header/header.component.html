@@ -22,15 +22,15 @@
   </div>
 
   <div [ngClass]="{ dropdown : true, right : true, hide : showNav}">
-      <a (click)="toggleDropDown()" routerLink="">
+      <a [routerLink]="" (click)="toggleDropDown()">
         <fa-icon [icon]="faLanguage" size="lg"></fa-icon>
         <span class="link-text" translate>header.language</span>
         <fa-icon [icon]="faCaretDown" size="lg"></fa-icon>
       </a>
 
-    <div id="drop-c" [ngClass]="{ dropdownContent: true, hide : isHidden, show: isShown}" >
-      <a (click)="useLanguage('de')" [class.selected]="selectedGerman" routerLink="">{{labelGerman}}</a>
-      <a (click)="useLanguage('en')" [class.selected]="!selectedGerman" routerLink="">{{labelEnglish}}</a>
+    <div id="drop-c" [ngClass]="{ dropdownContent: true, hide : isHidden, show: isShown}">
+      <a (click)="useLanguage('de')" [class.selected]="selectedGerman" [routerLink]="">{{labelGerman}}</a>
+      <a (click)="useLanguage('en')" [class.selected]="!selectedGerman" [routerLink]="">{{labelEnglish}}</a>
     </div>
   </div>
 

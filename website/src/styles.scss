@@ -23,10 +23,17 @@ a {
   text-decoration: none;
 }
 
+.content-space {
+  margin: 0 auto;
+  padding: 1.3em 0;
+  background: white;
+}
+
 .content {
   margin: 0 auto;
-  padding: 1.3em;
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .center {

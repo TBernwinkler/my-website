@@ -1,13 +1,18 @@
 <footer>
-  <p>Future footer!</p>
-
-  <div>
-    last edited date: {{dateLastEdited}}
-
+  <div class="links">
     <a routerLink="/legal">
       <fa-icon [icon]="faFileContract" size="lg"></fa-icon>
       <span class="link-text" translate>footer.legal</span>
     </a>
+    <a target="_blank" href="https://de.linkedin.com/in/thomas-bernwinkler-b922a3111">
+      <fa-icon [icon]="faLinkedIn" size="lg"></fa-icon>
+      <span class="link-text" translate>LinkedIn</span>
+    </a>
+    <a target="_blank" href="https://github.com/TBernwinkler">
+      <fa-icon [icon]="faGithub" size="lg"></fa-icon>
+      <span class="link-text" translate>GitHub</span>
+    </a>
   </div>
+  <p class="edited"><span>Last page update </span><span class="date">28 Jan 2020</span></p>
 </footer>
 

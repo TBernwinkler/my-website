@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { formatDate } from '@angular/common';
 import { faFileContract } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +10,8 @@ import { faFileContract } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
 
   faFileContract = faFileContract;
-  dateLastEdited = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+  faLinkedIn = faLinkedin;
+  faGithub = faGithub;
 
   constructor() { }
 

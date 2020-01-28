@@ -7,8 +7,48 @@
     "language" : "Sprache"
   },
   "home" : {
-    "headline" : "Willkommen auf meiner Homepage",
-    "techChallengesHeading" : "Ich lebe für technische Herausforderungen"
+    "hero" : {
+      "headline" : "Willkommen auf meiner Homepage",
+      "subline" : "Die Startseite meiner Homepage bietet einen allgemein gehaltenen Überblick bzgl. der auf der Seite zu findenden Themengebiete, auf die teilweise auch durch zusätzliche Seiten näher eingegangen wird."
+    },
+    "technicalChallenges" : {
+      "headline" : "Ich lebe für technische Herausforderungen",
+      "subline" : "Mir persönlich ist es wichtig, mich ständig zu verbessern. Dies beinhaltet ...",
+      "entry1" : "Erforschung neuer Technologien und Frameworks",
+      "entry2" : "Neue Entwicklungsbereiche in Angriff nehmen",
+      "entry3" : "Wachstum in vielen Bereichen durch Forderung",
+      "entry4" : "Implementierung privater Projekte",
+      "entry5" : "Unterstützung in der (open source) Forschung",
+      "entry6" : "Optimierung von Hardware und Software",
+      "entry7" : "Zielführende Umsetzung von Ideen",
+      "entry8" : "Ständige Anpassung an neu Erlerntes"
+    },
+    "cards": {
+      "first": {
+        "headline": "Zurück ins echte Leben",
+        "content": "Die Balance zwischen Arbeit und Privatleben zu finden ist wichtig. Man sollte daher auch mal weg von Handy und Computer und raus zur Bewegung an der frischen Luft."
+      },
+      "second": {
+        "headline": "Musik",
+        "content": "deutscher Inhalt"
+      },
+      "third": {
+        "headline": "Projekte",
+        "content": "to do"
+      }
+    },
+    "japan" : {
+      "headline" : "über",
+      "subline": "unter",
+      "entry1" : "いち",
+      "entry2" : "に",
+      "entry3" : "さｎ",
+      "entry4" : "ぞｎ",
+      "entry5" : "ご",
+      "entry6" : "ろく",
+      "entry7" : "なな",
+      "entry8" : "はち"
+    }
   },
   "footer" : {
     "legal" : "Impressum"

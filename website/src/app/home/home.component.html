@@ -1,35 +1,32 @@
-<!--  <button type="button" class="btn btn-primary">Primary</button>-->
-<!--  <button type="button" class="btn btn-secondary">Secondary</button>-->
-<!--  <button type="button" class="btn btn-success">Success</button>-->
-<!--  <button type="button" class="btn btn-danger">Danger</button>-->
-<!--  <button type="button" class="btn btn-warning">Warning</button>-->
-<!--  <button type="button" class="btn btn-info">Info</button>-->
-<!--  <button type="button" class="btn btn-light">Light</button>-->
-<!--  <button type="button" class="btn btn-dark">Dark</button>-->
-<!--  <button type="button" class="btn btn-link">Link</button>-->
-<div>
+<div class="content">
   <div id="hero">
     <div class="bg-image"></div>
     <div class="heading">
-      <h1 translate>home.headline</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci eum error earum soluta voluptatum nisi laboriosam eos saepe asperiores dolorum.</p>
+      <h1 translate>home.hero.headline</h1>
+      <p translate>home.hero.subline</p>
     </div>
   </div>
 
   <div class="light">
-    <h2 translate>home.techChallengesHeading</h2>
-    <p class="dark subline">To me it is important to constantly improve. This includes ...</p>
-    <div class="full-size">
-        <p>exploring new technologies and frameworks</p>
-        <p class="dark">having a look at other areas of development</p>
-        <p>trying to constantly challenge myself</p>
-        <p>implementing private projects like this website</p>
-        <p class="dark">supporting (open source) research</p>
-        <p>find something else</p>
+    <h2 class="center" translate>home.technicalChallenges.headline</h2>
+    <p class="dark center subline" translate>home.technicalChallenges.subline</p>
+    <div class="full-size space-around">
+      <div class="half-size">
+        <p translate>home.technicalChallenges.entry1</p>
+        <p class="dark" translate>home.technicalChallenges.entry2</p>
+        <p translate>home.technicalChallenges.entry3</p>
+        <p class="dark" translate>home.technicalChallenges.entry4</p>
+      </div>
+      <div class="half-size">
+        <p translate>home.technicalChallenges.entry5</p>
+        <p class="dark" translate>home.technicalChallenges.entry6</p>
+        <p translate>home.technicalChallenges.entry7</p>
+        <p translate class="dark">home.technicalChallenges.entry8</p>
+      </div>
     </div>
   </div>
 
-  <section id="section-b">
+  <section id="section-b" class="light">
     <ul>
       <li>
         <div class="card blue">
@@ -37,19 +34,21 @@
             <img srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
           </a>
           <div class="card-content">
-            <h3 class="card-title">test</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum cum maiores exercitationem.</p>
+            <h3 class="card-title" translate>home.cards.first.headline</h3>
+            <fa-icon [icon]="faHeart" size="lg"></fa-icon>
+            <p class="justify" translate>home.cards.first.content</p>
           </div>
         </div>
       </li>
       <li>
-        <div class="card light">
+        <div class="card semi-light">
           <a target="_blank" href="https://www.pexels.com/@snapwire">
             <img srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="time-travel image">
           </a>
           <div class="card-content">
-            <h3 class="card-title" translate>header.music</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum cum maiores exercitationem.</p>
+            <h3 class="card-title" translate>home.cards.second.headline</h3>
+            <fa-icon [icon]="faMusic" size="lg"></fa-icon>
+            <p class="justify" translate>home.cards.second.content</p>
           </div>
         </div>
       </li>
@@ -60,52 +59,61 @@
           </a>
           <div class="card-content">
             <h3 class="card-title" translate>header.projects</h3>
-            <p>paragraph text</p>
+            <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
+            <p class="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum cum maiores exercitationem.</p>
           </div>
         </div>
       </li>
     </ul>
   </section>
 
-  <div class="light">
-    <h2 translate>header.contact</h2>
-    <p class="dark subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
+  <div class="center light">
+    <h2 translate>Another topic</h2>
+    <p class="dark subline">Bla bla bla bla bla bla bla bla!</p>
     <div class="full-size">
-      <p class="center">alpha</p>
-      <p class="dark center">beta</p>
-      <p class="center">gamma</p>
-      <p class="center">delta</p>
-      <p class="dark center">epsilon</p>
-      <p class="center">zeta</p>
+      <p translate>entry 1</p>
+      <p class="dark" translate>entry 2</p>
+      <p translate>entry 3</p>
+      <p translate>entry 4</p>
+      <p class="dark" translate>entry 5</p>
+      <p translate>entry 6</p>
     </div>
   </div>
 
-  <div class="blue">
-    <h2 translate>japanese stuff?</h2>
-    <p class="light-blue subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
+  <div class="center blue">
+    <h2 translate>home.japan.headline</h2>
+    <p class="light-blue subline">こんにちは <fa-icon class="circle-icon" [icon]="faCircle" size="sm"></fa-icon><span translate>home.japan.subline</span></p>
     <div class="full-size">
-      <p class="center">alpha</p>
-      <p class="light-blue center">beta</p>
-      <p class="center">gamma</p>
-      <p class="center">delta</p>
-      <p class="light-blue center">epsilon</p>
-      <p class="center">zeta</p>
+<!--      <p translate>alpha</p>-->
+<!--      <p class="light-blue" translate>beta</p>-->
+<!--      <p translate>gamma</p>-->
+<!--      <p translate>delta</p>-->
+<!--      <p class="light-blue" translate>epsilon</p>-->
+<!--      <p translate>zeta</p>-->
+      <p translate>home.japan.entry1</p>
+      <p class="light-blue" translate>home.japan.entry2</p>
+      <p translate>home.japan.entry3</p>
+      <p class="light-blue" translate>home.japan.entry4</p>
+      <p translate>home.japan.entry5</p>
+      <p class="light-blue" translate>home.japan.entry6</p>
+      <p translate>home.japan.entry7</p>
+      <p class="light-blue" translate>home.japan.entry8</p>
     </div>
   </div>
 
-  <div class="light">
+  <div class="center light">
     <h2 translate>header.contact</h2>
     <p class="dark subline">Do you have some ideas to fine tune this page? Cool! Reach out!</p>
-    <div class="full-size">
-      <p class="center">Created to improve CSS and Angular skills</p>
-      <p class="center">Made with love <3</p>
+    <div class="center-block">
+      <p>Created to improve my CSS and Angular skills <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
+      <p>Made with <fa-icon [icon]="faHeart" size="lg"></fa-icon></p>
     </div>
   </div>
 
 <!--    <p>TODO: Think about Pokémon UI Telegram Support</p>-->
 <!--    <p>json+ld</p>-->
 <!--    <p>social sharing stuff with open graph meta tags</p>-->
-<!--    <p>get final files using ng build &#45;&#45;prod</p>-->
+<!--    <p>get final files using ng build --prod --aot=false --buildOptimizer=false</p>-->
 
   <!--  <button (click)="firstClick()">Click me</button>-->
 </div>

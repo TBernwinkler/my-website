@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { NgxPopper } from 'angular-popper';
 
 @NgModule({
   declarations: [
@@ -41,14 +42,19 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxPopper
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-// required for AOT compilation
+// required for compilation
+// make sure the correct path based on the web server directory is set
 export function HttpLoaderFactory(http: HttpClient) {
+  // PROD
+  // return new TranslateHttpLoader(http, "/temp/website/assets/i18n/", ".json");
+  // LOCAL
   return new TranslateHttpLoader(http);
 }

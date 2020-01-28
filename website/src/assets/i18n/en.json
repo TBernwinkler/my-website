@@ -7,8 +7,48 @@
     "language" : "Language"
   },
   "home" : {
-    "headline" : "Welcome to my Homepage",
-    "techChallengesHeading" : "Living for Technical Challenges"
+    "hero" : {
+      "headline" : "Welcome to my Homepage",
+      "subline" : "This start page of my homepage gives an overall overview with respect to a number of topics. Some of these topics are covered more detailed on further pages."
+    },
+    "technicalChallenges" : {
+      "headline" : "I Love Technical Challenges",
+      "subline" : "To me it is important to constantly improve. This includes topics like ...",
+      "entry1" : "exploring new technologies & frameworks",
+      "entry2" : "tackling other/new areas of development",
+      "entry3" : "trying to challenge myself again and again",
+      "entry4" : "implementing private projects like this webiste",
+      "entry5" : "supporting (open source) research projects",
+      "entry6" : "tweaking both, hardware and software",
+      "entry7" : "living ideas until they form greatness",
+      "entry8" : "constantly learning (new) best practices"
+    },
+    "cards": {
+      "first": {
+        "headline": "Back to Life",
+        "content": "To me, it is very important to have a decent work-life-balance. This also applies to screen time in general. I highly recommend going outside to have a walk once in a while."
+      },
+      "second": {
+        "headline": "Music",
+        "content": "English content"
+      },
+      "third": {
+        "headline": "Projects",
+        "content": "to do"
+      }
+    },
+    "japan" : {
+      "headline" : "head",
+      "subline": "sub",
+      "entry1" : "いち",
+      "entry2" : "に",
+      "entry3" : "さｎ",
+      "entry4" : "ぞｎ",
+      "entry5" : "ご",
+      "entry6" : "ろく",
+      "entry7" : "なな",
+      "entry8" : "はち"
+    }
   },
   "footer" : {
     "legal" : "Legal Information"
