@@ -15,7 +15,7 @@
       "headline" : "Ich lebe für technische Herausforderungen",
       "subline" : "Mir persönlich ist es wichtig, mich ständig zu verbessern. Dies beinhaltet ...",
       "entry1" : "Erforschung neuer Technologien und Frameworks",
-      "entry2" : "Neue Entwicklungsbereiche in Angriff nehmen",
+      "entry2" : "Neue Fachbereiche in erkunden",
       "entry3" : "Wachstum in vielen Bereichen durch Forderung",
       "entry4" : "Implementierung privater Projekte",
       "entry5" : "Unterstützung in der (open source) Forschung",
@@ -30,24 +30,24 @@
       },
       "second": {
         "headline": "Musik",
-        "content": "deutscher Inhalt"
+        "content": "Musik hat meiner Meinung nach etwas Magisches an sich. Sie kann die Stimmung ändern, durch harte Zeiten helfen oder einen Abend zu etwas ganz Besonderem machen."
       },
       "third": {
         "headline": "Projekte",
-        "content": "to do"
+        "content": "Alle auf dieser Webseite gelisteten Projekte decken verschiedene Technologien und Fachbereiche ab. Sie helfen mir dabei, stets technsiche Fortschritte zu machen."
       }
     },
     "japan" : {
       "headline" : "über",
       "subline": "unter",
-      "entry1" : "いち",
-      "entry2" : "に",
-      "entry3" : "さｎ",
-      "entry4" : "ぞｎ",
-      "entry5" : "ご",
-      "entry6" : "ろく",
-      "entry7" : "なな",
-      "entry8" : "はち"
+      "entry1" : "一",
+      "entry2" : "二",
+      "entry3" : "三",
+      "entry4" : "四",
+      "entry5" : "五",
+      "entry6" : "六",
+      "entry7" : "七",
+      "entry8" : "八"
     }
   },
   "footer" : {

@@ -30,24 +30,24 @@
       },
       "second": {
         "headline": "Music",
-        "content": "English content"
+        "content": "In my opinion, music is something magical. It has the outstanding power to totally chance the mood, to support in hard times, or to make an evening a total blast."
       },
       "third": {
         "headline": "Projects",
-        "content": "to do"
+        "content": "Projects listed on this website cover different fields and technologies to improve my overall understanding, toolset, mindset and possibly, my future career."
       }
     },
     "japan" : {
       "headline" : "head",
       "subline": "sub",
-      "entry1" : "いち",
-      "entry2" : "に",
-      "entry3" : "さｎ",
-      "entry4" : "ぞｎ",
-      "entry5" : "ご",
-      "entry6" : "ろく",
-      "entry7" : "なな",
-      "entry8" : "はち"
+      "entry1" : "一",
+      "entry2" : "二",
+      "entry3" : "三",
+      "entry4" : "四",
+      "entry5" : "五",
+      "entry6" : "六",
+      "entry7" : "七",
+      "entry8" : "八"
     }
   },
   "footer" : {

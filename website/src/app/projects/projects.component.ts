@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   faGlobeEurope, faGlobeAmericas, faLaptopCode, faTasks, faEdit, faCalendarMinus, faCalendarPlus, faCalendarCheck,
-  faCalendarAlt, faCogs, faUser, faUsers, faTools
+  faCalendarAlt, faCogs, faUser, faUsers, faTools, faLevelDownAlt, faLevelUpAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { faAndroid, faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -28,6 +28,8 @@ export class ProjectsComponent implements OnInit {
   faUser = faUser;
   faUsers = faUsers;
   faTools = faTools;
+  faLevelDownAlt = faLevelDownAlt;
+  faLevelUpAlt = faLevelUpAlt;
 
   constructor() { }
 
