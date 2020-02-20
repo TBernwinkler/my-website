@@ -73,47 +73,58 @@ a.active {
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
 
   li {
     &.even {
-      background: #2C5F96;
+      background: linear-gradient(0.25turn, #6c9fd6, #2c5f96, #6c9fd6);
+      //background: #2C5F96;
     }
 
     &.odd {
-      background: #666;
+      background: linear-gradient(0.25turn, #ccc, #666, #ccc);
     }
 
     padding: 2em;
     display: grid;
   }
 
-  p {
-    font-weight: bold;
-    margin-left: 1rem
-  }
-
   a {
     color: #dadada;
   }
 
-  .overview {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-bottom: 15px;
+  .wrapper .overview {
+    width: 50%;
+    margin: 0 auto;
   }
 
-  .entry-details {
-    font-size: 2rem;
-    margin-left: 10%;
-    width: 75%;
+  .overview {
+    display: flex;
+    padding-bottom: 25px;
+    margin: 0 auto;
+    padding-left: 15%;
+    display: flex;
+    align-items: center;
+  }
+
+  .initials {
+    color: #2C5F96;
+    border-radius: 50%;
+    width: 16%;
+    min-width: 85px;
+    height: auto;
+    line-height:100px;
+    font-size: 20px;
+    background: whitesmoke;
+    text-align: center;
+    margin: 0 30px;
   }
 
   .interpret {
     margin-top: 15px;
     margin-bottom: 0;
-    text-decoration: underline;
+    font-size: 17px;
+    font-weight: lighter;
     color: #f8f8f8;
   }
 
@@ -121,18 +132,6 @@ ul {
     margin-top: 0;
     margin-bottom: 0;
     color: #dadada;
-  }
-
-  .initials {
-    color: #777;
-    border-radius: 50%;
-    width: 15%;
-    min-width: 75px;
-    height: auto;
-    line-height:100px;
-    font-size: 2rem;
-    background: whitesmoke;
-    text-align: center;
   }
 
   @media only screen and  (max-width: 768px) {
@@ -152,17 +151,26 @@ ul {
 }
 
 @media only screen and  (min-width: 992px) {
+  #hero {
+    min-height: 350px;
+  }
   ul {
-    width: 70%;
+    margin: 0;
   }
 
   .bg-image {
-    width: 70%;
-    background: #666 url("../../assets/img/home/audio-crop.jpg") no-repeat;
+    background: #666 url("../../assets/img/home/audio-crop.jpg") no-repeat center;
     background-size: cover;
+    height: 350px;
   }
 
   .heading {
     padding: 125px 15% 0;
   }
+
+  .wrapper {
+    width: 50%;
+    margin: 0 auto;
+  }
+
 }

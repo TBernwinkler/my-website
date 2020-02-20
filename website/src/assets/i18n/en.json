@@ -9,7 +9,7 @@
   "home" : {
     "hero" : {
       "headline" : "Welcome to my Homepage",
-      "subline" : "This start page of my homepage gives an overall overview with respect to a number of topics. Some of these topics are covered more detailed on further pages."
+      "subline" : "This start page gives an overall overview regarding several fields. Next to some recommendations, personal interests and topics related to other pages are also outlined."
     },
     "technicalChallenges" : {
       "headline" : "I Love Technical Challenges",
@@ -38,16 +38,17 @@
       }
     },
     "japan" : {
-      "headline" : "head",
-      "subline": "sub",
-      "entry1" : "一",
-      "entry2" : "二",
-      "entry3" : "三",
-      "entry4" : "四",
-      "entry5" : "五",
-      "entry6" : "六",
-      "entry7" : "七",
-      "entry8" : "八"
+      "headline" : "Communication is key",
+      "subline": "and speaking or learning languages is the best way to connect",
+      "entry-m1" : "一",
+      "entry-m2" : "二",
+      "entry-m3" : "三",
+      "entry-m4" : "四",
+      "entry-m5" : "五",
+      "entry-m6" : "六",
+      "entry-m7" : "七",
+      "entry-m8" : "八",
+      "entry-r1": "Hello"
     }
   },
   "footer" : {

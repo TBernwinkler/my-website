@@ -1,37 +1,38 @@
 <header>
-  <div id="navigation" [ngClass]="{ navbar : true, show : showNav }">
-    <a class="icon" (click)="toggleNav()"><fa-icon [icon]="faBars" size="lg"></fa-icon></a>
-    <a (click)="selectPage('home')" [class.active]="isHome" routerLink="/">
-      <fa-icon [icon]="faHome" size="lg"></fa-icon>
-      <span class="link-text" translate>header.home</span>
-    </a>
+  <div class="container">
+    <div id="navigation" [ngClass]="{ navbar : true, show : showNav }">
+      <a class="icon" (click)="toggleNav()"><fa-icon [icon]="faBars" size="lg"></fa-icon></a>
+      <a (click)="selectPage('home')" [class.active]="isHome" routerLink="/">
+        <fa-icon [icon]="faHome" size="lg"></fa-icon>
+        <span class="link-text" translate>header.home</span>
+      </a>
 
-    <a (click)="selectPage('music')" [class.active]="isMusic" routerLink="/music">
+      <a (click)="selectPage('music')" [class.active]="isMusic" routerLink="/music">
 
         <fa-icon [icon]="faMusic" size="lg"></fa-icon>
         <span class="link-text" translate>header.music</span>
-    </a>
-    <a (click)="selectPage('projects')" [class.active]="isProjects" routerLink="/projects">
+      </a>
+      <a (click)="selectPage('projects')" [class.active]="isProjects" routerLink="/projects">
         <fa-icon [icon]="faProjectDiagram" size="lg"></fa-icon>
         <span class="link-text" translate>header.projects</span>
-    </a>
-    <a (click)="selectPage('contact')" [class.active]="isContact" routerLink="/contact">
+      </a>
+      <a (click)="selectPage('contact')" [class.active]="isContact" routerLink="/contact">
         <fa-icon [icon]="faAddressBook" size="lg"></fa-icon>
         <span class="link-text" translate>header.contact</span>
-    </a>
-  </div>
+      </a>
+    </div>
 
-  <div [ngClass]="{ dropdown : true, right : true, hide : showNav}">
+    <div [ngClass]="{ dropdown : true, right : true, hide : showNav}">
       <a [routerLink]="" (click)="toggleDropDown()">
         <fa-icon [icon]="faLanguage" size="lg"></fa-icon>
         <span class="link-text" translate>header.language</span>
         <fa-icon [icon]="faCaretDown" size="lg"></fa-icon>
       </a>
 
-    <div id="drop-c" [ngClass]="{ dropdownContent: true, hide : isHidden, show: isShown}">
-      <a (click)="useLanguage('de')" [class.selected]="selectedGerman" [routerLink]="">{{labelGerman}}</a>
-      <a (click)="useLanguage('en')" [class.selected]="!selectedGerman" [routerLink]="">{{labelEnglish}}</a>
+      <div id="drop-c" [ngClass]="{ dropdownContent: true, hide : isHidden, show: isShown}">
+        <a (click)="useLanguage('de')" [class.selected]="selectedGerman" [routerLink]="">{{labelGerman}}</a>
+        <a (click)="useLanguage('en')" [class.selected]="!selectedGerman" [routerLink]="">{{labelEnglish}}</a>
+      </div>
     </div>
   </div>
-
 </header>
