@@ -1,27 +1,27 @@
 {
-  "header" : {
-    "home" : "Home",
-    "music" : "Musik",
-    "projects" : "Projekte",
-    "contact" : "Kontakt",
-    "language" : "Sprache"
+  "header": {
+    "home": "Home",
+    "music": "Musik",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "language": "Sprache"
   },
-  "home" : {
-    "hero" : {
-      "headline" : "Willkommen auf meiner Homepage",
-      "subline" : "Die Startseite meiner Homepage bietet einen allgemein gehaltenen Überblick bzgl. der auf der Seite zu findenden Themengebiete, auf die teilweise auch durch zusätzliche Seiten näher eingegangen wird."
+  "home": {
+    "hero": {
+      "headline": "Willkommen auf meiner Homepage",
+      "subline": "Die Startseite meiner Homepage bietet einen allgemein gehaltenen Überblick bzgl. der auf der Seite zu findenden Themengebiete, auf die teilweise auch durch zusätzliche Seiten näher eingegangen wird."
     },
-    "technicalChallenges" : {
-      "headline" : "Ich lebe für technische Herausforderungen",
-      "subline" : "Mir persönlich ist es wichtig, mich ständig zu verbessern. Dies beinhaltet ...",
-      "entry1" : "Erforschung neuer Technologien und Frameworks",
-      "entry2" : "Neue Fachbereiche in erkunden",
-      "entry3" : "Wachstum in vielen Bereichen durch Forderung",
-      "entry4" : "Implementierung privater Projekte",
-      "entry5" : "Unterstützung in der (open source) Forschung",
-      "entry6" : "Optimierung von Hardware und Software",
-      "entry7" : "Zielführende Umsetzung von Ideen",
-      "entry8" : "Ständige Anpassung an neu Erlerntes"
+    "technicalChallenges": {
+      "headline": "Ich lebe für technische Herausforderungen",
+      "subline": "Mir persönlich ist es wichtig, mich ständig zu verbessern. Dies beinhaltet ...",
+      "entry1": "Erforschung neuer Technologien und Frameworks",
+      "entry2": "Neue Fachbereiche in erkunden",
+      "entry3": "Wachstum in vielen Bereichen durch Forderung",
+      "entry4": "Implementierung privater Projekte",
+      "entry5": "Unterstützung in der (open source) Forschung",
+      "entry6": "Optimierung von Hardware und Software",
+      "entry7": "Zielführende Umsetzung von Ideen",
+      "entry8": "Ständige Anpassung an neu Erlerntes"
     },
     "cards": {
       "first": {
@@ -37,20 +37,35 @@
         "content": "Alle auf dieser Webseite gelisteten Projekte decken verschiedene Technologien und Fachbereiche ab. Sie helfen mir dabei, stets technsiche Fortschritte zu machen."
       }
     },
-    "japan" : {
-      "headline" : "über",
+    "japan": {
+      "headline": "über",
       "subline": "unter",
-      "entry1" : "一",
-      "entry2" : "二",
-      "entry3" : "三",
-      "entry4" : "四",
-      "entry5" : "五",
-      "entry6" : "六",
-      "entry7" : "七",
-      "entry8" : "八"
+      "entry-m1": "一",
+      "entry-m2": "二",
+      "entry-m3": "三",
+      "entry-m4": "四",
+      "entry-m5": "五",
+      "entry-m6": "六",
+      "entry-m7": "七",
+      "entry-m8": "八",
+      "entry-r1": "Hallo",
+      "entry-r2": "",
+      "entry-r3": "",
+      "entry-r4": "",
+      "entry-r5": "",
+      "entry-r6": "",
+      "entry-r7": "",
+      "entry-r8": ""
     }
   },
-  "footer" : {
-    "legal" : "Impressum"
+  "music": {
+    "headlineA": "Musik",
+    "headlineB": "Vorschläge"
+  },
+  "projects": {
+    "headline": "Projektüberblick"
+  },
+  "footer": {
+    "legal": "Impressum"
   }
 }

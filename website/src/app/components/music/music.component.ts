@@ -23,7 +23,7 @@ export class MusicComponent implements OnInit {
     {initials: 'S', artist: 'Sabaton', track: 'Primo Victoria', youtube: 'qVHyl0P_P-M'},
     {initials: 'T', artist: 'Trivium', track: 'Anthem (We Are Fire)', youtube: 'Lp8p5OPtEe0?start=12'},
     {initials: 'EL', artist: 'Eluveitie', track: 'Inis Mona', youtube: 'iijKLHCQw5o'},
-    {initials: 'RA', artist: 'Rise Against', track: 'Savior', youtube: 'e8X3ACToii0?start=12'},
+    {initials: 'RA', artist: 'Rise Against', track: 'Savior', youtube: 'e8X3ACToii0'},
     {initials: 'BE', artist: 'Betontod', track: 'Keine Popsongs', youtube: 'gFgaQDurt4Y'},
     {initials: 'BL', artist: 'Blink 182', track: 'What\'s my age again?', youtube: 'K7l5ZeVVoCA'},
     {initials: 'BB', artist: 'Breaking Benjamin', track: 'Dance With The Devil', youtube: 'IN_FFmeQAC0'},
@@ -56,23 +56,21 @@ export class MusicComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleEntry(idx: number) {
-    const elements = document.querySelectorAll('.overview a');
-    const overviewElement = elements[idx];
-    const contentElement = document.querySelector('li:nth-child(' + (idx + 1) + ') div.iframe-container');
-
-    if (overviewElement.classList.contains(this.classActive)) {
-      overviewElement.classList.remove(this.classActive);
-      contentElement.classList.remove(this.classActive);
-    } else {
-      overviewElement.classList.add(this.classActive);
-      contentElement.classList.add(this.classActive);
-    }
+  toggleEntry(index: number): void {
+    const headerElement = document.querySelectorAll('.accordion-header')[index];
+    const contentElement = document.querySelector('li:nth-child(' + (index + 1) + ') .accordion-content');
+    headerElement.classList.toggle(this.classActive);
+    contentElement.classList.toggle(this.classActive);
   }
 
-  getUrl(url: string) {
-    const inputUrl = this.baseUrl + url;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(inputUrl);
+  isActive(index: number): boolean {
+    const contentElement = document.querySelector('li:nth-child(' + (index + 1) + ') .accordion-content');
+    return contentElement.classList.contains(this.classActive);
   }
+
+  // getUrl(url: string) {
+  //   const inputUrl = this.baseUrl + url;
+  //   return this.sanitizer.bypassSecurityTrustResourceUrl(inputUrl);
+  // }
 
 }

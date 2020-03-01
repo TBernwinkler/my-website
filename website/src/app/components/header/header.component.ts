@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../app.component';
 import { faHome, faMusic, faProjectDiagram, faAddressBook, faBars, faLanguage, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

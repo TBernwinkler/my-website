@@ -1,5 +1,7 @@
+@import "../common.scss";
+
 footer {
-  background: #2C5F96;
+  background: $blue;
   padding: 0.5rem 1rem;
   color: #f2f2f2;
 
@@ -39,7 +41,7 @@ footer {
 
     a:hover {
       background: #f2f2f2;
-      color: #2C5F96;
+      color: $blue;
     }
 
 

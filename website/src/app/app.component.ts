@@ -8,7 +8,12 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
+    const language = navigator.language;
+    if (language && language.startsWith('de')) {
+      translate.setDefaultLang('de');
+    } else {
+      translate.setDefaultLang('en');
+    }
   }
 
   title = 'website';

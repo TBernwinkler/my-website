@@ -2,28 +2,25 @@
   <div id="hero">
     <div class="bg-image"></div>
     <div class="heading">
-      <h1>Music <fa-icon class="down" [icon]="faMusic" size="lg"></fa-icon> Suggestions</h1>
+      <h1><span translate>music.headlineA</span> <fa-icon class="separator" [icon]="faMusic" size="lg"></fa-icon> <span translate>music.headlineB</span></h1>
     </div>
   </div>
 
   <ul>
     <li *ngFor="let suggestion of musicSuggestions" [class]="musicSuggestions.indexOf(suggestion)%2==0 ? 'even' : 'odd'">
       <div class="wrapper">
-        <div class="overview">
+        <div class="accordion-header" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">
           <div class="initials">{{suggestion.initials}}</div>
-          <div class="entry-details">
+          <div>
             <p class="interpret">{{suggestion.artist}}</p>
             <p class="track">
-              <a [routerLink]="" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">
                 {{suggestion.track}}
-                <fa-icon class="down" [icon]="faCaretDown" size="lg"></fa-icon>
-                <fa-icon class="up" [icon]="faCaretUp" size="lg"></fa-icon>
-              </a>
+                <fa-icon class="caret" [icon]="isActive(musicSuggestions.indexOf(suggestion)) ? faCaretUp : faCaretDown" size="lg"></fa-icon>
             </p>
           </div>
         </div>
-        <div class="iframe-container">
-          <iframe [src]="getUrl(suggestion.youtube)" frameborder="0"
+        <div class="accordion-content">
+          <iframe [src]="baseUrl + suggestion.youtube | safe"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
         </div>

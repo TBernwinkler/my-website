@@ -1,5 +1,7 @@
+@import "../common.scss";
+
 h1 {
-  color: #2C5F96;
+  color: $blue;
   font-weight: bolder;
   text-align: center;
 }
@@ -33,7 +35,7 @@ h1 {
 
     .element, .description {
       padding: 15px;
-      background: #2C5F96;
+      background: $blue;
       color: #f8f8f8;
       align-items: center;
 

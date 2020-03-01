@@ -1,27 +1,27 @@
 {
-  "header" : {
-    "home" : "Home",
-    "music" : "Music",
-    "projects" : "Projects",
-    "contact" : "Contact",
-    "language" : "Language"
+  "header": {
+    "home": "Home",
+    "music": "Music",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
   },
-  "home" : {
-    "hero" : {
-      "headline" : "Welcome to my Homepage",
-      "subline" : "This start page gives an overall overview regarding several fields. Next to some recommendations, personal interests and topics related to other pages are also outlined."
+  "home": {
+    "hero": {
+      "headline": "Welcome to my Homepage",
+      "subline": "This start page gives an overall overview regarding several fields. Next to some recommendations, personal interests and topics related to other pages are also outlined."
     },
-    "technicalChallenges" : {
-      "headline" : "I Love Technical Challenges",
-      "subline" : "To me it is important to constantly improve. This includes topics like ...",
-      "entry1" : "exploring new technologies & frameworks",
-      "entry2" : "tackling other/new areas of development",
-      "entry3" : "trying to challenge myself again and again",
-      "entry4" : "implementing private projects like this webiste",
-      "entry5" : "supporting (open source) research projects",
-      "entry6" : "tweaking both, hardware and software",
-      "entry7" : "living ideas until they form greatness",
-      "entry8" : "constantly learning (new) best practices"
+    "technicalChallenges": {
+      "headline": "I Love Technical Challenges",
+      "subline": "To me it is important to constantly improve. This includes topics like ...",
+      "entry1": "exploring new technologies & frameworks",
+      "entry2": "tackling other/new areas of development",
+      "entry3": "trying to challenge myself again and again",
+      "entry4": "implementing private projects like this webiste",
+      "entry5": "supporting (open source) research projects",
+      "entry6": "tweaking both, hardware and software",
+      "entry7": "living ideas until they form greatness",
+      "entry8": "constantly learning (new) best practices"
     },
     "cards": {
       "first": {
@@ -37,21 +37,35 @@
         "content": "Projects listed on this website cover different fields and technologies to improve my overall understanding, toolset, mindset and possibly, my future career."
       }
     },
-    "japan" : {
-      "headline" : "Communication is key",
+    "japan": {
+      "headline": "Communication is key",
       "subline": "and speaking or learning languages is the best way to connect",
-      "entry-m1" : "一",
-      "entry-m2" : "二",
-      "entry-m3" : "三",
-      "entry-m4" : "四",
-      "entry-m5" : "五",
-      "entry-m6" : "六",
-      "entry-m7" : "七",
-      "entry-m8" : "八",
-      "entry-r1": "Hello"
+      "entry-m1": "一",
+      "entry-m2": "二",
+      "entry-m3": "三",
+      "entry-m4": "四",
+      "entry-m5": "五",
+      "entry-m6": "六",
+      "entry-m7": "七",
+      "entry-m8": "八",
+      "entry-r1": "Hello",
+      "entry-r2": "",
+      "entry-r3": "",
+      "entry-r4": "",
+      "entry-r5": "",
+      "entry-r6": "",
+      "entry-r7": "",
+      "entry-r8": ""
     }
   },
-  "footer" : {
-    "legal" : "Legal Information"
+  "music": {
+    "headlineA": "Music",
+    "headlineB": "Suggestions"
+  },
+  "projects": {
+    "headline": "Project Overview"
+  },
+  "footer": {
+    "legal": "Legal Information"
   }
 }
