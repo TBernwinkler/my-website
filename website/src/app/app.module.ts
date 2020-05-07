@@ -19,6 +19,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgxPopper} from 'angular-popper';
 import {SafePipe} from './pipes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSlideToggleModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import {SafePipe} from './pipes';
     MusicComponent,
     HomeComponent,
     ProjectsComponent,
-    SafePipe
+    SafePipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,11 @@ import {SafePipe} from './pipes';
         deps: [HttpClient]
       }
     }),
-    NgxPopper
+    NgxPopper,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -57,7 +67,7 @@ export class AppModule { }
 // make sure the correct path based on the web server directory is set
 export function HttpLoaderFactory(http: HttpClient) {
   // PROD
-  // return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
   // LOCAL
-  return new TranslateHttpLoader(http);
+  // return new TranslateHttpLoader(http);
 }

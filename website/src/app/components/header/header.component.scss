@@ -8,7 +8,7 @@ header {
 
   a {
     display: block;
-    color: #f2f2f2;
+    color: $white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -60,7 +60,7 @@ header {
   }
 
   .navbar a:hover, .dropdownContent a:hover {
-    background-color: #f2f2f2;
+    background-color: $white;
     color: $blue;
   }
 

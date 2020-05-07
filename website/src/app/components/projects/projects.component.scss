@@ -8,34 +8,35 @@ h1 {
 
 .entry {
   display: flex;
-  align-items: center;
-
-  &.even {
-    background-image: linear-gradient(-90deg, lightgray, #666);
-  }
-
-  &.odd {
-    background-image: linear-gradient(-90deg, #666, lightgray);
-  }
+  //align-items: center;
+  align-items: stretch;
 
   img {
-    width: 70%;
-    border-radius: 5px;
+    border-radius: 3px;
+    max-height: 100%;
+    max-width: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
   .img {
     width: 50%;
-    padding: 15px 0;
     text-align: center;
+    position: relative;
+    margin: 10px 0;
   }
 
   .text {
     width: 50%;
-    padding: 0;
+    background: $blue;
 
     .element, .description {
-      padding: 15px;
-      background: $blue;
+      padding: 15px 10%;
+
       color: #f8f8f8;
       align-items: center;
 
@@ -92,10 +93,18 @@ h1 {
           background: #bababa;
         }
       }
+
+      &.even {
+        background-image: linear-gradient(-90deg, lightgray, #666);
+      }
+
+      &.odd {
+        background-image: linear-gradient(-90deg, #666, lightgray);
+      }
     }
   }
 
-  @media only screen and (max-width: 576px){
+  @media only screen and (max-width: 768px){
     flex-direction: column;
 
     &.even, &.odd {

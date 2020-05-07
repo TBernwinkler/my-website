@@ -2,29 +2,127 @@
   <div id="hero">
     <div class="bg-image"></div>
     <div class="heading">
-      <h1><span translate>music.headlineA</span> <fa-icon class="separator" [icon]="faMusic" size="lg"></fa-icon> <span translate>music.headlineB</span></h1>
+      <h1><span translate>music.headlineA</span>
+        <fa-icon class="separator" [icon]="faMusic" size="lg"></fa-icon>
+        <span translate>music.headlineB</span></h1>
     </div>
   </div>
 
-  <ul>
-    <li *ngFor="let suggestion of musicSuggestions" [class]="musicSuggestions.indexOf(suggestion)%2==0 ? 'even' : 'odd'">
-      <div class="wrapper">
-        <div class="accordion-header" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">
-          <div class="initials">{{suggestion.initials}}</div>
-          <div>
-            <p class="interpret">{{suggestion.artist}}</p>
-            <p class="track">
+  <ng-container *ngIf="isMobile(); else desktop">
+    <ul>
+      <li *ngFor="let suggestion of musicSuggestions"
+          [class]="musicSuggestions.indexOf(suggestion)%2==0 ? 'even' : 'odd'">
+        <div class="wrapper">
+          <div class="accordion-header" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">
+            <div>
+              <p class="interpret">{{suggestion.artist}}</p>
+              <p class="track">
                 {{suggestion.track}}
-                <fa-icon class="caret" [icon]="isActive(musicSuggestions.indexOf(suggestion)) ? faCaretUp : faCaretDown" size="lg"></fa-icon>
-            </p>
+                <fa-icon class="caret" [icon]="isActive(musicSuggestions.indexOf(suggestion)) ? faCaretUp : faCaretDown"
+                         size="lg"></fa-icon>
+              </p>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <iframe [src]="baseUrl + suggestion.youtube | safe"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
           </div>
         </div>
-        <div class="accordion-content">
-          <iframe [src]="baseUrl + suggestion.youtube | safe"
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #desktop>
+    <div class="flex-container">
+      <div class="track-list">
+        <div class="video-options">
+          <mat-slide-toggle color="warn" [(ngModel)]="autoplay" (change)="handleToggle($event, 'autoplay')">Autoplay
+          </mat-slide-toggle>
+          <mat-slide-toggle color="warn" [(ngModel)]="playAll" (change)="handleToggle($event, 'playAll')">Play All
+          </mat-slide-toggle>
+          <p class="description-outline" (click)="scrollToElement(descriptions)">How does it work? Click here</p>
+        </div>
+
+        <div cdkDropList (cdkDropListDropped)="drop($event)">
+          <div *ngFor="let suggestion of musicSuggestions" style="display: block" cdkDrag>
+            <div [ngClass]="{ 'active': isSelected(musicSuggestions.indexOf(suggestion)), 'even': musicSuggestions.indexOf(suggestion)%2===0, 'odd': musicSuggestions.indexOf(suggestion)%2!==0}">
+              <div class="selection-wrapper">
+                <span (click)="onVideoChange(musicSuggestions.indexOf(suggestion), video)">
+                  <div class="flex-container">
+                    <div class="icon">
+                      <fa-icon class="separator" [icon]="isSelected(musicSuggestions.indexOf(suggestion)) ? faVolumeUp : faPlayCircle" size="lg"></fa-icon>
+                    </div>
+                    <div class="details">
+                      <p class="interpret">{{suggestion.artist}}</p>
+                      <p class="track">{{suggestion.track}}</p>
+                    </div>
+
+                  </div>
+                </span>
+                <div class="icon move">
+                  <fa-icon class="separator" [icon]="faArrowsAlt" size="lg"></fa-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="active-video" #video>
+        <div class="iframe-container">
+          <iframe #videoPlayback [src]="baseUrl + activeVideo.youtube | safe"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
         </div>
+        <div class="center">
+          <h1>{{activeVideo.artist}}
+            <fa-icon class="separator" [icon]="faMinus" size="lg"></fa-icon>
+            {{activeVideo.track}}</h1>
+          <p *ngIf="playAll">
+            <fa-icon class="separator" [icon]="faStepBackward"
+                     (click)="playPreviousSong()" size="2x"></fa-icon>
+            <fa-icon class="separator" [icon]="counterPaused ? faPlayCircle : faPauseCircle"
+                     (click)="playPauseVideoCounter()" size="2x"></fa-icon>
+<!--            todo: shuffle in ts-->
+            <fa-icon class="separator disabled-content" [icon]="faRandom" size="2x"></fa-icon>
+            <fa-icon class="separator" [icon]="faStepForward"
+                     (click)="playNextSong()" size="2x"></fa-icon>
+          </p>
+          <p *ngIf="playAll">Next video will play in {{remainingTime}} seconds</p>
+        </div>
+
+<!--        todo: active/inactive styling and icon-->
+        <div class="flex-container scaling">
+          <div class="flex-section">
+            <form>
+              <label>Video ID</label>
+              <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
+              <label>Interpret</label>
+              <input [(ngModel)]="inputInterpret" name="inputInterpret" type="text" required="required">
+              <label>Track</label>
+              <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
+              <label>Video duration [sec]</label>
+              <input [(ngModel)]="inputDuration" name="inputDuration" type="number" min="1" required="required">
+              <button type="button" (click)="addNewVideo()">Add Video</button>
+<!--              todo: conditional validation-->
+<!--              <div *ngIf="inputVideoId.invalid">-->
+<!--                <p>TEST</p>-->
+<!--              </div>-->
+            </form>
+          </div>
+          <div class="flex-section" #descriptions>
+            <h4>Autoplay</h4>
+            <p>Enable Autoplay and click on one of the entries to your left. The new video will start automatically.</p>
+            <h4>Play All</h4>
+            <p>The first video will start playing and further videos will follow automatically.</p>
+            <h4>Reorder Videos</h4>
+            <p>Everybody has a different taste in music. That's exactly why you might want to reorder the tracks. Go ahead and do so via drag and drop.</p>
+            <h4>Changes are temporary</h4>
+            <p>In future, it will be possible to add your own tracks. At the moment, the button does not work yet.
+              However, once you add your own videos, they will only be available as long as your browser window is open.
+              Everything is stored in your web browser. No data is transferred to the server.</p>
+          </div>
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </ng-template>
 </div>

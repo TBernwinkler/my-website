@@ -11,13 +11,16 @@ body, html {
 
   @media only screen and (min-width: 992px) {
     .container {
-      margin: 0 15%; //top+bottom right+left
+      padding: 0 15%; //top+bottom right+left
     }
 
   }
 }
 
 body {
+  // styling option: open-sans
+  // https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans
+  // https://stackoverflow.com/questions/49878988/how-to-import-a-new-font-into-a-project-angular-5
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
 }
@@ -42,3 +45,11 @@ a {
 .center {
   text-align: center;
 }
+
+.disabled-content {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
