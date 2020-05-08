@@ -10,7 +10,8 @@ import {
   HomeComponent,
   LegalComponent,
   MusicComponent,
-  ProjectsComponent
+  ProjectsComponent,
+  PageNotFoundComponent
 } from './components';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 // import ngx-translate and the http loader
@@ -20,10 +21,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgxPopper} from 'angular-popper';
 import {SafePipe} from './pipes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSlideToggleModule} from '@angular/material';
+import {MatFormFieldModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BrowserAnimationsModule,
     MatSlideToggleModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

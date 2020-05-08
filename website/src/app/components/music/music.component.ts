@@ -10,7 +10,7 @@ import {
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {Video} from '../../models';
-import {MatSlideToggleChange} from '@angular/material';
+import {MatSelectChange, MatSelectionListChange, MatSlideToggleChange} from '@angular/material';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
@@ -90,10 +90,17 @@ export class MusicComponent implements OnInit {
     {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210}
   ];
 
+  trackList: Array<{name: string, value: string}> = [];
+  selectedTracks: Array<string> = [];
+
   constructor() { }
 
   ngOnInit() {
     this.activeVideo = this.musicSuggestions[0];
+
+    this.musicSuggestions.forEach(entry => {
+      this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
+    });
   }
 
   // GENERAL PART
@@ -148,6 +155,30 @@ export class MusicComponent implements OnInit {
         this.runAsPlaylist();
       }
     }
+  }
+
+  handleDeleteVideoListSelectionChange(event: MatSelectChange) {
+    this.selectedTracks = event.source.value;
+    console.log(this.selectedTracks);
+  }
+
+  handleRemoveVideosFromSuggestions() {
+    // REMOVE VIDEO TO THE LEFT
+    if (this.selectedTracks.length > 0) {
+      this.selectedTracks.forEach(entry => {
+        const idx = this.musicSuggestions.indexOf(this.musicSuggestions.find(
+          suggestion => suggestion.youtube === entry));
+        this.musicSuggestions.splice(idx, 1);
+      });
+
+      // REMOVE ITEMS FROM SELECT BOX
+      this.selectedTracks.forEach(entry => {
+        const idx = this.trackList.indexOf(this.trackList.find(
+          track => track.value === entry));
+        this.trackList.splice(idx, 1);
+      });
+    }
+    this.selectedTracks = [];
   }
 
   playPauseVideoCounter() {

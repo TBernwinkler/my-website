@@ -36,9 +36,9 @@
     <div class="flex-container">
       <div class="track-list">
         <div class="video-options">
-          <mat-slide-toggle color="warn" [(ngModel)]="autoplay" (change)="handleToggle($event, 'autoplay')">Autoplay
+          <mat-slide-toggle color="primary" [(ngModel)]="autoplay" (change)="handleToggle($event, 'autoplay')">Autoplay
           </mat-slide-toggle>
-          <mat-slide-toggle color="warn" [(ngModel)]="playAll" (change)="handleToggle($event, 'playAll')">Play All
+          <mat-slide-toggle color="primary" [(ngModel)]="playAll" (change)="handleToggle($event, 'playAll')">Play All
           </mat-slide-toggle>
           <p class="description-outline" (click)="scrollToElement(descriptions)">How does it work? Click here</p>
         </div>
@@ -115,11 +115,28 @@
             <h4>Play All</h4>
             <p>The first video will start playing and further videos will follow automatically.</p>
             <h4>Reorder Videos</h4>
-            <p>Everybody has a different taste in music. That's exactly why you might want to reorder the tracks. Go ahead and do so via drag and drop.</p>
+            <p>Everybody has a different taste in music. That's exactly why you might want to reorder the tracks.
+              Go ahead and do so via drag and drop. Moreover, it is even possible to export and import your own list of videos.</p>
             <h4>Changes are temporary</h4>
-            <p>In future, it will be possible to add your own tracks. At the moment, the button does not work yet.
-              However, once you add your own videos, they will only be available as long as your browser window is open.
-              Everything is stored in your web browser. No data is transferred to the server.</p>
+            <p>It is possible to add your own track, if necessary data is provided.
+              However, once you add your own videos, they will only be available for you and only as long as your browser
+              window is open. Everything is stored on your computer. No data is transferred to any server.</p>
+          </div>
+          <div class="flex-section">
+            <h4>Remove Videos</h4>
+            In case you don't like a video, select one or multiple one and click the remove button.
+
+            <mat-form-field color="accent" style="width: 100%">
+              <mat-label>Videos to Remove</mat-label>
+              <mat-select (selectionChange)="handleDeleteVideoListSelectionChange($event)" multiple>
+                <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
+              </mat-select>
+              <br><br>
+
+            </mat-form-field>
+            <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
+
+            <h4>Export Video List</h4>
           </div>
         </div>
       </div>
