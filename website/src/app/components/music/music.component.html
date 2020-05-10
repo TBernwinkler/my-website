@@ -136,7 +136,35 @@
             </mat-form-field>
             <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
 
-            <h4>Export Video List</h4>
+            <h4>Custom Reusable Video List</h4>
+            Obviously, every individual has a different taste in music. Hence, it is possible to adjust the list of videos
+            to your liking.
+
+            <mat-tab-group backgroundColor="primary" (selectedTabChange)="handleTabChange($event)">
+              <mat-tab label="Info">
+                <p class="tab-content">
+                  It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR
+                  regulations, the video list resets on page refresh. That is exactly where this feature comes in handy.
+                  After adjusting the video list, it is possible to export it and import your list the next time, you visit the page.
+                  If you are experienced with software development, particularly JSON format, you are even free to adjust the list manually.
+                </p>
+              </mat-tab>
+              <mat-tab label="Import"> <button type="button">Import</button> </mat-tab>
+              <mat-tab label="Export">
+                <span>Download the videos to export by clicking the button or simply show a preview by checking the box</span>
+                <p class="double">
+                  <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview">
+                  <label for="exportCheck">Show Preview</label>
+                </p>
+
+                <div *ngIf="exportPreview" class="export-preview">
+                  <h5>Export Preview</h5>
+                  <textarea>bla</textarea>
+                </div>
+
+                <button type="button">Export</button>
+              </mat-tab>
+            </mat-tab-group>
           </div>
         </div>
       </div>

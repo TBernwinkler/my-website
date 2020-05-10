@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {
   faArrowsAlt,
   faCaretDown,
@@ -10,14 +10,15 @@ import {
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {Video} from '../../models';
-import {MatSelectChange, MatSelectionListChange, MatSlideToggleChange} from '@angular/material';
+import {MatSelectChange, MatTabChangeEvent, MatSlideToggleChange} from '@angular/material';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
-  styleUrls: ['./music.component.scss']
+  styleUrls: ['./music.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MusicComponent implements OnInit {
   @ViewChild('videoPlayback', {static: false}) videoPlayback: ElementRef<HTMLElement>;
@@ -92,6 +93,8 @@ export class MusicComponent implements OnInit {
 
   trackList: Array<{name: string, value: string}> = [];
   selectedTracks: Array<string> = [];
+  highlightFirstTab = true;
+  exportPreview = false;
 
   constructor() { }
 
@@ -159,6 +162,8 @@ export class MusicComponent implements OnInit {
 
   handleDeleteVideoListSelectionChange(event: MatSelectChange) {
     this.selectedTracks = event.source.value;
+    if (event.source.selected) {
+    }
     console.log(this.selectedTracks);
   }
 
@@ -179,6 +184,11 @@ export class MusicComponent implements OnInit {
       });
     }
     this.selectedTracks = [];
+  }
+
+  handleTabChange(event: MatTabChangeEvent) {
+    this.highlightFirstTab = event.index === 0;
+    console.log(event);
   }
 
   playPauseVideoCounter() {

@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -38,28 +39,29 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     SafePipe,
     PageNotFoundComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
 
-    // ngx-translate and the loader module
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    NgxPopper,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    FormsModule,
-    DragDropModule,
-    MatFormFieldModule,
-    MatSelectModule
-  ],
+        // ngx-translate and the loader module
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        NgxPopper,
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        FormsModule,
+        DragDropModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatTabsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
