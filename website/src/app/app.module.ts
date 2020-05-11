@@ -21,10 +21,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgxPopper} from 'angular-popper';
 import {SafePipe} from './pipes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatSelectModule, MatSlideToggleModule} from '@angular/material';
+import {MatFormFieldModule, MatSelectModule, MatTabsModule, MatSlideToggleModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [

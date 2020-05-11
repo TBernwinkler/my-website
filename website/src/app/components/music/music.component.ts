@@ -2,11 +2,11 @@ import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angu
 import {
   faArrowsAlt,
   faCaretDown,
-  faCaretUp,
+  faCaretUp, faClipboard,
   faMinus,
   faMusic,
   faPauseCircle,
-  faPlayCircle, faRandom, faStepBackward, faStepForward,
+  faPlayCircle, faRandom, faStepBackward, faStepForward, faUpload,
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {Video} from '../../models';
@@ -49,6 +49,8 @@ export class MusicComponent implements OnInit {
   faStepForward = faStepForward;
   faStepBackward = faStepBackward;
   faRandom = faRandom;
+  faClipboard = faClipboard;
+  faUpload = faUpload;
 
   musicSuggestions: Array<Video> = [
     {artist: 'Parkway Drive', track: 'Prey', youtube: 'WL_8ZY89dP4?start=5', duration: 255},
@@ -95,6 +97,7 @@ export class MusicComponent implements OnInit {
   selectedTracks: Array<string> = [];
   highlightFirstTab = true;
   exportPreview = false;
+  exportString = 'Lorem ipsum. Test.';
 
   constructor() { }
 
@@ -189,6 +192,13 @@ export class MusicComponent implements OnInit {
   handleTabChange(event: MatTabChangeEvent) {
     this.highlightFirstTab = event.index === 0;
     console.log(event);
+  }
+
+  copyToClipboard(inputElement) {
+    console.log(inputElement);
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
   }
 
   playPauseVideoCounter() {

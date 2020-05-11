@@ -1,5 +1,11 @@
 @import "../common.scss";
 
+/* temporary */
+.under-construction {
+  color: crimson;
+  font-style: italic;
+}
+
 /* heading section */
 #hero {
   min-height: 200px;
@@ -232,7 +238,7 @@ ul {
 
 .flex-section {
   width: 45%;
-  padding: 30px 25px;
+  padding: 25px 25px 0 25px;
   min-width: 40%;
 
   label {
@@ -257,7 +263,7 @@ ul {
     color: $blue;
 
     &:focus {
-      background: $white;
+      background: #fbfbfb;
     }
   }
 
@@ -275,7 +281,7 @@ ul {
   }
 
   h4 {
-    color: #999;
+    color: $blue;
     text-transform: uppercase;
   }
 
@@ -287,10 +293,11 @@ ul {
   /* Styles for tab labels */
   .mat-tab-label {
     min-width: 25px !important;
-    width: 33.3%;
+    width: 33.33%;
     padding: 5px;
-    background-color: transparent;
-    color: darkblue;
+    background-color: $white;
+    opacity: 1;
+    color: $blue;
     font-weight: 700;
   }
 
@@ -310,6 +317,15 @@ ul {
   padding: 15px;
   color: $white;
   border-radius: 4px;
+}
+
+.link {
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+    text-decoration: underline;
+  }
 }
 
 /* START CHECKBOX STYLES FROM https://codepen.io/GeoffreyCrofte/pen/BiHzp */

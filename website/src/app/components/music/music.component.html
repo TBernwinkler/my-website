@@ -93,6 +93,7 @@
 <!--        todo: active/inactive styling and icon-->
         <div class="flex-container scaling">
           <div class="flex-section">
+            <h4>Add New Videos</h4>
             <form>
               <label>Video ID</label>
               <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
@@ -108,6 +109,17 @@
 <!--                <p>TEST</p>-->
 <!--              </div>-->
             </form>
+
+            <h4>Remove Videos</h4>
+            <span>In case you don't like a video, select one or multiple one and click the remove button.</span>
+            <mat-form-field color="accent" style="width: 100%">
+              <mat-label>Videos to Remove</mat-label>
+              <mat-select (selectionChange)="handleDeleteVideoListSelectionChange($event)" multiple>
+                <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
+
           </div>
           <div class="flex-section" #descriptions>
             <h4>Autoplay</h4>
@@ -123,24 +135,11 @@
               window is open. Everything is stored on your computer. No data is transferred to any server.</p>
           </div>
           <div class="flex-section">
-            <h4>Remove Videos</h4>
-            In case you don't like a video, select one or multiple one and click the remove button.
-
-            <mat-form-field color="accent" style="width: 100%">
-              <mat-label>Videos to Remove</mat-label>
-              <mat-select (selectionChange)="handleDeleteVideoListSelectionChange($event)" multiple>
-                <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
-              </mat-select>
-              <br><br>
-
-            </mat-form-field>
-            <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
-
             <h4>Custom Reusable Video List</h4>
             Obviously, every individual has a different taste in music. Hence, it is possible to adjust the list of videos
             to your liking.
 
-            <mat-tab-group backgroundColor="primary" (selectedTabChange)="handleTabChange($event)">
+            <mat-tab-group (selectedTabChange)="handleTabChange($event)">
               <mat-tab label="Info">
                 <p class="tab-content">
                   It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR
@@ -149,7 +148,11 @@
                   If you are experienced with software development, particularly JSON format, you are even free to adjust the list manually.
                 </p>
               </mat-tab>
-              <mat-tab label="Import"> <button type="button">Import</button> </mat-tab>
+              <mat-tab label="Import">
+                <p class="under-construction">Feature is not ready yet. The button is not connected to any action.</p>
+                <button type="button">Import <fa-icon class="separator" [icon]="faUpload" size="lg"></fa-icon></button>
+<!--                use material dialog?-->
+              </mat-tab>
               <mat-tab label="Export">
                 <span>Download the videos to export by clicking the button or simply show a preview by checking the box</span>
                 <p class="double">
@@ -159,9 +162,13 @@
 
                 <div *ngIf="exportPreview" class="export-preview">
                   <h5>Export Preview</h5>
-                  <textarea>bla</textarea>
-                </div>
+                  <textarea #preview [(ngModel)]="exportString"></textarea>
 
+                  <p>
+                    <span class="link" (click)="copyToClipboard(preview)">Copy preview to clipboard <fa-icon class="separator" [icon]="faClipboard" size="lg"></fa-icon></span>
+                  </p>
+                </div>
+                <p class="under-construction">Feature is not ready yet. The button is not connected to any action.</p>
                 <button type="button">Export</button>
               </mat-tab>
             </mat-tab-group>
