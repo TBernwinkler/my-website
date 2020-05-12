@@ -12,6 +12,7 @@ import {
 import {Video} from '../../models';
 import {MatSelectChange, MatTabChangeEvent, MatSlideToggleChange} from '@angular/material';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { saveAs } from 'file-saver';
 
 
 @Component({
@@ -98,6 +99,8 @@ export class MusicComponent implements OnInit {
   highlightFirstTab = true;
   exportPreview = false;
   exportString = 'Lorem ipsum. Test.';
+  importString = '';
+  exportUrl = '';
 
   constructor() { }
 
@@ -107,6 +110,7 @@ export class MusicComponent implements OnInit {
     this.musicSuggestions.forEach(entry => {
       this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
     });
+    this.updateTrackExport();
   }
 
   // GENERAL PART
@@ -167,7 +171,6 @@ export class MusicComponent implements OnInit {
     this.selectedTracks = event.source.value;
     if (event.source.selected) {
     }
-    console.log(this.selectedTracks);
   }
 
   handleRemoveVideosFromSuggestions() {
@@ -185,6 +188,7 @@ export class MusicComponent implements OnInit {
           track => track.value === entry));
         this.trackList.splice(idx, 1);
       });
+      this.updateTrackExport();
     }
     this.selectedTracks = [];
   }
@@ -199,6 +203,14 @@ export class MusicComponent implements OnInit {
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
+  }
+
+  updateTrackExport() {
+    this.exportString = JSON.stringify(this.musicSuggestions, null, 2);
+  }
+
+  exportTracks() {
+    saveAs(new Blob([this.exportString], {type: 'application/json'}), 'TrackExport.json');
   }
 
   playPauseVideoCounter() {
@@ -257,6 +269,7 @@ export class MusicComponent implements OnInit {
       this.inputTrack = '';
       this.inputVideoId = '';
       this.inputDuration = 0;
+      this.updateTrackExport();
     }
   }
 

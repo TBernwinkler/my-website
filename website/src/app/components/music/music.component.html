@@ -56,7 +56,6 @@
                       <p class="interpret">{{suggestion.artist}}</p>
                       <p class="track">{{suggestion.track}}</p>
                     </div>
-
                   </div>
                 </span>
                 <div class="icon move">
@@ -103,7 +102,9 @@
               <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
               <label>Video duration [sec]</label>
               <input [(ngModel)]="inputDuration" name="inputDuration" type="number" min="1" required="required">
+              <label>&nbsp;</label>
               <button type="button" (click)="addNewVideo()">Add Video</button>
+
 <!--              todo: conditional validation-->
 <!--              <div *ngIf="inputVideoId.invalid">-->
 <!--                <p>TEST</p>-->
@@ -118,6 +119,7 @@
                 <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
               </mat-select>
             </mat-form-field>
+            <label>&nbsp;</label>
             <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
 
           </div>
@@ -134,10 +136,10 @@
               However, once you add your own videos, they will only be available for you and only as long as your browser
               window is open. Everything is stored on your computer. No data is transferred to any server.</p>
           </div>
-          <div class="flex-section">
+          <div class="flex-section" style="width: 100%">
             <h4>Custom Reusable Video List</h4>
-            Obviously, every individual has a different taste in music. Hence, it is possible to adjust the list of videos
-            to your liking.
+            <p>Obviously, every individual has a different taste in music. Hence, it is possible to adjust the list of videos
+            to your liking.</p>
 
             <mat-tab-group (selectedTabChange)="handleTabChange($event)">
               <mat-tab label="Info">
@@ -150,17 +152,20 @@
               </mat-tab>
               <mat-tab label="Import">
                 <p class="under-construction">Feature is not ready yet. The button is not connected to any action.</p>
+                <div class="import-export">
+                  <textarea [(ngModel)]="importString"></textarea>
+                </div>
                 <button type="button">Import <fa-icon class="separator" [icon]="faUpload" size="lg"></fa-icon></button>
 <!--                use material dialog?-->
               </mat-tab>
               <mat-tab label="Export">
-                <span>Download the videos to export by clicking the button or simply show a preview by checking the box</span>
+                <p>Download the videos to export by clicking the button or simply show a preview by checking the box</p>
                 <p class="double">
-                  <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview">
+                  <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview" (click)="updateTrackExport()">
                   <label for="exportCheck">Show Preview</label>
                 </p>
 
-                <div *ngIf="exportPreview" class="export-preview">
+                <div *ngIf="exportPreview" class="import-export">
                   <h5>Export Preview</h5>
                   <textarea #preview [(ngModel)]="exportString"></textarea>
 
@@ -168,8 +173,7 @@
                     <span class="link" (click)="copyToClipboard(preview)">Copy preview to clipboard <fa-icon class="separator" [icon]="faClipboard" size="lg"></fa-icon></span>
                   </p>
                 </div>
-                <p class="under-construction">Feature is not ready yet. The button is not connected to any action.</p>
-                <button type="button">Export</button>
+                <button type="button" (click)="exportTracks()">Export</button>
               </mat-tab>
             </mat-tab-group>
           </div>
