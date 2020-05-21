@@ -21,9 +21,18 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgxPopper} from 'angular-popper';
 import {SafePipe} from './pipes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatSelectModule, MatTabsModule, MatSlideToggleModule} from '@angular/material';
+import {
+  MatFormFieldModule,
+  MatSelectModule,
+  MatTabsModule,
+  MatSlideToggleModule,
+  MatDialogModule,
+  MatButtonModule
+} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ImportExportComponent } from './components/import-export/import-export.component';
+import {DialogComponent} from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,33 +45,38 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     HomeComponent,
     ProjectsComponent,
     SafePipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DialogComponent,
+    ImportExportComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FontAwesomeModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
 
-        // ngx-translate and the loader module
-        HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        NgxPopper,
-        BrowserAnimationsModule,
-        MatSlideToggleModule,
-        FormsModule,
-        DragDropModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatTabsModule
-    ],
+    // ngx-translate and the loader module
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    NgxPopper,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    FormsModule,
+    DragDropModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatDialogModule,
+    MatButtonModule
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
 

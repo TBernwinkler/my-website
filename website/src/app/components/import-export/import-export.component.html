@@ -1,0 +1,35 @@
+<mat-tab-group (selectedTabChange)="handleTabChange($event)">
+  <mat-tab label="Info">
+    <p class="tab-content">
+      It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR
+      regulations, the video list resets on page refresh. That is exactly where this feature comes in handy.
+      After adjusting the video list, it is possible to export it and import your list the next time, you visit the page.
+      If you are experienced with software development, or with the JSON format, you can adjust the list manually.
+    </p>
+  </mat-tab>
+  <mat-tab label="Import">
+    <div class="import-export">
+      <h5>Import by copying JSON into the textarea</h5>
+      <textarea [(ngModel)]="importString"></textarea>
+    </div>
+    <button type="button" (click)="importTracks()">Import <fa-icon class="separator" [icon]="faUpload" size="lg"></fa-icon></button>
+    <!--                use material dialog?-->
+  </mat-tab>
+  <mat-tab label="Export">
+    <p>Download the videos to export by clicking the button or simply show a preview by checking the box</p>
+    <p class="double">
+      <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview" (click)="updateTrackExport()">
+      <label for="exportCheck">Show Preview</label>
+    </p>
+
+    <div *ngIf="exportPreview" class="import-export">
+      <h5>Export Preview</h5>
+      <textarea #preview [(ngModel)]="exportString"></textarea>
+
+      <p>
+        <span class="link" (click)="copyToClipboard(preview)">Copy preview to clipboard <fa-icon class="separator" [icon]="faClipboard" size="lg"></fa-icon></span>
+      </p>
+    </div>
+    <button type="button" (click)="exportTracks()">Export</button>
+  </mat-tab>
+</mat-tab-group>

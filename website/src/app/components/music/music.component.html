@@ -8,31 +8,31 @@
     </div>
   </div>
 
-  <ng-container *ngIf="isMobile(); else desktop">
-    <ul>
-      <li *ngFor="let suggestion of musicSuggestions"
-          [class]="musicSuggestions.indexOf(suggestion)%2==0 ? 'even' : 'odd'">
-        <div class="wrapper">
-          <div class="accordion-header" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">
-            <div>
-              <p class="interpret">{{suggestion.artist}}</p>
-              <p class="track">
-                {{suggestion.track}}
-                <fa-icon class="caret" [icon]="isActive(musicSuggestions.indexOf(suggestion)) ? faCaretUp : faCaretDown"
-                         size="lg"></fa-icon>
-              </p>
-            </div>
-          </div>
-          <div class="accordion-content">
-            <iframe [src]="baseUrl + suggestion.youtube | safe"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </ng-container>
-  <ng-template #desktop>
+<!--  <ng-container *ngIf="isMobile(); else desktop">-->
+<!--    <ul>-->
+<!--      <li *ngFor="let suggestion of musicSuggestions"-->
+<!--          [class]="musicSuggestions.indexOf(suggestion)%2==0 ? 'even' : 'odd'">-->
+<!--        <div class="wrapper">-->
+<!--          <div class="accordion-header" (click)="toggleEntry(musicSuggestions.indexOf(suggestion))">-->
+<!--            <div>-->
+<!--              <p class="interpret">{{suggestion.artist}}</p>-->
+<!--              <p class="track">-->
+<!--                {{suggestion.track}}-->
+<!--                <fa-icon class="caret" [icon]="isActive(musicSuggestions.indexOf(suggestion)) ? faCaretUp : faCaretDown"-->
+<!--                         size="lg"></fa-icon>-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="accordion-content">-->
+<!--            <iframe [src]="baseUrl + suggestion.youtube | safe"-->
+<!--                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                    allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </ng-container>-->
+<!--  <ng-template #desktop>-->
     <div class="flex-container">
       <div class="track-list">
         <div class="video-options">
@@ -40,14 +40,17 @@
           </mat-slide-toggle>
           <mat-slide-toggle color="primary" [(ngModel)]="playAll" (change)="handleToggle($event, 'playAll')">Play All
           </mat-slide-toggle>
-          <p class="description-outline" (click)="scrollToElement(descriptions)">How does it work? Click here</p>
+          <p>
+            <button (click)="triggerShuffle()"><fa-icon class="separator" [icon]="faRandom" size="lg"></fa-icon> Shuffle</button>
+            <button (click)="scrollToElement(descriptions)"><fa-icon class="separator" [icon]="faBook" size="lg"></fa-icon> Info</button>
+          </p>
         </div>
 
         <div cdkDropList (cdkDropListDropped)="drop($event)">
           <div *ngFor="let suggestion of musicSuggestions" style="display: block" cdkDrag>
             <div [ngClass]="{ 'active': isSelected(musicSuggestions.indexOf(suggestion)), 'even': musicSuggestions.indexOf(suggestion)%2===0, 'odd': musicSuggestions.indexOf(suggestion)%2!==0}">
               <div class="selection-wrapper">
-                <span (click)="onVideoChange(musicSuggestions.indexOf(suggestion), video)">
+                <span (click)="changeVideoByClick(musicSuggestions.indexOf(suggestion), video)">
                   <div class="flex-container">
                     <div class="icon">
                       <fa-icon class="separator" [icon]="isSelected(musicSuggestions.indexOf(suggestion)) ? faVolumeUp : faPlayCircle" size="lg"></fa-icon>
@@ -81,8 +84,6 @@
                      (click)="playPreviousSong()" size="2x"></fa-icon>
             <fa-icon class="separator" [icon]="counterPaused ? faPlayCircle : faPauseCircle"
                      (click)="playPauseVideoCounter()" size="2x"></fa-icon>
-<!--            todo: shuffle in ts-->
-            <fa-icon class="separator disabled-content" [icon]="faRandom" size="2x"></fa-icon>
             <fa-icon class="separator" [icon]="faStepForward"
                      (click)="playNextSong()" size="2x"></fa-icon>
           </p>
@@ -94,18 +95,19 @@
           <div class="flex-section">
             <h4>Add New Videos</h4>
             <form>
-              <label>Video ID</label>
+              <label>Video ID/YouTube Link</label>
               <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
               <label>Interpret</label>
               <input [(ngModel)]="inputInterpret" name="inputInterpret" type="text" required="required">
               <label>Track</label>
               <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
-              <label>Video duration [sec]</label>
-              <input [(ngModel)]="inputDuration" name="inputDuration" type="number" min="1" required="required">
+              <label>Video duration</label>
+              <input [(ngModel)]="inputDurationMin" name="inputDuration" type="number" min="0"><span class="blue-text"> min </span>
+              <input [(ngModel)]="inputDurationSec" name="inputDuration" type="number" min="1" required="required"><span class="blue-text"> sec</span>
               <label>&nbsp;</label>
               <button type="button" (click)="addNewVideo()">Add Video</button>
 
-<!--              todo: conditional validation-->
+<!--              todo: conditional validation: id criteria? special characters? duration as number? split duration? add skip first seconds? -->
 <!--              <div *ngIf="inputVideoId.invalid">-->
 <!--                <p>TEST</p>-->
 <!--              </div>-->
@@ -125,12 +127,14 @@
           </div>
           <div class="flex-section" #descriptions>
             <h4>Autoplay</h4>
-            <p>Enable Autoplay and click on one of the entries to your left. The new video will start automatically.</p>
+            <p>Enable Autoplay and click on one of the entries in the track list. The selected video will start automatically.</p>
             <h4>Play All</h4>
             <p>The first video will start playing and further videos will follow automatically.</p>
             <h4>Reorder Videos</h4>
             <p>Everybody has a different taste in music. That's exactly why you might want to reorder the tracks.
-              Go ahead and do so via drag and drop. Moreover, it is even possible to export and import your own list of videos.</p>
+              Go ahead and do so via drag and drop.</p>
+            <h4>Add and Delete Videos</h4>
+            <p>It is possible to add new videos. All input fields are mandatory. It is possible to use video IDs or entire YouTube links. Just copy the the link in your browser or go to the youtube share section and copy the embed code. Even "Start at" from YouTube is supported.</p>
             <h4>Changes are temporary</h4>
             <p>It is possible to add your own track, if necessary data is provided.
               However, once you add your own videos, they will only be available for you and only as long as your browser
@@ -138,47 +142,17 @@
           </div>
           <div class="flex-section" style="width: 100%">
             <h4>Custom Reusable Video List</h4>
-            <p>Obviously, every individual has a different taste in music. Hence, it is possible to adjust the list of videos
+            <p>Obviously, every individual has a different taste in music. Hence, on your computer or tablet, it is possible to export and import your own list of videos.
             to your liking.</p>
 
-            <mat-tab-group (selectedTabChange)="handleTabChange($event)">
-              <mat-tab label="Info">
-                <p class="tab-content">
-                  It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR
-                  regulations, the video list resets on page refresh. That is exactly where this feature comes in handy.
-                  After adjusting the video list, it is possible to export it and import your list the next time, you visit the page.
-                  If you are experienced with software development, particularly JSON format, you are even free to adjust the list manually.
-                </p>
-              </mat-tab>
-              <mat-tab label="Import">
-                <p class="under-construction">Feature is not ready yet. The button is not connected to any action.</p>
-                <div class="import-export">
-                  <textarea [(ngModel)]="importString"></textarea>
-                </div>
-                <button type="button">Import <fa-icon class="separator" [icon]="faUpload" size="lg"></fa-icon></button>
-<!--                use material dialog?-->
-              </mat-tab>
-              <mat-tab label="Export">
-                <p>Download the videos to export by clicking the button or simply show a preview by checking the box</p>
-                <p class="double">
-                  <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview" (click)="updateTrackExport()">
-                  <label for="exportCheck">Show Preview</label>
-                </p>
-
-                <div *ngIf="exportPreview" class="import-export">
-                  <h5>Export Preview</h5>
-                  <textarea #preview [(ngModel)]="exportString"></textarea>
-
-                  <p>
-                    <span class="link" (click)="copyToClipboard(preview)">Copy preview to clipboard <fa-icon class="separator" [icon]="faClipboard" size="lg"></fa-icon></span>
-                  </p>
-                </div>
-                <button type="button" (click)="exportTracks()">Export</button>
-              </mat-tab>
-            </mat-tab-group>
+            <app-import-export #importExportComponent
+                               *ngIf="!isMobile()"
+                               [musicSuggestions]="musicSuggestions"
+                               (tracksImported)="updateOnImport($event)">
+            </app-import-export>
           </div>
         </div>
       </div>
     </div>
-  </ng-template>
+<!--  </ng-template>-->
 </div>

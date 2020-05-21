@@ -51,5 +51,10 @@ a {
   cursor: not-allowed;
 }
 
+.under-construction {
+  color: crimson;
+  font-style: italic;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
