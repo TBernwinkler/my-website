@@ -1,0 +1,18 @@
+<div class="hero-component">
+  <div [style.background-position]="imageOrientation"
+    [style.background-image]="'url(/assets/img/' + getRendition() + ')'"
+       class="bg-image" matTooltip="{{imageSource}}"></div>
+  <div class="heading">
+    <h1>
+      <ng-container *ngFor="let element of headline">
+        <ng-container *ngIf="element.name; else icon">
+          {{ element.name | translate}}
+        </ng-container>
+        <ng-template #icon>
+          <fa-icon class="separator" [icon]="element.icon" size="lg"></fa-icon>
+        </ng-template>
+      </ng-container>
+    </h1>
+    <p *ngIf="description" translate>{{description}}</p>
+  </div>
+</div>

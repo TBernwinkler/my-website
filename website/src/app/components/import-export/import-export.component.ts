@@ -1,16 +1,17 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MatTabChangeEvent} from '@angular/material';
+import {MatSelectChange, MatTabChangeEvent} from '@angular/material';
 import {DialogLevel, Video} from '../../models';
 import {saveAs} from 'file-saver';
 import { faClipboard, faUpload } from '@fortawesome/free-solid-svg-icons';
 import {DialogService} from '../../services/dialog/dialog.service';
+import {VideoProvider} from '../../models/video-provider';
 
 @Component({
   selector: 'app-import-export',
   templateUrl: './import-export.component.html',
   styleUrls: ['./import-export.component.scss']
 })
-export class ImportExportComponent implements OnInit { // todo: trigger updateTrackExport on old method calls
+export class ImportExportComponent implements OnInit {
 
   private importErrorDialogHeadline = 'Import Error'; // translate
   @Input() musicSuggestions: Array<Video>;
@@ -23,11 +24,13 @@ export class ImportExportComponent implements OnInit { // todo: trigger updateTr
   exportPreview = false;
   exportString = '';
   importString = '';
+  genres: Array<string> = [];
 
   constructor(private dialogService: DialogService) {
   }
 
   ngOnInit() {
+    this.genres = VideoProvider.getGenres();
   }
 
   handleTabChange(event: MatTabChangeEvent) {
@@ -42,12 +45,27 @@ export class ImportExportComponent implements OnInit { // todo: trigger updateTr
     inputElement.setSelectionRange(0, 0);
   }
 
+  updatePreviewSelection(boxChecked) {
+    this.exportPreview = boxChecked;
+    if (this.exportPreview) {
+      this.updateTrackExport();
+    }
+  }
+
   updateTrackExport() {
     this.exportString = JSON.stringify(this.musicSuggestions, null, 2);
   }
 
   exportTracks() {
     saveAs(new Blob([this.exportString], {type: 'application/json'}), 'TrackExport.json');
+  }
+
+  changeTrackList(event: MatSelectChange) {
+    const genre = event.source.value;
+    if (genre) {
+      this.musicSuggestions = VideoProvider.provideGenreTracks(genre);
+      this.tracksImported.emit(this.musicSuggestions);
+    }
   }
 
   importTracks() {
@@ -64,7 +82,6 @@ export class ImportExportComponent implements OnInit { // todo: trigger updateTr
         this.dialogService.openDialog(this.importErrorDialogHeadline, dialogMessage, DialogLevel.Error);
         return;
       }
-      console.log('userInput: ', userInput);
       const userMusicSuggestions = userInput as Array<Video>;
       if (!userMusicSuggestions || userMusicSuggestions.length < 1) {
         const dialogMessage = 'user input not array of videos';

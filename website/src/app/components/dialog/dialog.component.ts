@@ -15,9 +15,9 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   levelStyling: string;
-  styleInfo = 'dialog-info';
-  styleWarn = 'dialog-warning';
-  styleError = 'dialog-error';
+  styleInfo = 'dialog info';
+  styleWarn = 'dialog warning';
+  styleError = 'dialog error';
 
   ngOnInit() {
     switch (this.data.level) {

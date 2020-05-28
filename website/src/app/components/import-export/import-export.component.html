@@ -7,6 +7,17 @@
       If you are experienced with software development, or with the JSON format, you can adjust the list manually.
     </p>
   </mat-tab>
+  <mat-tab label="Switch Genre">
+    <div class="import-export">
+      <h5>Change Video List By Genre</h5>
+      <mat-form-field class="full-width" color="accent">
+        <mat-label>Select Video List</mat-label>
+        <mat-select (selectionChange)="changeTrackList($event)">
+          <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-tab>
   <mat-tab label="Import">
     <div class="import-export">
       <h5>Import by copying JSON into the textarea</h5>
@@ -18,8 +29,11 @@
   <mat-tab label="Export">
     <p>Download the videos to export by clicking the button or simply show a preview by checking the box</p>
     <p class="double">
-      <input id="exportCheck" type="checkbox" [(ngModel)]="exportPreview" (click)="updateTrackExport()">
-      <label for="exportCheck">Show Preview</label>
+      <app-checkbox
+        [boxChecked]="exportPreview"
+        [labelText]="'Show Preview'"
+        (boxChanged)="updatePreviewSelection($event)">
+      </app-checkbox>
     </p>
 
     <div *ngIf="exportPreview" class="import-export">

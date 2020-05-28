@@ -1,11 +1,17 @@
-<div class="content">
-  <div id="hero">
-    <div class="bg-image"></div>
-    <div class="heading">
-      <h1 translate>home.hero.headline</h1>
-      <p translate>home.hero.subline</p>
-    </div>
-  </div>
+<div class="content home-component">
+<!--  <div id="hero">-->
+<!--    <div class="bg-image"></div>-->
+<!--    <div class="heading">-->
+<!--      <h1 translate>home.hero.headline</h1>-->
+<!--      <p translate>home.hero.subline</p>-->
+<!--    </div>-->
+<!--  </div>-->
+  <app-hero [headline]="headline"
+            [description]="description"
+            [images]="images"
+            [imageSource]="imageSource"
+            [imageOrientation]="imageOrientation">
+  </app-hero>
 
   <section class="light">
       <h2 class="center" translate>home.technicalChallenges.headline</h2>
@@ -32,9 +38,8 @@
     <ul>
       <li>
         <div class="card">
-          <a target="_blank" href="https://www.pexels.com/@negativespace">
-            <img srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
-          </a>
+          <img matTooltip="Image source: https://www.pexels.com/@negativespace"
+            srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
           <div class="card-content">
             <h3 class="card-title" translate>home.cards.first.headline</h3>
             <fa-icon [icon]="faHeart" size="lg"></fa-icon>
@@ -44,9 +49,8 @@
       </li>
       <li>
         <div class="card">
-          <a target="_blank" href="https://www.pexels.com/@snapwire">
-            <img srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="time-travel image">
-          </a>
+          <img matTooltip="Image source: https://www.pexels.com/@snapwire"
+            srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="music image">
           <div class="card-content">
             <h3 class="card-title" translate>home.cards.second.headline</h3>
             <fa-icon [icon]="faMusic" size="lg"></fa-icon>
@@ -56,9 +60,8 @@
       </li>
       <li>
         <div class="card">
-          <a target="_blank" href="https://www.pexels.com/@brett-sayles?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">
-            <img srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w" alt="time-travel image">
-          </a>
+          <img matTooltip="Image source: https://www.pexels.com/@brett-sayles"
+            srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w" alt="time-travel image">
           <div class="card-content">
             <h3 class="card-title" translate>header.projects</h3>
             <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
@@ -72,58 +75,158 @@
 
   <section class="triplet light">
     <div class="container center">
-      <h2 translate>home.japan.headline</h2>
-      <p class="subline" translate>home.japan.subline</p>
+      <h2 translate>home.languages.headline</h2>
+      <p class="subline" translate>home.languages.subline</p>
       <ul>
-        <li>
-          <p>こんにちは</p>
+        <li class="justify">
+          <h4 translate>home.languages.entry-l1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l6</span>
+          </p>
         </li>
-        <li>
-          <p><span translate>home.japan.entry-m1</span> 1</p>
-          <p class="dark" translate>home.japan.entry-m2</p>
-          <p translate>home.japan.entry-m3</p>
-          <p class="dark" translate>home.japan.entry-m4</p>
-          <p translate>home.japan.entry-m5</p>
-          <p class="dark" translate>home.japan.entry-m6</p>
-          <p translate>home.japan.entry-m7</p>
-          <p class="dark" translate>home.japan.entry-m8</p>
+        <li class="justify">
+          <h4 translate>home.languages.entry-m1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m6</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m7</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m8</span>
+          </p>
         </li>
-        <li>
-          <p translate>home.japan.entry-r1</p>
-          <p class="dark" translate>home.japan.entry-r2</p>
-          <p translate>home.japan.entry-r3</p>
-          <p class="dark" translate>home.japan.entry-r4</p>
-          <p translate>home.japan.entry-r5</p>
-          <p class="dark" translate>home.japan.entry-r6</p>
-          <p translate>home.japan.entry-r7</p>
-          <p class="dark" translate>home.japan.entry-r8</p>
+        <li class="justify">
+          <h4 translate>home.languages.entry-r1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r6</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r7</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r8</span>
+          </p>
         </li>
       </ul>
     </div>
   </section>
 
   <div class="center blue">
-    <h2 translate>Additional content</h2>
-    <p class="light-blue subline">see other pages</p>
+    <h2 translate>home.technologies.headline</h2>
+    <p class="light-blue subline" translate>home.technologies.subline</p>
     <div class="full-size">
-<!--      <p translate>alpha</p>-->
-<!--      <p class="light-blue" translate>beta</p>-->
-<!--      <p translate>gamma</p>-->
-<!--      <p translate>delta</p>-->
-<!--      <p class="light-blue" translate>epsilon</p>-->
-<!--      <p translate>zeta</p>-->
-      <p translate>entry 1</p>
-      <p class="light-blue" translate>entry 2</p>
-      <p translate>entry 3</p>
+      <p translate>home.technologies.entry1</p>
+      <p class="light-blue" translate>home.technologies.entry2</p>
+      <p translate>home.technologies.entry3</p>
+      <p class="light-blue" translate>home.technologies.entry4</p>
+      <p translate>home.technologies.entry5</p>
+      <p class="light-blue" translate>home.technologies.entry6</p>
     </div>
   </div>
 
   <div class="center light">
     <h2 translate>header.contact</h2>
-    <p class="dark subline">Do you have some ideas to fine tune this page? Cool! <a routerLink="/contact">Reach out!</a></p>
+    <p class="dark subline"><span translate>home.contact.subline1</span><a routerLink="/contact"><span translate>home.contact.subline2</span></a></p>
     <div class="center-block">
-      <p>Created to improve my CSS and Angular skills <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
-      <p>Made with <fa-icon [icon]="faHeart" size="lg"></fa-icon></p>
+      <p><span translate>home.contact.purpose</span> <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
+      <p><span translate>home.contact.madeWith1</span><fa-icon [icon]="faHeart" size="lg"></fa-icon><span translate>home.contact.madeWith2</span></p>
+      <button (click)="scrollToTop()" type="button"><span translate>home.contact.backToTop</span>
+        <fa-icon class="separator" [icon]="faLevelUpAlt" size="lg"></fa-icon>
+      </button>
     </div>
   </div>
 

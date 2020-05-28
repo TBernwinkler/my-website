@@ -26,7 +26,7 @@
     "cards": {
       "first": {
         "headline": "Back to Life",
-        "content": "To me, it is very important to have a decent work-life-balance. This also applies to screen time in general. I highly recommend going outside to have a walk once in a while."
+        "content": "It is very important to have a decent work-life-balance. This also applies to screen time in general. I highly recommend going outside to have a walk once in a while."
       },
       "second": {
         "headline": "Music",
@@ -37,25 +37,49 @@
         "content": "Projects listed on this website cover different fields and technologies to improve my overall understanding, toolset, mindset and possibly, my future career."
       }
     },
-    "japan": {
+    "languages": {
       "headline": "Communication is key",
       "subline": "and speaking or learning languages is the best way to connect",
-      "entry-m1": "一",
-      "entry-m2": "二",
-      "entry-m3": "三",
-      "entry-m4": "四",
-      "entry-m5": "五",
-      "entry-m6": "六",
-      "entry-m7": "七",
-      "entry-m8": "八",
-      "entry-r1": "Hello",
-      "entry-r2": "",
-      "entry-r3": "",
-      "entry-r4": "",
-      "entry-r5": "",
-      "entry-r6": "",
-      "entry-r7": "",
-      "entry-r8": ""
+      "entry-l1": "Spoken Languages",
+      "entry-l2": "German (Deutsch)",
+      "entry-l3": "English",
+      "entry-l4": "日本語　(Japanese)",
+      "entry-l5": "Français (French)",
+      "entry-l6": "Español (Spanish)",
+      "entry-m1": "Programming Languages",
+      "entry-m2": "Java",
+      "entry-m3": "C++",
+      "entry-m4": "Python",
+      "entry-m5": "C#",
+      "entry-m6": "Bash",
+      "entry-m7": "R",
+      "entry-m8": "PHP",
+      "entry-r1": "Markup and Other",
+      "entry-r2": "HTML5",
+      "entry-r3": "CSS3",
+      "entry-r4": "Angular",
+      "entry-r5": "JSON",
+      "entry-r6": "XML",
+      "entry-r7": "SQL",
+      "entry-r8": "YAML"
+    },
+    "technologies": {
+      "headline": "Familiar Technologies",
+      "subline": "Operating systems and technologies I enjoy working with",
+      "entry1": "Windows",
+      "entry2": "Linux",
+      "entry3": "Docker",
+      "entry4": "Kubernetes",
+      "entry5": "Web Development",
+      "entry6": "High Performance Programming and Parallel Computing (CUDA)"
+    },
+    "contact": {
+      "subline1": "Do you have some ideas to fine tune this page? Cool! ",
+      "subline2": "Reach out!",
+      "purpose": "Created to improve my CSS and Angular skills ",
+      "madeWith1": "Made with ",
+      "madeWith2": " and passion",
+      "backToTop": "Back to top "
     }
   },
   "music": {
@@ -63,9 +87,58 @@
     "headlineB": "Suggestions"
   },
   "projects": {
-    "headline": "Project Overview"
+    "hero": {
+      "headline": "Project Overview",
+      "subline": "talk about projects and background"
+    },
+    "status": {
+      "planned": "Planned",
+      "pending": "Pending",
+      "progress": "In Progress",
+      "success": "Done"
+    },
+    "partner": {
+      "standalone": "Independent, private",
+      "collaboration": "Collaboration"
+    },
+    "target": {
+      "audience": "Audience",
+      "recruiting": "Recruiters",
+      "userPC": "Computer users",
+      "userTablet": "Tablet users",
+      "userPhone": "Phone users",
+      "researcher": "Researchers",
+      "userAndroid": "Android users",
+      "developer": "Other developers"
+    },
+    "project1": {
+      "title": "This Website",
+      "description": "This website has been made to replace the old, ugly prototype. In addition, this has been an exercise to improve my frontend skills. This particularly includes CSS3 and working with the Angular framework. Moreover, social sharing, search engine optimization and performance have been focused."
+    },
+    "project2": {
+      "title": "Transite",
+      "description": "Put some description in here"
+    },
+    "project3": {
+      "title": "Scansite",
+      "description": "Scansite is a search engine for various protein, oncological and other databases. The main purpose of this tool are motif and protein sequence searches ... "
+    },
+    "project4":{
+      "title":"BioDApps",
+      "description": "This project offers a RESTful web service. Its purpose is providing multiple bioinformatics applications by just using a single endpoint. Various advantages include health checks, reusing results from one service for another one without having to implement a second API among others."
+    },
+    "project5": {
+      "title": "Programming Test",
+      "description": "This programming test is used for hiring at Celum. Due to a past misunderstanding, this project does not only have the purpose to learn Angular and Java Spring, but also makes it possible to explore implementations for business standards such as OAuth2 authentication for APIs."
+    },
+    "project6": {
+      "title": "Android Apps",
+      "description": "I've developed very simple Android Apps in the past. I particularly enjoyed writing them with Android Studio. After developing some minor apps, it would be cool to develop your personal secretary, that is able to save chores, to do lists, shopping lists, updates your calendar, reminds me of things, crosses off things from lists etc."
+    }
   },
   "footer": {
-    "legal": "Legal Information"
+    "legal": "Legal Information",
+    "lastUpdate": "Last updated",
+    "lastUpdateDate": "27 May 2020"
   }
 }

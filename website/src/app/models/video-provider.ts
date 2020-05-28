@@ -43,11 +43,61 @@ export class VideoProvider {
     {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210}
   ];
 
+  private static mainstreamSuggestions: Array<Video> = [
+    {artist: 'The Offspring', track: 'You\'re Gonna Go Far, Kid', youtube: 'ql9-82oV2JE?start=18', duration: 162},
+    {artist: 'The Bloodhound Gang', track: 'The Bad Touch', youtube: 'xat1GVnl8-k', duration: 244},
+    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 165},
+    {artist: 'Eiffel 65', track: 'Blue', youtube: '68ugkg9RePc', duration: 219},
+    {artist: 'O-Zone', track: 'Dragostea Din Tei', youtube: 'YnopHCL1Jk8?start=45', duration: 240},
+    {artist: 'Bomfunk', track: 'Freestyler', youtube: 'ymNFyxvIdaM', duration: 292},
+    {artist: 'Mr. President', track: 'Coco Jamboo', youtube: 'EScLmWJs82I', duration: 222},
+    {artist: 'La Bouche', track: 'Be My Lover', youtube: 'ViP87WipSm0', duration: 222},
+    {artist: 'The Cranberries', track: 'Zombie', youtube: '6Ejga4kJUts', duration: 307},
+    {artist: 'Aqua', track: 'Barbie Girl', youtube: 'ZyhrYis509A?start=15', duration: 186},
+    {artist: 'Cascada', track: 'Every Time We Touch', youtube: '4G6QDNC4jPs?start=5', duration: 209},
+    {artist: 'Bobby McFerrin', track: 'Don\'t Worry Be Happy', youtube: 'd-diB65scQU', duration: 243},
+    {artist: 'OutKast', track: 'Hey Ya', youtube: 'Fi8rsCncwF8', duration: 261},
+    {artist: 'Lou Bega', track: 'Mambo No. 5', youtube: 'EK_LN3XEcnw', duration: 0},
+    {artist: 'Ricky Martin', track: 'Livin La Vida Loca', youtube: 'p47fEXGabaY', duration: 222},
+    {artist: 'Britney Spears', track: 'Baby One More Time', youtube: 'C-u5WLJ9Yk4?start=16', duration: 220},
+    {artist: 'Jennifer Lopez', track: 'On The Floor ft. Pitbull', youtube: 't4H_Zoh7G5A?start=20', duration: 247},
+    {artist: 'Flo Rida', track: 'Whistle', youtube: 'cSnkWzZ7ZAA', duration: 234},
+    {artist: 'Ke$ha', track: 'Tik Tok', youtube: 'iP6XpLQM2Cs?start=9', duration: 205},
+    {artist: 'Taio Cruz', track: 'Hangover', youtube: 'dLhFDYQHDQY', duration: 288},
+    {artist: 'Tokyo Drift', track: 'Teriyaki Boyz', youtube: 'iuJDhFRDx9M', duration: 257},
+    {artist: 'Rihanna', track: 'Umbrella', youtube: 'CvBfHwUxHIk', duration: 254},
+    {artist: 'Katy Perry', track: 'I Kissed A Girl', youtube: 'tAp9BKosZXs', duration: 184},
+    {artist: 'Davig Guetta', track: 'Sexy Bitch', youtube: 'mIIN_SGQy9c', duration: 192},
+    {artist: 'Iyaz', track: 'Replay', youtube: 'WXxV9g7lsFE?start=9', duration: 188},
+    {artist: 'Italobrothers', track: 'Stamp On The Ground', youtube: 'cHcVU5cGUNE', duration: 213},
+    {artist: 'Liquido', track: 'Narcotic', youtube: 'PJ7E40Ec5ec', duration: 233},
+    {artist: 'Bon Jovi', track: 'It\'s My Life', youtube: 'vx2u5uUu3DE?start=20', duration: 246},
+    {artist: 'Avril Lavigne', track: 'Sk8ter Boy', youtube: 'TIy3n2b7V9k?start=7', duration: 213},
+    {artist: 'Avicii', track: 'Wake Me Up', youtube: 'IcrbM1l_BoI', duration: 272},
+    {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 212}
+  ];
+
+  private static genres: Array<string> = [ 'Hard \'n Heavy', 'Mainstream & Party'];
+
   constructor() {
   }
 
   static provideTracks() {
     return this.musicSuggestions;
+  }
+
+  static provideGenreTracks(genre: string) {
+    if (genre === this.genres[0]) {
+      return this.musicSuggestions;
+    } else if (genre === this.genres[1]) {
+      return this.mainstreamSuggestions;
+    }
+    // default
+    return this.musicSuggestions;
+  }
+
+  static getGenres() {
+    return this.genres;
   }
 
   static getNthTrackElement(index: number) {

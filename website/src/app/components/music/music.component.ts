@@ -1,8 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {
   faArrowsAlt, faBook,
-  faCaretDown,
-  faCaretUp,
   faMinus,
   faMusic,
   faPauseCircle,
@@ -10,7 +8,8 @@ import {
   faRandom,
   faStepBackward,
   faStepForward,
-  faVolumeUp
+  faVolumeUp,
+  faLevelUpAlt
 } from '@fortawesome/free-solid-svg-icons';
 import {DialogLevel, Video} from '../../models';
 import {MatSelectChange, MatSlideToggleChange} from '@angular/material';
@@ -18,6 +17,8 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {DialogService} from '../../services/dialog/dialog.service';
 import {ImportExportComponent} from '../import-export/import-export.component';
 import {VideoProvider} from '../../models/video-provider';
+import {NameIconPair} from '../../models/nameIconPair';
+import {Renditions} from '../../models/renditions';
 
 
 @Component({
@@ -48,13 +49,11 @@ export class MusicComponent implements OnInit {
   inputInterpret = '';
   inputTrack = '';
   inputDurationMin = 0;
-  inputDurationSec = 0;
+  inputDurationSec = 90;
   musicSuggestions: Array<Video> = VideoProvider.provideTracks();
   trackList: Array<{name: string, value: string}> = [];
   selectedTracks: Array<string> = [];
   // ICONS
-  faCaretDown = faCaretDown;
-  faCaretUp = faCaretUp;
   faPlayCircle = faPlayCircle;
   faPauseCircle = faPauseCircle;
   faVolumeUp = faVolumeUp;
@@ -65,6 +64,22 @@ export class MusicComponent implements OnInit {
   faStepBackward = faStepBackward;
   faRandom = faRandom;
   faBook = faBook;
+  faLevelUpAlt = faLevelUpAlt;
+  // hero component
+  headline: Array<NameIconPair> = [
+    {name: 'music.headlineA', icon: null},
+    {name: null, icon: this.faMusic},
+    {name: 'music.headlineB', icon: null}
+  ];
+  description: string;
+  images: Renditions = {
+    mobile: 'music/audio576.jpg',
+    tablet: 'music/audio768.jpg',
+    tabletLandscape: 'music/audio992',
+    desktop: 'music/audio1200',
+    extraLarge: 'music/audio.jpg'
+  };
+  imageSource = 'https://www.pexels.com/@snapwire';
 
   constructor(private dialogService: DialogService) { }
 
@@ -80,19 +95,6 @@ export class MusicComponent implements OnInit {
   // GENERAL PART
   isMobile(): boolean {
     return window.innerWidth < this.switchWidth;
-  }
-
-  // MOBILE PART
-  toggleEntry(index: number): void {
-    const headerElement = document.querySelectorAll('.accordion-header')[index];
-    const contentElement = document.querySelector('li:nth-child(' + (index + 1) + ') .accordion-content');
-    headerElement.classList.toggle(this.classActive);
-    contentElement.classList.toggle(this.classActive);
-  }
-
-  isActive(index: number): boolean {
-    const contentElement = document.querySelector('li:nth-child(' + (index + 1) + ') .accordion-content');
-    return contentElement.classList.contains(this.classActive);
   }
 
   // #################################
@@ -177,6 +179,9 @@ export class MusicComponent implements OnInit {
     if (selection && previousSelection && selection !== previousSelection && previousSelection.classList.contains(this.classActive)) {
         previousSelection.classList.remove(this.classActive);
     }
+    if (highlightIndex >= this.musicSuggestions.length) {
+      this.updateTrackHighlighting(0);
+    }
   }
 
   // ON AUTO PLAY ENABLED
@@ -187,9 +192,13 @@ export class MusicComponent implements OnInit {
       } else if (this.playAll && this.activeIndex < this.musicSuggestions.length) {
         this.activeIndex++;
         this.changeActiveVideo(this.activeIndex, null);
-        this.remainingTime = this.musicSuggestions[this.activeIndex].duration;
+        if (this.activeIndex < this.musicSuggestions.length) {
+          this.remainingTime = this.musicSuggestions[this.activeIndex].duration;
+        } else {
+          this.playAll = false;
+        }
       } else {
-        console.log('Autoplay timer encountered unexpected behavior.');
+        console.log('damn it...');
       }
     }, 1000);
   }
@@ -326,6 +335,11 @@ export class MusicComponent implements OnInit {
 
   updateOnImport(musicSuggestions) {
     this.musicSuggestions = musicSuggestions;
+  }
+
+  scrollToTop() {
+    const headline = document.querySelector('#navigation');
+    headline.scrollIntoView();
   }
 
   private updateTrackExport() {

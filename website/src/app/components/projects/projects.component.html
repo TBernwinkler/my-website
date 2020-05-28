@@ -1,341 +1,107 @@
-<div class="content">
-  <h1 translate>projects.headline</h1>
+<div class="content projects">
+  <app-hero [headline]="headline"
+            [description]="description"
+            [images]="images"
+            [imageSource]="imageSource"
+            [imageOrientation]="imageOrientation">
+  </app-hero>
 
-<!--  todo: put technology, status, url etc. into flex boxes (50%) and add research Vs. private-->
+  <div class="wrapper">
+    <div class="project" *ngFor="let entry of data">
+      <ng-container *ngIf="data.indexOf(entry)%2===1; else image">
+        <ng-container *ngTemplateOutlet="info">
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="data.indexOf(entry)%2===0; else image">
+        <ng-container *ngTemplateOutlet="info">
+        </ng-container>
+      </ng-container>
 
-    <div class="entry even" style="grid-auto-rows: 1fr">
-      <div class="img">
-        <img
-          src="assets/img/projects/markup.jpg"
-          alt="time-travel image">
-      </div>
-      <div class="text">
-
-        <div class="description">
-          <div class="element">
+      <ng-template #info>
+        <div class="info">
+          <div class="blue-section">
             <h2>
-              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
+              <fa-icon class="spaced" [icon]="faLaptopCode" size="lg"></fa-icon>
+              {{entry.title | translate}}
+              <fa-icon class="spaced" [icon]="faCogs" size="lg"></fa-icon>
             </h2>
-            <h2>This Website</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+            <p class="justified">{{entry.description | translate}}</p>
           </div>
-          <p>
-            This website has been made to replace the old, ugly prototype. In addition, this has been an exercise to
-            improve my frontend skills. This particularly includes CSS3 and working with the Angular framework. Moreover,
-            social sharing, search engine optimization and performance have been focused.
-          </p>
-        </div>
-
-        <div class="element alternative">
-          <span class="descriptor">Technology</span>
-          <span><fa-icon [icon]="faAngular" size="lg"></fa-icon> Angular</span>
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <!--        <span class="icon success"><fa-icon [icon]="faCalendarCheck" size="lg"></fa-icon> Done</span>-->
-          <span class="icon progress"><fa-icon [icon]="faTasks" size="lg"></fa-icon> In Progress</span>
-        </div>
-
-        <div class="element alternative">
-          <span>
-            <a href="http://thom4s.bplaced.net" target="_blank"><fa-icon [icon]="faGlobeEurope" size="lg"></fa-icon> URL</a>
-          </span>
-          <span>
-            <a href="https://github.com/TBernwinkler/my-website"
-               target="_blank"><fa-icon [icon]="faGithub" size="lg"></fa-icon> Github</a>
-          </span>
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUser" size="lg"></fa-icon> Standalone, private</span>
-        </div>
-
-      </div>
-    </div>
-
-    <p class="center filler">
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-      <fa-icon [icon]="faTools" size="lg"></fa-icon>
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-    </p>
-
-    <div class="entry odd">
-      <div class="text">
-        <div class="description">
-          <div class="element">
-            <h2>
-              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
-            </h2>
-            <h2>Transite</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+          <div class="gray-section split">
+            <div class="descriptor" translate>
+              Technologies
+            </div>
+            <div class="content-list">
+              <ul>
+                <li *ngFor="let technology of entry.technologies">
+                  <fa-icon class="spaced" [icon]="technology.icon ? technology.icon : faCog" size="lg"></fa-icon> {{technology.name}}
+                </li>
+              </ul>
+            </div>
           </div>
-          <p>
-            Some rough description ....
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem.
-          </p>
-        </div>
-
-        <div class="element alternative">
-          <span class="descriptor">Technology</span>
-          <span>R, Bash</span>
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <span class="icon success"><fa-icon [icon]="faCalendarCheck" size="lg"></fa-icon> Done</span>
-        </div>
-
-        <div class="element alternative">
-      <span>
-        <a href="https://transite.mit.edu" target="_blank"><fa-icon [icon]="faGlobeAmericas"
-                                                                    size="lg"></fa-icon> URL</a>
-      </span>
-          <span>
-        <a href="#" target="_blank"><fa-icon [icon]="faGithub" size="lg"></fa-icon> N/A</a>
-      </span>
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUsers" size="lg"></fa-icon> Collaboration: MIT</span>
-        </div>
-      </div>
-      <div class="img">
-        <img
-          src="assets/img/projects/transite-logo.svg"
-          alt="Transite logo">
-      </div>
-    </div>
-
-    <p class="center filler">
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-      <fa-icon [icon]="faTools" size="lg"></fa-icon>
-      <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-    </p>
-
-    <div class="entry even">
-      <div class="img">
-        <img
-          src="assets/img/projects/logo-scansite.png"
-          alt="Scansite logo">
-      </div>
-      <div class="text">
-        <div class="description">
-          <div class="element">
-            <h2>
-              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
-            </h2>
-            <h2>Scansite</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+          <div class="blue-section split">
+            <div class="descriptor" translate>
+              Status
+            </div>
+            <div class="status-wrapper">
+              <fa-icon class="spaced" [icon]="getStatusIcon(entry.status)" size="lg"></fa-icon>
+              <span class="status {{getStatusClass(entry.status)}}" translate>
+                {{ 'projects.status.' + getStatusClass(entry.status) | translate}}
+              </span>
+            </div>
           </div>
-          <p>
-            Scansite description is still to do. This is why this dummy text has been placed here instead.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem.
-          </p>
-        </div>
-
-        <div class="element alternative">
-          <span class="descriptor">Technology</span> Maven, Java, HTML, CSS, JS
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <span class="icon progress"><fa-icon [icon]="faTasks" size="lg"></fa-icon> In Progress</span>
-        </div>
-
-        <div class="element alternative">
-          <span>
-            <a href="https://scansite.mit.edu" target="_blank"><fa-icon [icon]="faGlobeEurope" size="lg"></fa-icon> URL</a>
-          </span>
-          <span>
-            <a href="https://github.com/kkrismer/scansite4" target="_blank"><fa-icon [icon]="faGithub" size="lg"></fa-icon> Github</a>
-          </span>
-        </div>
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUsers" size="lg"></fa-icon> Collaboration: MIT</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="center filler">
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-      <fa-icon [icon]="faTools" size="lg"></fa-icon>
-      <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-    </p>
-
-    <div class="entry odd">
-      <div class="text">
-        <div class="description">
-          <div class="element">
-            <h2>
-              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
-            </h2>
-            <h2>BioDApps</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+          <div class="gray-section split">
+            <div class="descriptor">
+              Links
+            </div>
+            <div class="content-list">
+              <ul>
+                <li>
+                  <fa-icon class="spaced" [icon]="faGlobeEurope" size="lg"></fa-icon> <a href="{{entry.link}}">URL</a><!-- todo: icon condition -->
+                </li>
+                <li>
+                  <fa-icon class="spaced" [icon]="faGithub" size="lg"></fa-icon> <a href="{{entry.github}}">GitHub</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <p>
-            Some rough description about Python, the maven projects etc. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem.
-          </p>
-        </div>
-
-        <div class="element alternative">
-          <span class="descriptor">Technology</span>
-          <span>Python, Maven, Java, HTML, CSS, JS</span>
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <span class="icon pending"><fa-icon [icon]="faCalendarMinus" size="lg"></fa-icon> Pending</span>
-        </div>
-
-        <div class="element alternative">
-      <span>
-        <a href="#" target="_blank"><fa-icon [icon]="faGlobeEurope" size="lg"></fa-icon> ???</a>
-      </span>
-          <span>
-        <a href="#" target="_blank"><fa-icon [icon]="faGithub" size="lg"></fa-icon> N/A</a>
-      </span>
-        </div>
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUsers" size="lg"></fa-icon> Collaboration: University of Salzburg</span>
-        </div>
-      </div>
-      <div class="img">
-        <img
-          src="assets/img/projects/biodapps-logo.png"
-          alt="BioDApps logo">
-      </div>
-    </div>
-
-    <p class="center filler">
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-      <fa-icon [icon]="faTools" size="lg"></fa-icon>
-      <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-    </p>
-
-    <div class="entry even">
-      <div class="img">
-        <img
-          srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w"
-          alt="time-travel image">
-      </div>
-      <div class="text">
-        <div class="description">
-          <div class="element">
-            <h2>
-              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
-            </h2>
-            <h2>Programming Test</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+          <div class="blue-section split">
+            <div class="descriptor">
+              Type
+            </div>
+            <div class="content-list" >
+              <ul>
+                <li *ngIf="entry.partner">
+                  <fa-icon class="spaced" [icon]="faUsers" size="lg"></fa-icon> {{'projects.partner.collaboration' | translate}}: {{entry.partner}}
+                </li>
+                <li *ngIf="!entry.partner">
+                  <fa-icon class="spaced" [icon]="faUser" size="lg"></fa-icon> {{'projects.partner.standalone' | translate}}
+                </li>
+              </ul>
+            </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem.
-          </p>
-        </div>
-
-        <div class="element alternative">
-          <span class="descriptor">Technology</span> Maven, Java, Spring, Angular
-        </div>
-
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <span class="icon pending"><fa-icon [icon]="faCalendarMinus" size="lg"></fa-icon> Pending</span>
-        </div>
-
-        <div class="element alternative">
-      <span>
-        <a href="#"><fa-icon [icon]="faGlobeEurope" size="lg"></fa-icon> N/A</a>
-      </span>
-          <span>
-        <a href="https://github.com/TBernwinkler/programming-test" target="_blank"><fa-icon [icon]="faGithub"
-                                                                                            size="lg"></fa-icon> Github</a>
-      </span>
-        </div>
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUser" size="lg"></fa-icon> Standalone, private</span>
-        </div>
-      </div>
-    </div>
-
-<!--    todo: render project entries && place links for arrows up and down + use indices of arrays-->
-    <p class="center filler">
-      <fa-icon [icon]="faLevelDownAlt" size="lg"></fa-icon>
-      <fa-icon [icon]="faTools" size="lg"></fa-icon>
-      <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-    </p>
-
-    <div class="entry odd">
-      <div class="text">
-        <div class="description">
-          <div class="element">
-            <h2>
-              <fa-icon [icon]="faAndroid" size="lg"></fa-icon>
-            </h2>
-            <h2>Android Apps</h2>
-            <h2>
-              <fa-icon [icon]="faCogs" size="lg"></fa-icon>
-            </h2>
+          <div class="gray-section split">
+            <div class="descriptor" translate>
+              projects.target.audience
+            </div>
+            <div class="content-list">
+              <ul>
+                <li *ngFor="let group of entry.audience">
+                  <fa-icon class="spaced" [fixedWidth]="true" [icon]="group.icon ? group.icon : faUsers" size="lg"></fa-icon> {{'projects.target.' + group.name | translate}}
+                </li>
+              </ul>
+            </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum et quasi velit voluptatum
-            cum maiores exercitationem.
-          </p>
         </div>
+      </ng-template>
 
-        <div class="element alternative">
-          <span class="descriptor">Technology</span>
-          <span>Java, XML</span>
+      <ng-template #image>
+        <div class="image">
+          <img *ngIf="entry.imageSrc" src="{{entry.imageSrc}}" alt="{{entry.imageAlt}}">
+          <img *ngIf="entry.imageSrcSet" srcset="{{entry.imageSrcSet}}" alt="{{entry.imageAlt}}">
         </div>
+      </ng-template>
 
-        <div class="element">
-          <span class="descriptor">Status Now</span>
-          <span class="icon planned"><fa-icon [icon]="faCalendarAlt" size="lg"></fa-icon> Planned</span>
-        </div>
-
-        <div class="element alternative">
-      <span>
-        <a href="#"><fa-icon [icon]="faGlobeEurope" size="lg"></fa-icon> N/A</a>
-      </span>
-          <span>
-        <a href="#"><fa-icon [icon]="faGithub" size="lg"></fa-icon> N/A</a>
-      </span>
-        </div>
-        <div class="element">
-          <span class="descriptor">Type</span>
-          <span><fa-icon [icon]="faUser" size="lg"></fa-icon> Standalone, private</span>
-        </div>
-      </div>
-      <div class="img">
-        <img
-          src="assets/img/projects/android.jpg"
-          alt="time-travel image">
-      </div>
     </div>
-
-  <p class="center filler">
-    <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-    <fa-icon [icon]="faTools" size="lg"></fa-icon>
-    <fa-icon [icon]="faLevelUpAlt" size="lg"></fa-icon>
-  </p>
+  </div>
 </div>

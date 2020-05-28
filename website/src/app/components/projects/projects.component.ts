@@ -1,9 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
-  faGlobeEurope, faGlobeAmericas, faLaptopCode, faTasks, faEdit, faCalendarMinus, faCalendarPlus, faCalendarCheck,
-  faCalendarAlt, faCogs, faUser, faUsers, faTools, faLevelDownAlt, faLevelUpAlt
+  faCalendarAlt,
+  faCalendarCheck,
+  faCalendarMinus,
+  faCog,
+  faCogs,
+  faGlobeAmericas,
+  faGlobeEurope,
+  faLaptopCode,
+  faTasks,
+  faUser,
+  faUsers
 } from '@fortawesome/free-solid-svg-icons';
-import { faAndroid, faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {faGithub} from '@fortawesome/free-brands-svg-icons';
+import {Project} from '../../models/project';
+import {ProjectProvider} from '../../models/project-provider';
+import {ProjectStatus} from '../../models/project-status';
+import {IconProp} from '@fortawesome/fontawesome-svg-core';
+import {NameIconPair} from '../../models/nameIconPair';
+import {Renditions} from '../../models/renditions';
 
 @Component({
   selector: 'app-projects',
@@ -11,9 +26,8 @@ import { faAndroid, faAngular, faGithub } from '@fortawesome/free-brands-svg-ico
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-
-  faAndroid = faAndroid;
-  faAngular = faAngular;
+  // ICONS
+  faCog = faCog;
   faGithub = faGithub;
   faGlobeEurope = faGlobeEurope;
   faGlobeAmericas = faGlobeAmericas;
@@ -25,32 +39,69 @@ export class ProjectsComponent implements OnInit {
   faCogs = faCogs;
   faUser = faUser;
   faUsers = faUsers;
-  faTools = faTools;
-  faLevelDownAlt = faLevelDownAlt;
-  faLevelUpAlt = faLevelUpAlt;
-
-  data: Array<{ imageSrc: string, imageSrcSet: string, imageAlt: string, headline: string, description: string,
-    technology: string, status: string, link: string, linkIcon, github: string, projectType: string}> = [
-      {
-        imageSrc: null, imageSrcSet: 'assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, ' +
-          'assets/img/home/network-800.jpg 800w', imageAlt: 'network image', headline: 'This Website',
-        description: 'This website has been made to replace the old, ugly prototype. In addition, this has been an exercise to\n' +
-          '            improve my frontend skills. This particularly includes CSS3 and working with the Angular framework. Moreover,\n' +
-          '            social sharing, search engine optimization and performance have been focused.',
-        technology: 'Angular', status: 'In Progress', link: 'http://thom4s.bplaced.net', linkIcon: 'faGlobeEurope',
-        github: 'https://github.com/TBernwinkler/my-website', projectType: 'Private'
-      },
-      {
-        imageSrc: 'assets/img/projects/transite-logo.svg', imageSrcSet: null, imageAlt: 'Transite logo', headline: 'Transite',
-        description: 'Some rough description .... Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa neque quo eum ' +
-          'et quasi velit voluptatum cum maiores exercitationem.', technology: 'R, Bash', status: 'Done', link: 'https://transite.mit.edu',
-        linkIcon: 'faGlobeAmericas', github: null, projectType: 'Collaboration: MIT'
-      }
-      ];
+  // PROJECT DATA
+  statusList: Array<{icon: IconProp, class: string, status: ProjectStatus}>;
+  data: Array<Project>;
+  // hero component
+  headline: Array<NameIconPair> = [
+    {name: 'projects.hero.headline', icon: null}
+  ];
+  description: string;
+  images: Renditions = {
+    mobile: 'projects/diagram-crop576.jpg',
+    tablet: 'projects/diagram-crop768.jpg',
+    tabletLandscape: 'projects/diagram-crop992',
+    desktop: 'projects/diagram-crop1200',
+    extraLarge: 'projects/diagram-crop4000.jpg'
+  };
+  imageSource = 'https://www.pexels.com/@divinetechygirl';
+  imageOrientation = 'center';
 
   constructor() { }
 
   ngOnInit() {
+    this.data = ProjectProvider.getProjects();
+    this.statusList = [
+      {
+        icon: this.faCalendarAlt,
+        class: 'planned',
+        status: ProjectStatus.Planned
+      },
+      {
+        icon: this.faCalendarMinus,
+        class: 'pending',
+        status: ProjectStatus.Pending
+      },
+      {
+        icon: this.faTasks,
+        class: 'progress',
+        status: ProjectStatus.InProgress
+      },
+      {
+        icon: this.faCalendarCheck,
+        class: 'success',
+        status: ProjectStatus.Done
+      }
+    ];
+  }
+
+  getStatusClass(status: ProjectStatus): string {
+    let className = 'planned';
+    this.statusList.forEach(entry => {
+      if (entry.status === status) {
+        className = entry.class;
+      }
+    });
+    return className;
+  }
+
+  getStatusIcon(status: ProjectStatus): IconProp {
+    this.statusList.forEach(entry => {
+      if (entry.status === status) {
+        return entry.icon;
+      }
+    });
+    return this.faCalendarAlt;
   }
 
 }

@@ -1,29 +1,31 @@
 @import "../common.scss";
 
-.manual-line-break {
-  white-space: pre
-}
+.dialog {
+  .manual-line-break {
+    white-space: pre
+  }
 
-.dialog-info {
-  color: $blue;
-
-  h1 {
+  &.info {
     color: $blue;
+
+    h1 {
+      color: $blue;
+    }
   }
-}
 
-.dialog-warning {
-  color: #FFC107;
-
-  h1 {
+  &.warning {
     color: #FFC107;
+
+    h1 {
+      color: #FFC107;
+    }
   }
-}
 
-.dialog-error {
-  color: #D84315;
-
-  h1 {
+  &.error {
     color: #D84315;
+
+    h1 {
+      color: #D84315;
+    }
   }
 }

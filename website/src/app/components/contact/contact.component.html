@@ -1,9 +1,56 @@
 <div class="content-space">
-  <div class="wrapper">
-    <p>contact works!</p>
+  <div class="contact-component wrapper">
+    <div class="flex-container">
+      <div class="flex-section">
+        <div class="image-wrapper">
+          <img src="../../../assets/img/contact/contact1200.jpg" alt="contact image">
+        </div>
+      </div>
+
+      <div class="flex-section">
+
+        <mat-form-field appearance="standard">
+          <mat-label>contact.name.first</mat-label>
+          <input matInput>
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="standard">
+          <mat-label>contact.name.last</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field appearance="standard">
+          <mat-label>contact.name.reason</mat-label>
+          <mat-select>
+            <mat-option value="option">contact.name.enhancement</mat-option>
+            <mat-option value="option">contact.name.music-wish</mat-option>
+            <mat-option value="option">contact.name.request</mat-option>
+            <mat-option value="option">contact.name.issue</mat-option>
+            <mat-option value="option">contact.name.other</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <br>
+        <mat-form-field appearance="standard">
+          <mat-label>contact.name.email</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard">
+          <mat-label>contact.name.phone</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <br>
+        <button mat-raised-button color="primary">Accent</button>
+
+      </div>
+
+    </div>
 
     <p>Thomas Bernwinkler</p>
     <p>Email?</p>
-
   </div>
 </div>

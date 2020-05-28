@@ -27,12 +27,14 @@ import {
   MatTabsModule,
   MatSlideToggleModule,
   MatDialogModule,
-  MatButtonModule
+  MatButtonModule, MatTooltipModule, MatInputModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ImportExportComponent } from './components/import-export/import-export.component';
 import {DialogComponent} from './components/dialog/dialog.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import {DialogComponent} from './components/dialog/dialog.component';
     SafePipe,
     PageNotFoundComponent,
     DialogComponent,
-    ImportExportComponent
+    ImportExportComponent,
+    CheckboxComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,9 @@ import {DialogComponent} from './components/dialog/dialog.component';
     MatSelectModule,
     MatTabsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltipModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

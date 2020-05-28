@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faHeart, faArrowCircleUp, faCircle, faMusic, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faArrowCircleUp, faCircle, faMusic, faLaptopCode, faLevelUpAlt, faStar} from '@fortawesome/free-solid-svg-icons';
+import {faStar as faStarEmpty} from '@fortawesome/free-regular-svg-icons';
 import {ActivatedRoute, Router} from '@angular/router';
+import {NameIconPair} from '../../models/nameIconPair';
+import {Renditions} from '../../models/renditions';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +11,27 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  h1Style = false;
+  // ICONS
   faHeart = faHeart;
   faArrowCircleUp = faArrowCircleUp;
-  faCircle = faCircle;
   faMusic = faMusic;
   faLaptopCode = faLaptopCode;
+  faLevelUpAlt = faLevelUpAlt;
+  faStar = faStar;
+  faStarEmpty = faStarEmpty;
+  headline: Array<NameIconPair> = [
+    {name: 'home.hero.headline', icon: null}
+  ];
+  description = 'home.hero.subline';
+  images: Renditions = {
+    mobile: 'home/entrance-768.jpg',
+    tablet: 'home/entrance-768.jpg',
+    tabletLandscape: 'home/entrance-768.jpg',
+    desktop: 'home/entrance-768.jpg',
+    extraLarge: 'home/entrance-768.jpg'
+  };
+  imageSource = 'https://www.pexels.com/@pixabay';
+  imageOrientation = 'center';
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router) { }
@@ -33,8 +50,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  firstClick() {
-    this.h1Style = true;
+  scrollToTop() {
+    const headline = document.querySelector('#navigation');
+    headline.scrollIntoView();
   }
 
 }

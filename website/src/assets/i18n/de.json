@@ -26,7 +26,7 @@
     "cards": {
       "first": {
         "headline": "Zurück ins echte Leben",
-        "content": "Die Balance zwischen Arbeit und Privatleben zu finden ist wichtig. Man sollte daher auch mal weg von Handy und Computer und raus zur Bewegung an der frischen Luft."
+        "content": "Die richtige Balance zwischen Arbeit und Privatleben ist unbezahlbar. Man sollte daher auch mal weg von Handy, Tablet und Computer und raus zur Bewegung an die frische Luft."
       },
       "second": {
         "headline": "Musik",
@@ -34,28 +34,52 @@
       },
       "third": {
         "headline": "Projekte",
-        "content": "Alle auf dieser Webseite gelisteten Projekte decken verschiedene Technologien und Fachbereiche ab. Sie helfen mir dabei, stets technsiche Fortschritte zu machen."
+        "content": "Alle auf dieser Webseite gelisteten Projekte decken verschiedene Technologien und Fachbereiche ab. Sie helfen mir dabei, mich stets technsich weiterzubilden und neue Einblicke zu erlangen."
       }
     },
-    "japan": {
-      "headline": "über",
-      "subline": "unter",
-      "entry-m1": "一",
-      "entry-m2": "二",
-      "entry-m3": "三",
-      "entry-m4": "四",
-      "entry-m5": "五",
-      "entry-m6": "六",
-      "entry-m7": "七",
-      "entry-m8": "八",
-      "entry-r1": "Hallo",
-      "entry-r2": "",
-      "entry-r3": "",
-      "entry-r4": "",
-      "entry-r5": "",
-      "entry-r6": "",
-      "entry-r7": "",
-      "entry-r8": ""
+    "languages": {
+      "headline": "Kommunikation ist der Schlüssel zum Erfolg",
+      "subline": "Das Sprechen und Lernen von Sprachen ist zudem das Beste Mittel um mit jemandem in Kontakt zu treten",
+      "entry-l1": "Gesprochene Sprachen",
+      "entry-l2": "Deutsch",
+      "entry-l3": "English (Englisch)",
+      "entry-l4": "日本語　(Japanisch)",
+      "entry-l5": "Français (Französisch)",
+      "entry-l6": "Español (Spanisch)",
+      "entry-m1": "Programmiersprachen",
+      "entry-m2": "Java",
+      "entry-m3": "C++",
+      "entry-m4": "Python",
+      "entry-m5": "C#",
+      "entry-m6": "Bash",
+      "entry-m7": "R",
+      "entry-m8": "PHP",
+      "entry-r1": "Markup und Anderes",
+      "entry-r2": "HTML5",
+      "entry-r3": "CSS3",
+      "entry-r4": "Angular",
+      "entry-r5": "JSON",
+      "entry-r6": "XML",
+      "entry-r7": "SQL",
+      "entry-r8": "YAML"
+    },
+    "technologies": {
+      "headline": "Vertraute Technologien",
+      "subline": "Betriebssysteme und Technologien, mit denen ich gerne arbeite",
+      "entry1": "Windows",
+      "entry2": "Linux",
+      "entry3": "Docker",
+      "entry4": "Kubernetes",
+      "entry5": "Web Entwicklung",
+      "entry6": "High Performance Programming und Parallel Computing (CUDA)"
+    },
+    "contact": {
+      "subline1": "Du hast Ideen, um diese Seiter noch besser aussehen zu lassen? Cool! ",
+      "subline2": "Melde Dich!",
+      "purpose": "Die Seite wurde erstellt um meine CSS und Angular Kenntnisse zu verbessern ",
+      "madeWith1": "Mit viel ",
+      "madeWith2": " erstellt",
+      "backToTop": "Zurück nach oben "
     }
   },
   "music": {
@@ -63,9 +87,58 @@
     "headlineB": "Vorschläge"
   },
   "projects": {
-    "headline": "Projektüberblick"
+    "hero": {
+      "headline": "Projektüberblick",
+      "subline": "..."
+    },
+    "status": {
+      "planned": "Geplant",
+      "pending": "Ausstehend",
+      "progress": "In Arbeit",
+      "success": "Erledigt"
+    },
+    "partner": {
+      "standalone": "Unabhängig, privat",
+      "collaboration": "Zusammenarbeit"
+    },
+    "target": {
+      "audience": "Zielgruppe",
+      "recruiting": "Anwerber, Personalvermittler",
+      "userPC": "Nutzer von Computern",
+      "userTablet": "Nutzer von Tablets",
+      "userPhone": "Nutzer von Handys",
+      "researcher": "Forscher",
+      "userAndroid": "Android Nutzer",
+      "developer": "Andere Entwickler"
+    },
+    "project1": {
+      "title": "Diese Webseite",
+      "description": "Diese Webseite wurde entwickelt, um den veralteten, nicht ansprechend gestylten Prototyp der Vorgänger-Homepage zu ersetzen. Zudem war dieses Projekt dazu gedient, meine Frontend Fähigkeiten aufzupolieren. Dies zielt insbesondere auf die Gestaltung mit CSS3 und das Arbeiten mit dem Angular Framework ab. Darüber hinaus stehen das Teilen der Websiete auf sozialen Plattformen, Suchmaschinen Optimierung und Performance im Vordergrund."
+    },
+    "project2": {
+      "title": "Transite",
+      "description": "Put some description in here"
+    },
+    "project3": {
+      "title": "Scansite",
+      "description": "Scansite is a search engine for various protein, oncological and other databases. The main purpose of this tool are motif and protein sequence searches ... "
+    },
+    "project4":{
+      "title":"BioDApps",
+      "description": "Dieses Projekt stein ein RESTful Web Service zur Verfügung. Der Hauptverwendungszweck besteht darin, verschiedenste Anwendungen aus der Bioinformatik über eine zentrale Anlaufstelle zur Verfügung zu stellen. Zudem bringt BioDApps zahlreiche weitere Vorteile wie etwa die Prüfung von Systemausfällen oder -warung, das Weiterverwenden von Ergebnissen eines Services mit sich, ohne eine weitere API anbinden zu müssen."
+    },
+    "project5": {
+      "title": "Programmier Test",
+      "description": "Dieser Programmiertest wird als Aufnahmeverfahren von der Firma Celum gestellt. Bedingt durch Missverständnisse in der Vergangenheit dient dieses Projekt nicht mehr nur ausschließlich zum Lernen von Angular und Java Spring, sondern auch um neben der Verwendung auch den Aufbau von Standards großer Firmen wie beispielsweise die OAuth2 Authentifizierung bei APIs besser zu verstehen."
+    },
+    "project6": {
+      "title": "Android Apps",
+      "description": "Schon in der Vergangenheit habe ich einfachere Android Apps entwickelt. Dabei hat mir besonders die Umsetzung Android Studio gefallen. Nach der Entwicklung trivialer Apps wäre es cool, eine Art persönlichen Sekretär entwickeln zu können. Dieser könnte dann in der Lage sein, Listen mit Aufgaben, Erledigungen im Haushalt, Einkaufslisten etc. zu speichern. Eine Synchronisierung mit dem eigenen Kalender (z.B. Google), Einstellen von Erinnerungen und das Abhaken oder Streichen von Punkten aus Listen würde eine solche App wirklich überaus nützlich machen."
+    }
   },
   "footer": {
-    "legal": "Impressum"
+    "legal": "Impressum",
+    "lastUpdate": "Letzte Aktualisierung",
+    "lastUpdateDate": "27. Mai 2020"
   }
 }
