@@ -34,7 +34,8 @@
             <div class="content-list">
               <ul>
                 <li *ngFor="let technology of entry.technologies">
-                  <fa-icon class="spaced" [icon]="technology.icon ? technology.icon : faCog" size="lg"></fa-icon> {{technology.name}}
+                  <fa-icon class="spaced" [fixedWidth]="true"
+                           [icon]="technology.icon ? technology.icon : faCog" size="lg"></fa-icon> {{technology.name}}
                 </li>
               </ul>
             </div>
@@ -44,7 +45,7 @@
               Status
             </div>
             <div class="status-wrapper">
-              <fa-icon class="spaced" [icon]="getStatusIcon(entry.status)" size="lg"></fa-icon>
+              <fa-icon class="spaced" [fixedWidth]="true" [icon]="getStatusIcon(entry.status)" size="lg"></fa-icon>
               <span class="status {{getStatusClass(entry.status)}}" translate>
                 {{ 'projects.status.' + getStatusClass(entry.status) | translate}}
               </span>
@@ -57,10 +58,10 @@
             <div class="content-list">
               <ul>
                 <li>
-                  <fa-icon class="spaced" [icon]="faGlobeEurope" size="lg"></fa-icon> <a href="{{entry.link}}">URL</a><!-- todo: icon condition -->
+                  <fa-icon class="spaced" [fixedWidth]="true" [icon]="faGlobeEurope" size="lg"></fa-icon> <a href="{{entry.link}}">URL</a><!-- todo: icon condition -->
                 </li>
                 <li>
-                  <fa-icon class="spaced" [icon]="faGithub" size="lg"></fa-icon> <a href="{{entry.github}}">GitHub</a>
+                  <fa-icon class="spaced" [fixedWidth]="true" [icon]="faGithub" size="lg"></fa-icon> <a href="{{entry.github}}">GitHub</a>
                 </li>
               </ul>
             </div>
@@ -71,11 +72,15 @@
             </div>
             <div class="content-list" >
               <ul>
-                <li *ngIf="entry.partner">
-                  <fa-icon class="spaced" [icon]="faUsers" size="lg"></fa-icon> {{'projects.partner.collaboration' | translate}}: {{entry.partner}}
+                <li *ngIf="entry.partner" class="partner">
+                  <fa-icon class="spaced" [fixedWidth]="true" [icon]="faUsers" size="lg"></fa-icon>
+                  <span>
+                    {{'projects.partner.collaboration' | translate}}:
+                    {{entry.partner}}
+                  </span>
                 </li>
                 <li *ngIf="!entry.partner">
-                  <fa-icon class="spaced" [icon]="faUser" size="lg"></fa-icon> {{'projects.partner.standalone' | translate}}
+                  <fa-icon class="spaced"[fixedWidth]="true" [icon]="faUser" size="lg"></fa-icon> {{'projects.partner.standalone' | translate}}
                 </li>
               </ul>
             </div>

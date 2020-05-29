@@ -7,9 +7,9 @@
   }
 
   .wrapper {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
 
   .project {
@@ -32,8 +32,7 @@
 
     h2 {
       margin: 0;
-      padding-top: 25px;
-      padding-bottom: 10px;
+      padding: 25px 15px 10px 15px;
       text-align: center;
     }
 
@@ -62,11 +61,11 @@
     .descriptor {
       font-weight: lighter;
       font-variant: small-caps;
-      width: 50%;
+      width: 40%;
     }
 
     .content-list {
-      width: 50%;
+      width: 60%;
       //padding-top: 10px;
       ul {
         list-style-type: none;
@@ -75,13 +74,18 @@
 
         li {
           padding: 5px;
+
+          &.partner {
+            display: inline-flex;
+            align-items: center;
+          }
         }
       }
     }
 
     .status-wrapper {
-      width: 50%;
-      padding-left: 15px;
+      width: 60%;
+      padding-left: 10px;
 
       .status {
         padding: 5px;
@@ -129,12 +133,11 @@
   }
 
   fa-icon.spaced {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 5px;
   }
 
   @media only screen and (min-width: 768px) {
-    &.wrapper {
+    .wrapper {
       width: 80%;
       margin-left: 10%;
       margin-right: 10%;

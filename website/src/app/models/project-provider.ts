@@ -7,8 +7,9 @@ export class ProjectProvider {
 
   private static projects: Array<Project> = [
     {
-      imageSrc: 'assets/img/projects/markup.jpg',
-      imageSrcSet: null,
+      imageSrc: null,
+      imageSrcSet: 'assets/img/projects/markup576.jpg 576w, assets/img/projects/markup768.jpg 768w, ' +
+        'assets/img/projects/markup992.jpg 992w, assets/img/projects/markup1200.jpg 1200w',
       imageAlt: 'network image',
       title: 'projects.project1.title',
       description: 'projects.project1.description',
@@ -43,7 +44,7 @@ export class ProjectProvider {
       link: 'https://transite.mit.edu',
       linkIcon: 'faGlobeAmericas',
       github: null,
-      partner: 'MIT',
+      partner: 'Massachusetts Institute of Technology',
       audience: [
         {name: 'researcher', icon: faFlask}
       ]
@@ -65,7 +66,7 @@ export class ProjectProvider {
       link: 'https://scansite.mit.edu',
       linkIcon: 'faGlobeAmericas',
       github: 'https://github.com/kkrismer/scansite4',
-      partner: 'MIT',
+      partner: 'Massachusetts Institute of Technology',
       audience: [
         {name: 'researcher', icon: faFlask}
       ]
@@ -114,8 +115,9 @@ export class ProjectProvider {
       ]
     },
     {
-      imageSrc: 'assets/img/projects/android.jpg',
-      imageSrcSet: null,
+      imageSrc: null,
+      imageSrcSet: 'assets/img/projects/android576.jpg 576w, assets/img/projects/android768.jpg 768w, ' +
+        'assets/img/projects/android992.jpg 992w, assets/img/projects/android1200.jpg 1200w',
       imageAlt: null,
       title: 'projects.project6.title',
       description: 'projects.project6.description',
