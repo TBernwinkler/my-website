@@ -8,6 +8,10 @@
     max-width: 98%;
   }
 
+  button {
+    width: 150px;
+  }
+
   .link {
     cursor: pointer;
 
@@ -15,6 +19,10 @@
       color: $blue;
       text-decoration: underline;
     }
+  }
+
+  .checkbox-wrapper {
+
   }
 
 }

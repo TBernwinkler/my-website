@@ -16,6 +16,7 @@ label {
   [type="checkbox"]:checked + label {
     position: relative;
     padding-left: 1.95em;
+    padding-top: 3px;
     cursor: pointer;
   }
 

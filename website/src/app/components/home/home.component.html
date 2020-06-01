@@ -1,11 +1,5 @@
 <div class="content home-component">
-<!--  <div id="hero">-->
-<!--    <div class="bg-image"></div>-->
-<!--    <div class="heading">-->
-<!--      <h1 translate>home.hero.headline</h1>-->
-<!--      <p translate>home.hero.subline</p>-->
-<!--    </div>-->
-<!--  </div>-->
+
   <app-hero [headline]="headline"
             [description]="description"
             [images]="images"
@@ -15,7 +9,7 @@
 
   <section class="light">
       <h2 class="center" translate>home.technicalChallenges.headline</h2>
-      <p class="dark center subline" translate>home.technicalChallenges.subline</p>
+      <p class="dark center subline center-justify" translate>home.technicalChallenges.subline</p>
       <div class="full-size space-around">
         <div class="half-size">
           <p translate>home.technicalChallenges.entry1</p>
@@ -76,7 +70,7 @@
   <section class="triplet light">
     <div class="container center">
       <h2 translate>home.languages.headline</h2>
-      <p class="subline" translate>home.languages.subline</p>
+      <p class="subline center-justify" translate>home.languages.subline</p>
       <ul>
         <li class="wrapper justify">
           <h4 translate>home.languages.entry-l1</h4>
@@ -207,30 +201,31 @@
 
   <div class="center blue">
     <h2 translate>home.technologies.headline</h2>
-    <p class="light-blue subline" translate>home.technologies.subline</p>
-    <div class="full-size">
+    <p class="light-blue subline center-justify" translate>home.technologies.subline</p>
+    <div class="wrapper center-justify">
       <p translate>home.technologies.entry1</p>
       <p class="light-blue" translate>home.technologies.entry2</p>
       <p translate>home.technologies.entry3</p>
       <p class="light-blue" translate>home.technologies.entry4</p>
       <p translate>home.technologies.entry5</p>
       <p class="light-blue" translate>home.technologies.entry6</p>
+      <p translate>home.technologies.entry7</p>
+      <p class="light-blue" translate>home.technologies.entry8</p>
+      <p translate>home.technologies.entry9</p>
     </div>
   </div>
 
   <div class="center light">
     <h2 translate>header.contact</h2>
-    <p class="dark subline"><span translate>home.contact.subline1</span><a routerLink="/contact"><span translate>home.contact.subline2</span></a></p>
+    <p class="dark subline center-justify"> {{'home.contact.subline1' | translate}}<a routerLink="/contact">{{'home.contact.subline2' | translate}}</a></p>
     <div class="center-block">
-      <p><span translate>home.contact.purpose</span> <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
+      <p class="wrapper">{{'home.contact.purpose' | translate}} <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
       <p><span translate>home.contact.madeWith1</span><fa-icon [icon]="faHeart" size="lg"></fa-icon><span translate>home.contact.madeWith2</span></p>
-      <button (click)="scrollToTop()" type="button"><span translate>home.contact.backToTop</span>
-        <fa-icon class="separator" [icon]="faLevelUpAlt" size="lg"></fa-icon>
-      </button>
+      <app-top-button>
+      </app-top-button>
     </div>
   </div>
 
-<!--    <p>TODO: Think about Pokémon UI Telegram Support</p>-->
 <!--    <p>json+ld</p>-->
 <!--    <p>social sharing stuff with open graph meta tags</p>-->
 <!--    <p>get final files using ng build --prod</p>-->

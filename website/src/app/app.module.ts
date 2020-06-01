@@ -35,6 +35,7 @@ import { ImportExportComponent } from './components/import-export/import-export.
 import {DialogComponent} from './components/dialog/dialog.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { TopButtonComponent } from './components/top-button/top-button.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { HeroComponent } from './components/hero/hero.component';
     DialogComponent,
     ImportExportComponent,
     CheckboxComponent,
-    HeroComponent
+    HeroComponent,
+    TopButtonComponent
   ],
   imports: [
     BrowserModule,

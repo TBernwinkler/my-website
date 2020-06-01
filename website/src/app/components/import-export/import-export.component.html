@@ -1,3 +1,4 @@
+<div class="import-export">
 <mat-tab-group (selectedTabChange)="handleTabChange($event)">
   <mat-tab label="Info">
     <p class="tab-content">
@@ -8,26 +9,22 @@
     </p>
   </mat-tab>
   <mat-tab label="Switch Genre">
-    <div class="import-export">
-      <h5>Change Video List By Genre</h5>
-      <mat-form-field class="full-width" color="accent">
-        <mat-label>Select Video List</mat-label>
-        <mat-select (selectionChange)="changeTrackList($event)">
-          <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+    <h5>Change Video List By Genre</h5>
+    <mat-form-field class="full-width" color="accent">
+      <mat-label>Select Video List</mat-label>
+      <mat-select (selectionChange)="changeTrackList($event)">
+        <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </mat-tab>
   <mat-tab label="Import">
-    <div class="import-export">
       <h5>Import by copying JSON into the textarea</h5>
       <textarea [(ngModel)]="importString"></textarea>
-    </div>
-    <button type="button" (click)="importTracks()">Import <fa-icon class="separator" [icon]="faUpload" size="lg"></fa-icon></button>
+    <button type="button" (click)="importTracks()">Import <fa-icon class="spaced-around" [icon]="faUpload" size="lg"></fa-icon></button>
     <!--                use material dialog?-->
   </mat-tab>
   <mat-tab label="Export">
-    <p>Download the videos to export by clicking the button or simply show a preview by checking the box</p>
+    <h5>Export videos by clicking the button or simply show a preview by checking the box</h5>
     <p class="double">
       <app-checkbox
         [boxChecked]="exportPreview"
@@ -36,14 +33,15 @@
       </app-checkbox>
     </p>
 
-    <div *ngIf="exportPreview" class="import-export">
+    <div *ngIf="exportPreview">
       <h5>Export Preview</h5>
       <textarea #preview [(ngModel)]="exportString"></textarea>
 
-      <p>
-        <span class="link" (click)="copyToClipboard(preview)">Copy preview to clipboard <fa-icon class="separator" [icon]="faClipboard" size="lg"></fa-icon></span>
+      <p class="link" (click)="copyToClipboard(preview)">
+        Copy preview to clipboard <fa-icon class="spaced-around" [icon]="faClipboard" size="lg"></fa-icon>
       </p>
     </div>
-    <button type="button" (click)="exportTracks()">Export</button>
+    <button type="button" (click)="exportTracks()">Export <fa-icon class="spaced-around" [icon]="faDownload" size="lg"></fa-icon></button>
   </mat-tab>
 </mat-tab-group>
+</div>

@@ -67,9 +67,9 @@ export class MusicComponent implements OnInit {
   faLevelUpAlt = faLevelUpAlt;
   // hero component
   headline: Array<NameIconPair> = [
-    {name: 'music.headlineA', icon: null},
+    {name: 'music.hero.headlineA', icon: null},
     {name: null, icon: this.faMusic},
-    {name: 'music.headlineB', icon: null}
+    {name: 'music.hero.headlineB', icon: null}
   ];
   description: string;
   images: Renditions = {

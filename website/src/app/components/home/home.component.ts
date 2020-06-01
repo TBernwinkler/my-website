@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faHeart, faArrowCircleUp, faCircle, faMusic, faLaptopCode, faLevelUpAlt, faStar} from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faArrowCircleUp, faMusic, faLaptopCode, faStar} from '@fortawesome/free-solid-svg-icons';
 import {faStar as faStarEmpty} from '@fortawesome/free-regular-svg-icons';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NameIconPair} from '../../models/nameIconPair';
@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   faArrowCircleUp = faArrowCircleUp;
   faMusic = faMusic;
   faLaptopCode = faLaptopCode;
-  faLevelUpAlt = faLevelUpAlt;
   faStar = faStar;
   faStarEmpty = faStarEmpty;
   headline: Array<NameIconPair> = [
@@ -48,11 +47,6 @@ export class HomeComponent implements OnInit {
         this.router.navigate([redirect]);
       }
     });
-  }
-
-  scrollToTop() {
-    const headline = document.querySelector('#navigation');
-    headline.scrollIntoView();
   }
 
 }

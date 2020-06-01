@@ -1,56 +1,56 @@
-<div class="content-space">
-  <div class="contact-component wrapper">
+<div class="contact-component">
+
+  <app-hero [headline]="headline"
+            [description]="description"
+            [images]="images"
+            [imageSource]="imageSource"
+            [imageOrientation]="imageOrientation">
+  </app-hero>
+
+  <div class="wrapper">
     <div class="flex-container">
       <div class="flex-section">
         <div class="image-wrapper">
-          <img src="../../../assets/img/contact/contact1200.jpg" alt="contact image">
+          <img src="assets/img/contact/contact1200.jpg" alt="contact image">
         </div>
       </div>
 
       <div class="flex-section">
-
-        <mat-form-field appearance="standard">
-          <mat-label>contact.name.first</mat-label>
-          <input matInput>
-        </mat-form-field>
-        &nbsp;
-        <mat-form-field appearance="standard">
-          <mat-label>contact.name.last</mat-label>
-          <input matInput>
+        <mat-form-field appearance="standard" class="form-component">
+          <mat-label>{{'contact.name.first' | translate}}*</mat-label>
+          <input [(ngModel)]="firstName" matInput>
         </mat-form-field>
 
-        <br>
-        <mat-form-field appearance="standard">
-          <mat-label>contact.name.reason</mat-label>
-          <mat-select>
-            <mat-option value="option">contact.name.enhancement</mat-option>
-            <mat-option value="option">contact.name.music-wish</mat-option>
-            <mat-option value="option">contact.name.request</mat-option>
-            <mat-option value="option">contact.name.issue</mat-option>
-            <mat-option value="option">contact.name.other</mat-option>
+        <mat-form-field appearance="standard" class="form-component">
+          <mat-label>{{'contact.name.last' | translate}}*</mat-label>
+          <input [(ngModel)]="lastName" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="form-component">
+          <mat-label>{{'contact.email' | translate}}*</mat-label>
+          <input [(ngModel)]="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="form-component">
+          <mat-label translate>contact.phone</mat-label>
+          <input [(ngModel)]="phone" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="form-component">
+          <mat-label>{{'contact.reason.label' | translate}}*</mat-label>
+          <mat-select [(ngModel)]="reason">
+            <mat-option value="option">{{'contact.reason.enhancement' | translate}}</mat-option>
+            <mat-option value="option" translate>{{'contact.reason.music-wish' | translate}}</mat-option>
+            <mat-option value="option" translate>{{'contact.reason.request' | translate}}</mat-option>
+            <mat-option value="option" translate>{{'contact.reason.issue' | translate}}</mat-option>
+            <mat-option value="option" translate>{{'contact.reason.other' | translate}}</mat-option>
           </mat-select>
         </mat-form-field>
 
-
-        <br>
-        <mat-form-field appearance="standard">
-          <mat-label>contact.name.email</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="standard">
-          <mat-label>contact.name.phone</mat-label>
-          <input matInput>
-        </mat-form-field>
-
-        <br>
-        <button mat-raised-button color="primary">Accent</button>
+        <p class="form-component {{submittedSuccessfully ? 'success-text' : 'error-text'}}">{{buttonClickText}}</p>
+        <button mat-raised-button class="form-component" (click)="handleSubmitButtonClick()">{{'contact.submit' | translate}}</button>
 
       </div>
-
     </div>
-
-    <p>Thomas Bernwinkler</p>
-    <p>Email?</p>
   </div>
 </div>

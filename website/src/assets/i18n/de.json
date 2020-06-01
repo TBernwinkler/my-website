@@ -71,7 +71,10 @@
       "entry3": "Docker",
       "entry4": "Kubernetes",
       "entry5": "Web Entwicklung",
-      "entry6": "High Performance Programming und Parallel Computing (CUDA)"
+      "entry6": "Geschwindigkeitsoptimierung",
+      "entry7": "Parallel Computing (CUDA)",
+      "entry8": "Machine Learning",
+      "entry9": "Künstliche Intelligenz"
     },
     "contact": {
       "subline1": "Du hast Ideen, um diese Seiter noch besser aussehen zu lassen? Cool! ",
@@ -83,8 +86,19 @@
     }
   },
   "music": {
-    "headlineA": "Musik",
-    "headlineB": "Vorschläge"
+    "hero": {
+      "headlineA": "Musik",
+      "headlineB": "Vorschläge"
+    },
+    "trackList": {
+      "noAutoplay": "Leider wird Autoplay vom mobilen Geräten nicht unterstützt :("
+    },
+    "addVideo": {
+      "label": ""
+    },
+    "removeVideo": {
+      "label": ""
+    }
   },
   "projects": {
     "hero": {
@@ -135,6 +149,27 @@
       "title": "Android Apps",
       "description": "Schon in der Vergangenheit habe ich einfachere Android Apps entwickelt. Dabei hat mir besonders die Umsetzung Android Studio gefallen. Nach der Entwicklung trivialer Apps wäre es cool, eine Art persönlichen Sekretär entwickeln zu können. Dieser könnte dann in der Lage sein, Listen mit Aufgaben, Erledigungen im Haushalt, Einkaufslisten etc. zu speichern. Eine Synchronisierung mit dem eigenen Kalender (z.B. Google), Einstellen von Erinnerungen und das Abhaken oder Streichen von Punkten aus Listen würde eine solche App wirklich überaus nützlich machen."
     }
+  },
+  "contact": {
+    "hero": {
+      "headline": "Kontakt",
+      "subline": "Du hast Fragen, Vorschläge oder es gibt Probleme mit dieser Webseite? Melde Dich und ich werde so schnell wie möglich antworten."
+    },
+    "name": {
+      "first": "Vorname",
+      "last": "Nachname"
+    },
+    "email": "E-Mail",
+    "phone": "Telefonnummer",
+    "reason": {
+      "label": "Grund",
+      "enhancement": "Verbesserung der Webseite",
+      "music-wish": "Musikwunsch",
+      "request": "Anfrage",
+      "issue": "Problem",
+      "other": "Anderer Grund"
+    },
+    "submit": "Absenden"
   },
   "footer": {
     "legal": "Impressum",

@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatSelectChange, MatTabChangeEvent} from '@angular/material';
 import {DialogLevel, Video} from '../../models';
 import {saveAs} from 'file-saver';
-import { faClipboard, faUpload } from '@fortawesome/free-solid-svg-icons';
+import {faClipboard, faDownload, faUpload} from '@fortawesome/free-solid-svg-icons';
 import {DialogService} from '../../services/dialog/dialog.service';
 import {VideoProvider} from '../../models/video-provider';
 
@@ -19,6 +19,7 @@ export class ImportExportComponent implements OnInit {
 
   faClipboard = faClipboard;
   faUpload = faUpload;
+  faDownload = faDownload;
 
   highlightFirstTab = true;
   exportPreview = false;

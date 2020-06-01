@@ -6,10 +6,6 @@
     margin-bottom: 2rem;
   }
 
-  a {
-    color: blue;
-  }
-
   a:hover {
     text-decoration: underline;
   }
@@ -17,12 +13,11 @@
   img {
     display: block;
     width: 100%;
-    height: auto;
-    padding-left: 0;
   }
 
   .subline {
-    margin-bottom: 2rem;
+    margin: 0 10% 2rem 10%;
+    width: 80%;
   }
 
   .blue, .light {
@@ -42,9 +37,9 @@
   }
 
   .dark {
-    color: #666;
+    color: #666666;
     a {
-      color: #666;
+      color: #666666;
     }
   }
 
@@ -52,15 +47,9 @@
     color: #B2ECFF;
   }
 
-  .circle-icon {
-    padding-right: 5px;
-  }
-
-  .full-size {
-    &.space-around {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
+  .space-around {
+    padding-left: 20%;
+    padding-right: 20%;
   }
 
   .half-size {
@@ -70,23 +59,26 @@
     text-align: left;
   }
 
+  .wrapper {
+    width: 55%;
+    margin-left: 25%;
+    margin-right: 20%;
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+  .center-justify {
+    text-align: justify;
+  }
+
   .triplet ul {
     list-style: none;
     text-align: center;
     padding-left: 0;
     padding-right: 0;
     margin: 0;
-
-    .justify {
-      text-align: justify;
-    }
-
-    .wrapper {
-      width: 50%;
-      margin-left: 25%;
-      margin-right: 25%;
-    }
-
   }
 
   .lang-entry {
@@ -100,7 +92,7 @@
 
   .center-block {
     text-align: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   button {
@@ -129,7 +121,10 @@
       li {
         width: 31%;
       }
+    }
 
+    .center-justify {
+      text-align: center;
     }
 
     .card {
@@ -142,14 +137,12 @@
       }
     }
 
-    .full-size {
+    .space-around {
       padding-bottom: 2rem;
-
-      &.space-around {
-        display: flex;
-        padding-left: 18%;
-      }
+      display: flex;
+      padding-left: 18%;
     }
+
 
     .half-size {
       margin-left: 10%;

@@ -71,7 +71,10 @@
       "entry3": "Docker",
       "entry4": "Kubernetes",
       "entry5": "Web Development",
-      "entry6": "High Performance Programming and Parallel Computing (CUDA)"
+      "entry6": "Performance Optimization",
+      "entry7": "Parallel Computing (CUDA)",
+      "entry8": "Machine Learning",
+      "entry9": "Artificial Intelligence"
     },
     "contact": {
       "subline1": "Do you have some ideas to fine tune this page? Cool! ",
@@ -83,8 +86,27 @@
     }
   },
   "music": {
-    "headlineA": "Music",
-    "headlineB": "Suggestions"
+    "hero": {
+      "headlineA": "Music",
+      "headlineB": "Suggestions"
+    },
+    "trackList": {
+      "autoplay": "Autoplay",
+      "playAll": "Play All",
+      "noAutoplay": "Unfortunately, autoplay is not supported on mobile devices :(",
+      "shuffle": "Shuffle",
+      "info": "Info"
+    },
+    "playlist": {
+      "nextVideoA": "",
+      "nextVideoB": ""
+    },
+    "addVideo": {
+      "label": ""
+    },
+    "removeVideo": {
+      "label": ""
+    }
   },
   "projects": {
     "hero": {
@@ -135,6 +157,27 @@
       "title": "Android Apps",
       "description": "I've developed very simple Android Apps in the past. I particularly enjoyed writing them with Android Studio. After developing some minor apps, it would be cool to develop your personal secretary, that is able to save chores, to do lists, shopping lists, updates your calendar, reminds me of things, crosses off things from lists etc."
     }
+  },
+  "contact": {
+    "hero": {
+      "headline": "Contact",
+      "subline": "You're having some questions, suggestions or found some issues with this website? Reach out and I'll get back to you as soon as possible."
+    },
+    "name": {
+      "first": "First Name",
+      "last": "Last name"
+    },
+    "email": "Email",
+    "phone": "Phone number",
+    "reason": {
+      "label": "Reason",
+      "enhancement": "Website Enhancement",
+      "music-wish": "Music Wish",
+      "request": "Request",
+      "issue": "Issue",
+      "other": "Other"
+    },
+    "submit": "Submit"
   },
   "footer": {
     "legal": "Legal Information",
