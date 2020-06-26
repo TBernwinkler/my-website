@@ -11,7 +11,7 @@ import {
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {DialogLevel, Video} from '../../models';
-import {MatSelectChange, MatSlideToggleChange} from '@angular/material';
+import {MatSlideToggleChange} from '@angular/material';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {DialogService} from '../../services/dialog/dialog.service';
 import {ImportExportComponent} from '../import-export/import-export.component';
@@ -306,12 +306,6 @@ export class MusicComponent implements OnInit {
     }
   }
 
-  handleDeleteVideoListSelectionChange(event: MatSelectChange) {
-    this.selectedTracks = event.source.value;
-    if (event.source.selected) {
-    }
-  }
-
   handleRemoveVideosFromSuggestions() {
     if (this.selectedTracks.length > 0) {
       // REMOVE VIDEO TO THE LEFT
@@ -334,6 +328,10 @@ export class MusicComponent implements OnInit {
 
   updateOnImport(musicSuggestions) {
     this.musicSuggestions = musicSuggestions;
+    this.trackList.splice(0, this.trackList.length);
+    this.musicSuggestions.forEach(entry => {
+      this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
+    });
   }
 
   private updateTrackExport() {
