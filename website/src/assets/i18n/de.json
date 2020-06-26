@@ -91,13 +91,71 @@
       "headlineB": "Vorschläge"
     },
     "trackList": {
-      "noAutoplay": "Leider wird Autoplay vom mobilen Geräten nicht unterstützt :("
+      "autoplay": "Autoplay",
+      "playAll": "Alle abspielen",
+      "noAutoplay": "Leider wird Autoplay vom mobilen Geräten nicht unterstützt :(",
+      "shuffle": "Zufällig anordnen",
+      "info": "Info"
+    },
+    "playlist": {
+      "nextVideoA": "Nächstes Video wird in",
+      "nextVideoB": "Sekunden abgespielt"
     },
     "addVideo": {
-      "label": ""
+      "label": "Neue Videos Hinzufügen",
+      "videoId": "Video ID/YouTube Link",
+      "interpret": "Künstler",
+      "track": "Track",
+      "videoDuration": "Videodauer",
+      "minutes": "Min",
+      "seconds": "Sek",
+      "buttonLabel": "Video Hinzufügen"
     },
     "removeVideo": {
-      "label": ""
+      "label": "Videos Entfernen",
+      "description": "Für den Fall, dass du ein oder mehrere Video(s) nicht magst, ist es möglich, eins oder mehrere auszuwählen, um sie anschließend mit einem Klick auf den Button zu entfernen",
+      "selectLabel": "Zu löschende Videos",
+      "buttonLabel": "Ausgewählte Videos Entfernen"
+    },
+    "infoSection": {
+      "autoplayHeadline": "Autoplay",
+      "autoplayDescription": "Schalte Autoplay ein und klicke auf einen Eintrag in der Videoliste. Das ausgewählte Video wird automatisch abgespielt.",
+      "playAllHeadline": "Alle Abspielen",
+      "playAllDescription": "Das erste Video in der Liste wird automatisch abgespielt. Alle weiteren folgen der Reihe nach.",
+      "reorderVideosHeadline": "Videos Verschieben",
+      "reorderVideosDescription": "Jede(r) hat einen anderen Musikgeschmack. Vielen passt deswegen vermutlich auch die Reihenfolge nicht. Deshalb lassen sich alle Videos an die gewünschte Position ziehen.",
+      "addDeleteHeadline": "Videos Hinzufügen und Löschen",
+      "addDeleteDescription": "Es ist möglich, neue Videos zur Liste hinzuzufügen. Dabei müssen alle Eingabefelder ausgefüllt werden. Beim ersten Feld kann sowohl die Video ID als auch die ganze YouTube URL eingegeben werden. Hier reicht es von deinem Browser Fenster den Link oder im YouTube Abschnitt zum Teilen von Videos den Einbettungscode zu kopieren. Sogar \"Starten bei\" von YouTube wird unterstützt.",
+      "temporaryHeadline": "Änderungen sind nur vorübergehend",
+      "temporaryDescription": "Es ist möglich die Liste der Lieder nach eigenem Geschmack anzupassen. Jedoch sind alle Änderungen (neue Lieder, entfernte, Umsortierungen, ...) nur so lange verfügbar, bis die Seite neu geladen wird. Es wird alles ausschließlich an deinem Computer gespeichert. Es werden keine Daten an einen Server übertragen."
+    },
+    "importExport": {
+      "headline": "Individuelle, wiederverwendbare Videoliste",
+      "description": "Offensichtlich hat jeder Mensch einen eigenen Musikgeschmack. Deswegen ist es auf dem Computer oder Tablet möglich, eine beliebige Liste an Liedern zu importieren und exportieren."
+    }
+  },
+  "importExport": {
+    "tab1": {
+      "label": "Info",
+      "paragraph": "Es ist möglich, neue Videos hinzuzufügen und bestehende zu löschen. Da Obligationen hinsichtlich der Datenschutzgrundverordnung vermieden werden sollen, werden keinerlei Daten auf dem Server gespeichert. Die Seite setzt sich beim erneuern automatisch auf den Anfangszustand zurück. Genau hier ist die nachfolgende Funktionalität besonders praktisch. Nach dem Anpassen der Videoliste ist es möglich, diese zu exportieren und beim nächsten Seitenbesuch wieder zu importieren. Wenn du mit Softwareentwicklung oder zumindest mit dem JSON Format vertraut bist, ist es auch möglich, die exportierte Liste manuell anzupassen."
+    },
+    "tab2": {
+      "label": "Genre Wechseln",
+      "headline": "Wähle ein Genre für die Videoliste aus",
+      "selectLabel": "Videoliste Auswählen"
+    },
+    "tab3": {
+      "label": "Import",
+      "headline": "Der Import erfolgt über das Kopieren des Inhalts der exportierten Datei in das Textfeld",
+      "buttonLabel": "Importieren"
+    },
+    "tab4": {
+      "Label": "Export",
+      "headline": "Exportiere Videos durch das Klicken auf den Button hake die Box an, um die Vorschau anzeigen zu lassen.",
+      "checkboxLabel": "Vorschau Anzeigen",
+      "buttonLabel": "Exportieren",
+      "previewHeadline": "Vorschau des Exports",
+      "previewDescription": "In den Zwischenspeicher kopieren"
     }
   },
   "projects": {
@@ -169,11 +227,12 @@
       "issue": "Problem",
       "other": "Anderer Grund"
     },
+    "message": "Hinterlasse eine Nachricht",
     "submit": "Absenden"
   },
   "footer": {
     "legal": "Impressum",
     "lastUpdate": "Letzte Aktualisierung",
-    "lastUpdateDate": "27. Mai 2020"
+    "lastUpdateDate": "26. Juni 2020"
   }
 }

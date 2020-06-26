@@ -8,8 +8,7 @@ import {
   faRandom,
   faStepBackward,
   faStepForward,
-  faVolumeUp,
-  faLevelUpAlt
+  faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {DialogLevel, Video} from '../../models';
 import {MatSelectChange, MatSlideToggleChange} from '@angular/material';
@@ -64,7 +63,6 @@ export class MusicComponent implements OnInit {
   faStepBackward = faStepBackward;
   faRandom = faRandom;
   faBook = faBook;
-  faLevelUpAlt = faLevelUpAlt;
   // hero component
   headline: Array<NameIconPair> = [
     {name: 'music.hero.headlineA', icon: null},
@@ -73,10 +71,11 @@ export class MusicComponent implements OnInit {
   ];
   description: string;
   images: Renditions = {
-    mobile: 'music/audio576.jpg',
-    tablet: 'music/audio768.jpg',
-    tabletLandscape: 'music/audio992',
-    desktop: 'music/audio1200',
+    mobile: 'music/audio-576.jpg',
+    tablet: 'music/audio-768.jpg',
+    tabletLandscape: 'music/audio-992.jpg',
+    laptop: 'music/audio-1200.jpg',
+    desktop: 'music/audio-1900.jpg',
     extraLarge: 'music/audio.jpg'
   };
   imageSource = 'https://www.pexels.com/@snapwire';
@@ -335,11 +334,6 @@ export class MusicComponent implements OnInit {
 
   updateOnImport(musicSuggestions) {
     this.musicSuggestions = musicSuggestions;
-  }
-
-  scrollToTop() {
-    const headline = document.querySelector('#navigation');
-    headline.scrollIntoView();
   }
 
   private updateTrackExport() {

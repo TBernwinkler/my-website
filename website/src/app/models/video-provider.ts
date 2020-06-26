@@ -39,25 +39,27 @@ export class VideoProvider {
     {artist: 'Killswitch Engange', track: 'In Due Time', youtube: 'HANCzu70us4?start=8', duration: 218},
     {artist: 'The Offspring', track: 'You\'re Gonna Go Far, Kid', youtube: 'ql9-82oV2JE?start=18', duration: 180},
     {artist: 'The Bloodhound Gang', track: 'The Bad Touch', youtube: 'xat1GVnl8-k', duration: 244},
-    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 202},
+    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 196},
     {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210}
   ];
 
   private static mainstreamSuggestions: Array<Video> = [
     {artist: 'The Offspring', track: 'You\'re Gonna Go Far, Kid', youtube: 'ql9-82oV2JE?start=18', duration: 162},
     {artist: 'The Bloodhound Gang', track: 'The Bad Touch', youtube: 'xat1GVnl8-k', duration: 244},
-    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 165},
+    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 196},
     {artist: 'Eiffel 65', track: 'Blue', youtube: '68ugkg9RePc', duration: 219},
     {artist: 'O-Zone', track: 'Dragostea Din Tei', youtube: 'YnopHCL1Jk8?start=45', duration: 240},
     {artist: 'Bomfunk', track: 'Freestyler', youtube: 'ymNFyxvIdaM', duration: 292},
     {artist: 'Mr. President', track: 'Coco Jamboo', youtube: 'EScLmWJs82I', duration: 222},
+    {artist: 'James Brown', track: 'I Feel Good', youtube: 'U5TqIdff_DQ', duration: 165},
     {artist: 'La Bouche', track: 'Be My Lover', youtube: 'ViP87WipSm0', duration: 222},
     {artist: 'The Cranberries', track: 'Zombie', youtube: '6Ejga4kJUts', duration: 307},
     {artist: 'Aqua', track: 'Barbie Girl', youtube: 'ZyhrYis509A?start=15', duration: 186},
     {artist: 'Cascada', track: 'Every Time We Touch', youtube: '4G6QDNC4jPs?start=5', duration: 209},
     {artist: 'Bobby McFerrin', track: 'Don\'t Worry Be Happy', youtube: 'd-diB65scQU', duration: 243},
     {artist: 'OutKast', track: 'Hey Ya', youtube: 'Fi8rsCncwF8', duration: 261},
-    {artist: 'Lou Bega', track: 'Mambo No. 5', youtube: 'EK_LN3XEcnw', duration: 0},
+    {artist: 'Baha Men', track: 'Who Let The Dogs Out', youtube: 'Qkuu0Lwb5EM?start=18', duration: 310},
+    {artist: 'Lou Bega', track: 'Mambo No. 5', youtube: 'EK_LN3XEcnw', duration: 221},
     {artist: 'Ricky Martin', track: 'Livin La Vida Loca', youtube: 'p47fEXGabaY', duration: 222},
     {artist: 'Britney Spears', track: 'Baby One More Time', youtube: 'C-u5WLJ9Yk4?start=16', duration: 220},
     {artist: 'Jennifer Lopez', track: 'On The Floor ft. Pitbull', youtube: 't4H_Zoh7G5A?start=20', duration: 247},
@@ -67,17 +69,43 @@ export class VideoProvider {
     {artist: 'Tokyo Drift', track: 'Teriyaki Boyz', youtube: 'iuJDhFRDx9M', duration: 257},
     {artist: 'Rihanna', track: 'Umbrella', youtube: 'CvBfHwUxHIk', duration: 254},
     {artist: 'Katy Perry', track: 'I Kissed A Girl', youtube: 'tAp9BKosZXs', duration: 184},
-    {artist: 'Davig Guetta', track: 'Sexy Bitch', youtube: 'mIIN_SGQy9c', duration: 192},
+    {artist: 'David Guetta', track: 'Sexy Bitch', youtube: 'mIIN_SGQy9c', duration: 192},
     {artist: 'Iyaz', track: 'Replay', youtube: 'WXxV9g7lsFE?start=9', duration: 188},
     {artist: 'Italobrothers', track: 'Stamp On The Ground', youtube: 'cHcVU5cGUNE', duration: 213},
     {artist: 'Liquido', track: 'Narcotic', youtube: 'PJ7E40Ec5ec', duration: 233},
     {artist: 'Bon Jovi', track: 'It\'s My Life', youtube: 'vx2u5uUu3DE?start=20', duration: 246},
+    {artist: 'Survivor', track: 'Eye Of The Tiger', youtube: 'btPJPFnesV4', duration: 243},
     {artist: 'Avril Lavigne', track: 'Sk8ter Boy', youtube: 'TIy3n2b7V9k?start=7', duration: 213},
     {artist: 'Avicii', track: 'Wake Me Up', youtube: 'IcrbM1l_BoI', duration: 272},
-    {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 212}
+    {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 212},
+    {artist: 'Captain Jack', track: 'Captain Jack', youtube: 'QVlGeYrnTHQ', duration: 248}
   ];
 
-  private static genres: Array<string> = [ 'Hard \'n Heavy', 'Mainstream & Party'];
+  private static electroSuggetsions: Array<Video> = [
+    {artist: 'Ma.Bra.', track: 'Whenever, Wherever', youtube: '99-_2fWwOuw', duration: 204},
+    {artist: 'Jan Wayne', track: 'Bring Me To Life', youtube: 'Z8YR2Uf2sK0', duration: 210},
+    {artist: 'Rob Mayth', track: 'Heart To Heart', youtube: 'U_YC0_7iS48', duration: 201},
+    {artist: 'Timmy Trumpet', track: 'Freaks', youtube: 'ofmzX1nI7SE', duration: 173},
+    {artist: 'Da Tweekaz', track: 'Jägermeister', youtube: 'AGDolE35XHA', duration: 214},
+    {artist: 'Rebourne', track: 'What Is Love', youtube: 'LMV6NDEQd0Q', duration: 180},
+    {artist: 'Alex \'M. vs. Marc van Damme', track: 'Children Of The Night', youtube: 'iTElyjj3TVQ', duration: 211},
+    {artist: 'FTU pres. CREAM', track: 'You Came', youtube: 'RB8tI5n2GJs', duration: 186},
+    {artist: 'DJ Gollum feat. Scarlet', track: 'All The Things She Said', youtube: 'WLD8yAhoQDA?start=40', duration: 282},
+    {artist: 'Gigi D\'Agostino', track: 'The Riddle', youtube: 'KR92DOYS-_Y', duration: 218},
+    {artist: 'Jeany Kiss & Sunray feat Gemma B.', track: 'My Heart Beats Like A Drum', youtube: 'CrUUE8QCOHk?start=50', duration: 230},
+    {artist: 'Megastylez vs. DJ Restlezz feat. Euphorizon', track: 'Our Revolution', youtube: 'AetLRG98M-U', duration: 230},
+    {artist: 'Alan Walker, K-391, Tungevaag, Mangoo', track: 'Play', youtube: 'YQRHrco73g4', duration: 193},
+    {artist: 'Crapman', track: 'Uh La La La', youtube: 'SqeOjAUdIxQ', duration: 175},
+    {artist: 'Harris & Ford vs. Gordon & Doyle feat. Lisah', track: 'Das Geht Boom', youtube: 'U-H1SgBYJ1Y', duration: 210},
+    {artist: 'Darude', track: 'Sandstorm', youtube: 'y6120QOlsfU', duration: 223},
+    {artist: 'Empyre One', track: 'Angeline', youtube: 'FJReeFn9swY', duration: 181},
+    {artist: 'Special D', track: 'Come With Me', youtube: 'HJEoNtN7j04', duration: 210},
+    {artist: 'Scooter', track: 'Nessaja', youtube: 'wquCCFvbNhI', duration: 210},
+    {artist: 'Italobrothers', track: 'This Is Nightlife', youtube: 'sYcUv68nFUw?start=5', duration: 160},
+    {artist: 'Crystal Lake', track: 'Handzup Motherfuckers', youtube: 'YXI4GVtVPyU', duration: 163}
+  ];
+
+  private static genres: Array<string> = [ 'Hard \'n Heavy', 'Mainstream & Party', 'Electronic & Techno'];
 
   constructor() {
   }
@@ -87,13 +115,16 @@ export class VideoProvider {
   }
 
   static provideGenreTracks(genre: string) {
-    if (genre === this.genres[0]) {
-      return this.musicSuggestions;
-    } else if (genre === this.genres[1]) {
-      return this.mainstreamSuggestions;
+    switch (genre) {
+      case this.genres[0]:
+        return this.musicSuggestions;
+      case this.genres[1]:
+        return this.mainstreamSuggestions;
+      case this.genres[2]:
+        return this.electroSuggetsions;
+      default:
+        return this.musicSuggestions;
     }
-    // default
-    return this.musicSuggestions;
   }
 
   static getGenres() {

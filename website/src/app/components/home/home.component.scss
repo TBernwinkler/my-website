@@ -60,7 +60,6 @@
   }
 
   .wrapper {
-    width: 55%;
     margin-left: 25%;
     margin-right: 20%;
   }
@@ -106,25 +105,36 @@
       padding: 3rem 0;
     }
 
+    .wrapper {
+      margin: inherit;
+    }
+
     .triplet {
       ul {
         display: flex;
         justify-content: space-around;
-        margin: auto;
-
-        .wrapper {
-          width: inherit;
-          margin: inherit;
-        }
+        margin: inherit;
       }
 
-      li {
-        width: 31%;
+      &.light .central p {
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.blue {
+        li {
+          width: 31%;
+        }
       }
     }
 
     .center-justify {
       text-align: center;
+    }
+
+    .bottom-feeder {
+      margin-bottom: 40px;
     }
 
     .card {

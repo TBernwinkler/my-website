@@ -25,7 +25,7 @@
             <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
           </button>
           <button (click)="scrollToElement(descriptions)">
-            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
+            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon> {{'music.trackList.info' | translate}}
           </button>
         </p>
       </div>
@@ -50,7 +50,6 @@
                   <fa-icon class="spaced-around" [icon]="faArrowsAlt" size="lg"></fa-icon>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -74,61 +73,61 @@
           <fa-icon class="spaced-around" [icon]="faStepForward"
                    (click)="playNextSong()" size="2x"></fa-icon>
         </p>
-        <p *ngIf="playAll">Next video will play in {{remainingTime}} seconds</p>
+        <p *ngIf="playAll">
+          {{'music.playList.nextVideoA' | translate}}
+          {{remainingTime}}
+          {{'music.playList.nextVideoB' | translate}}
+        </p>
       </div>
 
-<!--        todo: active/inactive styling and icon-->
+<!--       <-- todo: active/inactive styling and icon-->
       <div class="flex-container scaling">
         <div class="flex-section">
-          <h4>Add New Videos</h4>
+          <h4 translate>{{'music.addVideo.label' | translate}}</h4>
           <form>
-            <label>Video ID/YouTube Link</label>
+            <label translate>music.addVideo.videoId</label>
             <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
-            <label>Interpret</label>
+            <label translate>music.addVideo.interpret</label>
             <input [(ngModel)]="inputInterpret" name="inputInterpret" type="text" required="required">
-            <label>Track</label>
+            <label translate>music.addVideo.track</label>
             <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
-            <label>Video duration</label>
+            <label translate>music.addVideo.videoDuration</label>
             <span class="number-inputs">
               <input [(ngModel)]="inputDurationMin" name="inputDurationMin" type="number" min="0" max="300"><span class="blue-text"> min </span>
               <input [(ngModel)]="inputDurationSec" name="inputDurationSec" type="number" min="1" max="18000" required="required"><span class="blue-text"> sec</span>
             </span>
 
             <label>&nbsp;</label>
-            <button type="button" (click)="addNewVideo()">Add Video</button>
+            <button type="button" (click)="addNewVideo()" translate>music.addVideo.buttonLabel</button>
           </form>
 
-          <h4>Remove Videos</h4>
-          <span>In case you don't like a video, select one or multiple one and click the remove button.</span>
+          <h4 translate>music.removeVideo.label</h4>
+          <span translate>music.removeVideo.description</span>
           <mat-form-field class="full-width" color="accent">
-            <mat-label>Videos to Remove</mat-label>
+            <mat-label translate>music.removeVideo.selectLabel</mat-label>
             <mat-select (selectionChange)="handleDeleteVideoListSelectionChange($event)" multiple>
               <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
             </mat-select>
           </mat-form-field>
           <label>&nbsp;</label>
-          <button type="button" (click)="handleRemoveVideosFromSuggestions()">Remove Selected Videos</button>
+          <button type="button" (click)="handleRemoveVideosFromSuggestions()" translate>music.removeVideo.buttonLabel</button>
 
         </div>
         <div class="flex-section" #descriptions>
-          <h4>Autoplay</h4>
-          <p>Enable Autoplay and click on one of the entries in the track list. The selected video will start automatically.</p>
-          <h4>Play All</h4>
-          <p>The first video will start playing and further videos will follow automatically.</p>
-          <h4>Reorder Videos</h4>
-          <p>Everybody has a different taste in music. That's exactly why you might want to reorder the tracks.
-            Go ahead and do so via drag and drop.</p>
-          <h4>Add and Delete Videos</h4>
-          <p>It is possible to add new videos. All input fields are mandatory. It is possible to use video IDs or entire YouTube links. Just copy the the link in your browser or go to the youtube share section and copy the embed code. Even "Start at" from YouTube is supported.</p>
-          <h4>Changes are temporary</h4>
-          <p>It is possible to add your own track, if necessary data is provided.
-            However, once you add your own videos, they will only be available for you and only as long as your browser
-            window is open. Everything is stored on your computer. No data is transferred to any server.</p>
+          <h4 translate>music.infoSection.autoplayHeadline</h4>
+          <p translate>music.infoSection.autoplayDescription</p>
+          <h4 translate>music.infoSection.playAllHeadline</h4>
+          <p translate>music.infoSection.playAllDescription</p>
+          <h4 translate>music.infoSection.reorderVideosHeadline</h4>
+          <p translate>music.infoSection.reorderVideosDescription</p>
+          <h4 translate>music.infoSection.addDeleteHeadline</h4>
+          <p translate>music.infoSection.addDeleteDescription</p>
+          <h4 translate>music.infoSection.temporaryHeadline</h4>
+          <p translate>music.infoSection.temporaryDescription</p>
         </div>
         <div class="flex-section wide">
-          <h4>Custom Reusable Video List</h4>
-          <p>Obviously, every individual has a different taste in music. Hence, on your computer or tablet, it is possible to export and import your own list of videos.
-          to your liking.</p>
+          <h4 translate>music.importExport.headline</h4>
+          <p translate>music.importExport.description</p>
 
           <app-import-export #importExportComponent
                              *ngIf="!isMobile()"

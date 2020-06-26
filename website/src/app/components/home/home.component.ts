@@ -23,11 +23,12 @@ export class HomeComponent implements OnInit {
   ];
   description = 'home.hero.subline';
   images: Renditions = {
-    mobile: 'home/entrance-768.jpg',
+    mobile: 'home/entrance-576.jpg',
     tablet: 'home/entrance-768.jpg',
-    tabletLandscape: 'home/entrance-768.jpg',
-    desktop: 'home/entrance-768.jpg',
-    extraLarge: 'home/entrance-768.jpg'
+    tabletLandscape: 'home/entrance-992.jpg',
+    laptop: 'home/entrance-1200.jpg',
+    desktop: 'home/entrance-1900.jpg',
+    extraLarge: 'home/entrance.jpg'
   };
   imageSource = 'https://www.pexels.com/@pixabay';
   imageOrientation = 'center';

@@ -1,47 +1,46 @@
 <div class="import-export">
 <mat-tab-group (selectedTabChange)="handleTabChange($event)">
-  <mat-tab label="Info">
+  <mat-tab label="{{'importExport.tab1.label' | translate}}">
     <p class="tab-content">
-      It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR
-      regulations, the video list resets on page refresh. That is exactly where this feature comes in handy.
-      After adjusting the video list, it is possible to export it and import your list the next time, you visit the page.
-      If you are experienced with software development, or with the JSON format, you can adjust the list manually.
+      {{'importExport.tab1.paragraph' | translate}}
     </p>
   </mat-tab>
-  <mat-tab label="Switch Genre">
-    <h5>Change Video List By Genre</h5>
+  <mat-tab label="{{'importExport.tab2.label' | translate}}">
+    <h5 translate>importExport.tab2.headline</h5>
     <mat-form-field class="full-width" color="accent">
-      <mat-label>Select Video List</mat-label>
+      <mat-label>{{'importExport.tab2.selectLabel' | translate}}</mat-label>
       <mat-select (selectionChange)="changeTrackList($event)">
         <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
       </mat-select>
     </mat-form-field>
   </mat-tab>
-  <mat-tab label="Import">
-      <h5>Import by copying JSON into the textarea</h5>
+  <mat-tab label="{{'importExport.tab3.label' | translate}}">
+      <h5 translate>importExport.tab3.headline</h5>
       <textarea [(ngModel)]="importString"></textarea>
-    <button type="button" (click)="importTracks()">Import <fa-icon class="spaced-around" [icon]="faUpload" size="lg"></fa-icon></button>
-    <!--                use material dialog?-->
+    <button type="button" (click)="importTracks()">
+      {{'importExport.tab3.buttonLabel' | translate}}
+      <fa-icon class="spaced-around" [icon]="faUpload" size="lg"></fa-icon>
+    </button>
   </mat-tab>
-  <mat-tab label="Export">
-    <h5>Export videos by clicking the button or simply show a preview by checking the box</h5>
+  <mat-tab label="{{'importExport.tab4.label' | translate}}">
+    <h5 translate>importExport.tab4.headline</h5>
     <p class="double">
       <app-checkbox
         [boxChecked]="exportPreview"
-        [labelText]="'Show Preview'"
+        [labelText]="'importExport.tab4.checkboxLabel' | translate"
         (boxChanged)="updatePreviewSelection($event)">
       </app-checkbox>
     </p>
 
     <div *ngIf="exportPreview">
-      <h5>Export Preview</h5>
+      <h5 translate>importExport.tab4.previewHeadline</h5>
       <textarea #preview [(ngModel)]="exportString"></textarea>
 
       <p class="link" (click)="copyToClipboard(preview)">
-        Copy preview to clipboard <fa-icon class="spaced-around" [icon]="faClipboard" size="lg"></fa-icon>
+        {{'importExport.tab4.previewDescription' | translate}} <fa-icon class="spaced-around" [icon]="faClipboard" size="lg"></fa-icon>
       </p>
     </div>
-    <button type="button" (click)="exportTracks()">Export <fa-icon class="spaced-around" [icon]="faDownload" size="lg"></fa-icon></button>
+    <button type="button" (click)="exportTracks()">{{'importExport.tab4.buttonLabel' | translate}} <fa-icon class="spaced-around" [icon]="faDownload" size="lg"></fa-icon></button>
   </mat-tab>
 </mat-tab-group>
 </div>

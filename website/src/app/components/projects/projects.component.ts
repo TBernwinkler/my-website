@@ -50,8 +50,9 @@ export class ProjectsComponent implements OnInit {
   images: Renditions = {
     mobile: 'projects/diagram-crop576.jpg',
     tablet: 'projects/diagram-crop768.jpg',
-    tabletLandscape: 'projects/diagram-crop992',
-    desktop: 'projects/diagram-crop1200',
+    tabletLandscape: 'projects/diagram-crop992.jpg',
+    laptop: 'projects/diagram-crop1200.jpg',
+    desktop: 'projects/diagram-crop1900.jpg',
     extraLarge: 'projects/diagram-crop4000.jpg'
   };
   imageSource = 'https://www.pexels.com/@divinetechygirl';

@@ -97,15 +97,65 @@
       "shuffle": "Shuffle",
       "info": "Info"
     },
-    "playlist": {
-      "nextVideoA": "",
-      "nextVideoB": ""
+    "playList": {
+      "nextVideoA": "Next video will play in",
+      "nextVideoB": "seconds"
     },
     "addVideo": {
-      "label": ""
+      "label": "Add New Videos",
+      "videoId": "Video ID/YouTube Link",
+      "interpret": "Interpret",
+      "track": "Track",
+      "videoDuration": "Video duration",
+      "minutes": "min",
+      "seconds": "sec",
+      "buttonLabel": "Add Video"
     },
     "removeVideo": {
-      "label": ""
+      "label": "Remove Videos",
+      "description": "In case you don't like a video, select one or multiple one and click the remove button.",
+      "selectLabel": "Videos to Remove",
+      "buttonLabel": "Remove Selected Videos"
+    },
+    "infoSection": {
+      "autoplayHeadline": "Autoplay",
+      "autoplayDescription": "Enable Autoplay and click on one of the entries in the track list. The selected video will start automatically.",
+      "playAllHeadline": "Play All",
+      "playAllDescription": "The first video will start playing and further videos will follow automatically.",
+      "reorderVideosHeadline": "Reorder Videos",
+      "reorderVideosDescription": "Everybody has a different taste in music. That's exactly why you might want to reorder the tracks. Go ahead and do so via drag and drop.",
+      "addDeleteHeadline": "Add and Delete Videos",
+      "addDeleteDescription": "It is possible to add new videos. All input fields are mandatory. It is possible to use video IDs or entire YouTube links. Just copy the the link in your browser or go to the youtube share section and copy the embed code. Even \"Start at\" from YouTube is supported.",
+      "temporaryHeadline": "Changes are temporary",
+      "temporaryDescription": "It is possible to add your own track, if necessary data is provided. However, once you add your own videos, they will only be available for you and only as long as your browser window is open. Everything is stored on your computer. No data is transferred to any server."
+    },
+    "importExport": {
+      "headline": "Custom Reusable Video List",
+      "description": "Obviously, every individual has a different taste in music. Hence, on your computer or tablet, it is possible to export and import your own list of videos to your liking."
+    }
+  },
+  "importExport": {
+    "tab1": {
+      "label": "Info",
+      "paragraph": "It is possible to add new videos and remove existing ones. As no data is stored to avoid GDPR regulations, the video list resets on page refresh. That is exactly where this feature comes in handy. After adjusting the video list, it is possible to export it and import your list the next time, you visit the page. If you are experienced with software development, or with the JSON format, you can adjust the list manually."
+    },
+    "tab2": {
+      "label": "Switch Genre",
+      "headline": "Change Video List By Genre",
+      "selectLabel": "Select Video List"
+    },
+    "tab3": {
+      "label": "Import",
+      "headline": "Import by copying JSON into the textarea",
+      "buttonLabel": "Import"
+    },
+    "tab4": {
+      "label": "Export",
+      "headline": "Export videos by clicking the button or simply show a preview by checking the box",
+      "checkboxLabel": "Show Preview",
+      "buttonLabel": "Export",
+      "previewHeadline": "Export Preview",
+      "previewDescription": "Copy preview to clipboard"
     }
   },
   "projects": {
@@ -177,11 +227,12 @@
       "issue": "Issue",
       "other": "Other"
     },
+    "message": "Leave a message",
     "submit": "Submit"
   },
   "footer": {
     "legal": "Legal Information",
     "lastUpdate": "Last updated",
-    "lastUpdateDate": "27 May 2020"
+    "lastUpdateDate": "26 June 2020"
   }
 }

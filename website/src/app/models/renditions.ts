@@ -1,9 +1,10 @@
 export class Renditions {
 
-  constructor(mobile: string, tablet: string, tabletLandscape: string, desktop: string, extraLarge: string) {
+  constructor(mobile: string, tablet: string, tabletLandscape: string, laptop: string, desktop: string, extraLarge: string) {
     this.mobile = mobile;
     this.tablet = tablet;
     this.tabletLandscape = tabletLandscape;
+    this.laptop = laptop;
     this.desktop = desktop;
     this.extraLarge = extraLarge;
   }
@@ -11,6 +12,7 @@ export class Renditions {
   mobile: string;
   tablet: string;
   tabletLandscape: string;
+  laptop: string;
   desktop: string;
   extraLarge: string;
 }

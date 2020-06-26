@@ -36,6 +36,11 @@
           <input [(ngModel)]="phone" matInput>
         </mat-form-field>
 
+        <mat-form-field appearance="outline" class="form-component full-width">
+          <mat-label>{{'contact.message' | translate}}*</mat-label>
+          <textarea [(ngModel)]="message" matInput rows="5" placeholder="..."></textarea>
+        </mat-form-field>
+
         <mat-form-field appearance="standard" class="form-component">
           <mat-label>{{'contact.reason.label' | translate}}*</mat-label>
           <mat-select [(ngModel)]="reason">
@@ -48,7 +53,7 @@
         </mat-form-field>
 
         <p class="form-component {{submittedSuccessfully ? 'success-text' : 'error-text'}}">{{buttonClickText}}</p>
-        <button mat-raised-button class="form-component" (click)="handleSubmitButtonClick()">{{'contact.submit' | translate}}</button>
+        <button mat-raised-button class="form-component" (click)="handleSubmitButtonClick()" disabled>{{'contact.submit' | translate}}</button>
 
       </div>
     </div>

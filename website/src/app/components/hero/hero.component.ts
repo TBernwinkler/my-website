@@ -16,7 +16,7 @@ export class HeroComponent implements OnInit {
   @Input() imageSource: string;
   @Input() imageOrientation = 'bottom';
 
-  breakpoints = [576, 768, 992, 1200];
+  breakpoints = [576, 768, 992, 1200, 1920]; // todo: consider 1920px rendition
 
   constructor() { }
 
@@ -33,6 +33,8 @@ export class HeroComponent implements OnInit {
     } else if (width <= this.breakpoints[2]) {
       image = this.images.tabletLandscape;
     } else if (width <= this.breakpoints[3]) {
+      image = this.images.laptop;
+    } else if (width <= this.breakpoints[4]) {
       image = this.images.desktop;
     } else {
       image = this.images.extraLarge;

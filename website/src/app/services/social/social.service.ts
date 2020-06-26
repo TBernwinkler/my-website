@@ -37,27 +37,27 @@ export class SocialService {
       page: 'music',
       ogTitle: 'Website - Music Page',
       ogDescription: 'Enjoy the music suggestions',
-      ogImage: 'http://thom4s.bplaced.net/assets/img/music/audio1200.jpg',
+      ogImage: 'http://thom4s.bplaced.net/assets/img/music/audio-1200.jpg',
       ogImageAlt: 'Music instruments on a gray background',
       ogType: 'website',
       ogUrl: 'http://thom4s.bplaced.net/music',
       ogLocale: 'en_US',
       twitterTitle: 'Website - Music Page',
       twitterDescription: 'Enjoy the music suggestions',
-      twitterImage: 'http://thom4s.bplaced.net/assets/img/music/audio1200.jpg'
+      twitterImage: 'http://thom4s.bplaced.net/assets/img/music/audio-1200.jpg'
     },
     {
       page: 'music',
       ogTitle: 'Webseite - Musikseite',
       ogDescription: 'Gnieße die Musikvorschläge',
-      ogImage: 'http://thom4s.bplaced.net/assets/img/music/audio1200.jpg',
+      ogImage: 'http://thom4s.bplaced.net/assets/img/music/audio-1200.jpg',
       ogImageAlt: 'Music instruments on a gray background',
       ogType: 'website',
       ogUrl: 'http://thom4s.bplaced.net/music',
       ogLocale: 'de_DE',
       twitterTitle: 'Webseite - Musikseite',
       twitterDescription: 'Gnieße die Musikvorschläge',
-      twitterImage: 'http://thom4s.bplaced.net/assets/img/music/audio1200.jpg'
+      twitterImage: 'http://thom4s.bplaced.net/assets/img/music/audio-1200.jpg'
     },
     {
       page: 'projects',
