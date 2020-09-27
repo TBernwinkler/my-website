@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MatSelectChange, MatTabChangeEvent} from '@angular/material';
 import {DialogLevel, Video} from '../../models';
 import {saveAs} from 'file-saver';
 import {faClipboard, faDownload, faUpload} from '@fortawesome/free-solid-svg-icons';
 import {DialogService} from '../../services/dialog/dialog.service';
 import {VideoProvider} from '../../models/video-provider';
+import {MatTabChangeEvent} from '@angular/material/tabs';
+import {MatSelectChange} from '@angular/material/select';
 
 @Component({
   selector: 'app-import-export',
@@ -24,6 +25,7 @@ export class ImportExportComponent implements OnInit {
   highlightFirstTab = true;
   exportPreview = false;
   exportString = '';
+  importName = '';
   importString = '';
   genres: Array<string> = [];
 
@@ -70,6 +72,12 @@ export class ImportExportComponent implements OnInit {
   }
 
   importTracks() {
+    if (!this.importName) {
+      // todo: i18n
+      const dialogMessage = 'Missing input category name! Please enter a name for the genre/category you are about to import';
+      this.dialogService.openDialog(this.importErrorDialogHeadline, dialogMessage, DialogLevel.Error);
+      return;
+    }
     if (!this.importString) {
       // todo: translate error messages
       const dialogMessage = 'Empty input string! Please enter your tracks prior to clicking the import button';

@@ -106,7 +106,9 @@
           <mat-form-field class="full-width" color="accent">
             <mat-label translate>music.removeVideo.selectLabel</mat-label>
             <mat-select [(ngModel)]="selectedTracks" multiple>
-              <mat-option *ngFor="let track of trackList" [value]="track.value">{{track.name}}</mat-option>
+              <mat-option *ngFor="let track of trackList" [value]="track.value"
+                          [disabled]="isSelected(trackList.indexOf(track))">{{track.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
           <label>&nbsp;</label>

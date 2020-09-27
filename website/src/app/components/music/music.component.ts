@@ -11,7 +11,7 @@ import {
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
 import {DialogLevel, Video} from '../../models';
-import {MatSlideToggleChange} from '@angular/material';
+import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {DialogService} from '../../services/dialog/dialog.service';
 import {ImportExportComponent} from '../import-export/import-export.component';
@@ -101,7 +101,7 @@ export class MusicComponent implements OnInit {
   // #################################
   isSelected(index: number): boolean {
     const selection = VideoProvider.getNthTrackElement(index);
-    return !selection ? index === 0 : selection.classList.contains(this.classActive);
+    return !selection || index < 1 ? index === 0 : selection.classList.contains(this.classActive);
   }
 
   scrollToElement(el: HTMLElement) {
@@ -136,6 +136,9 @@ export class MusicComponent implements OnInit {
     this.remainingTime = 0;
     if (this.interval) {
       clearInterval(this.interval);
+    }
+    if (this.counterPaused) {
+      this.counterPaused = false;
     }
     this.startCounter();
   }
@@ -328,10 +331,18 @@ export class MusicComponent implements OnInit {
 
   updateOnImport(musicSuggestions) {
     this.musicSuggestions = musicSuggestions;
+    // UPDATE LIST OF SONGS FOR POTENTIAL REMOVAL
     this.trackList.splice(0, this.trackList.length);
     this.musicSuggestions.forEach(entry => {
       this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
     });
+    // DISABLE PLAY ALL AND RESET HIGHLIGHTING
+    if (!this.counterPaused) {
+      this.playPauseVideoCounter();
+    }
+    this.playAll = false;
+    this.autoplay = false;
+    this.changeActiveVideo(0, null);
   }
 
   private updateTrackExport() {

@@ -1,4 +1,6 @@
-<div [ngClass]="levelStyling">
+<div [ngClass]="{'dialog info': level === dialogLevel.Info,
+                 'dialog warning':  level === dialogLevel.Warning,
+                 'dialog error' : level === dialogLevel.Error}">
   <h1 mat-dialog-title>{{data.headline}}</h1>
   <div mat-dialog-content>
     <p [class.manual-line-break]="data.message.indexOf('\n') !== -1">{{data.message}}</p>

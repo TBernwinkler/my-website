@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {DialogData} from '../../models/dialog-data';
-import {DialogLevel} from '../../models/dialog-level';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {DialogData, DialogLevel} from '../../models';
 
 @Component({
   selector: 'app-dialog',
@@ -10,30 +9,21 @@ import {DialogLevel} from '../../models/dialog-level';
 })
 export class DialogComponent implements OnInit {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  constructor(public dialogRef: MatDialogRef<DialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
-  levelStyling: string;
+  public level: DialogLevel = DialogLevel.Error;
+
   styleInfo = 'dialog info';
   styleWarn = 'dialog warning';
   styleError = 'dialog error';
 
   ngOnInit() {
-    switch (this.data.level) {
-      case DialogLevel.Info:
-        this.levelStyling = this.styleInfo;
-        break;
-      case DialogLevel.Warning:
-        this.levelStyling = this.styleWarn;
-        break;
-      case DialogLevel.Error:
-        this.levelStyling = this.styleError;
-        break;
-      default:
-        this.levelStyling = this.styleError;
-        break;
-    }
+    this.level = this.data.level;
+  }
+
+  public get dialogLevel(): typeof DialogLevel {
+    return DialogLevel;
   }
 
 }

@@ -78,6 +78,10 @@
       .track {
         color: $blue;
       }
+
+      .entry-left .icon {
+        color: $blue; // different color on active selection
+      }
     }
 
     .flex-expand {
