@@ -38,9 +38,15 @@ export class VideoProvider {
     {artist: 'A Day To Remember', track: 'All I Want', youtube: 'Pn-6eOxnEMI', duration: 215},
     {artist: 'Killswitch Engange', track: 'In Due Time', youtube: 'HANCzu70us4?start=8', duration: 218},
     {artist: 'The Offspring', track: 'You\'re Gonna Go Far, Kid', youtube: 'ql9-82oV2JE?start=18', duration: 175},
-    {artist: 'The Bloodhound Gang', track: 'The Bad Touch', youtube: 'xat1GVnl8-k', duration: 244},
     {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 196},
-    {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210}
+    {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210},
+    {artist: 'Good Charlotte', track: 'The Anthem', youtube: 'desJKYvdq9A', duration: 173},
+    {artist: 'Godsmack', track: 'When Legends Rise', youtube: 'J9jKQulDRCQ', duration: 173},
+    {artist: 'Halestorm', track: 'I Miss The Misery', youtube: 'YpJAmlnBxoA', duration: 192},
+    {artist: 'Paramore', track: 'Ignorance', youtube: 'I_56FINrt04', duration: 220},
+    {artist: 'The Pretty Reckless', track: 'Make Me Wanna Die', youtube: 'txBfhpm1jI0', duration: 232},
+    {artist: 'Korpiklaani', track: 'A Man With A Plan', youtube: 'bc0sJvtKrRM', duration: 178},
+    {artist: 'Avenged Sevenfold', track: 'Hail To The King', youtube: 'DelhLppPSxY', duration: 305}
   ];
 
   private static mainstreamSuggestions: Array<Video> = [
@@ -77,35 +83,47 @@ export class VideoProvider {
     {artist: 'Survivor', track: 'Eye Of The Tiger', youtube: 'btPJPFnesV4', duration: 243},
     {artist: 'Avril Lavigne', track: 'Sk8ter Boy', youtube: 'TIy3n2b7V9k?start=7', duration: 213},
     {artist: 'Avicii', track: 'Wake Me Up', youtube: 'IcrbM1l_BoI', duration: 272},
-    {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 212},
+    {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 207},
     {artist: 'Captain Jack', track: 'Captain Jack', youtube: 'QVlGeYrnTHQ', duration: 248}
   ];
 
   private static electroSuggetsions: Array<Video> = [
-    {artist: 'Ma.Bra.', track: 'Whenever, Wherever', youtube: '99-_2fWwOuw', duration: 204},
+    {artist: 'Ma.Bra.', track: 'Whenever, Wherever', youtube: '99-_2fWwOuw', duration: 174},
     {artist: 'Jan Wayne', track: 'Bring Me To Life', youtube: 'Z8YR2Uf2sK0', duration: 210},
-    {artist: 'Rob Mayth', track: 'Heart To Heart', youtube: 'U_YC0_7iS48', duration: 201},
+    {artist: 'Rob Mayth', track: 'Herz an Herz', youtube: '7OuUhvrG3O0', duration: 239},
     {artist: 'Timmy Trumpet', track: 'Freaks', youtube: 'ofmzX1nI7SE', duration: 173},
     {artist: 'Da Tweekaz', track: 'Jägermeister', youtube: 'AGDolE35XHA', duration: 214},
-    {artist: 'Rebourne', track: 'What Is Love', youtube: 'LMV6NDEQd0Q', duration: 180},
     {artist: 'Alex \'M. vs. Marc van Damme', track: 'Children Of The Night', youtube: 'iTElyjj3TVQ', duration: 211},
     {artist: 'FTU pres. CREAM', track: 'You Came', youtube: 'RB8tI5n2GJs', duration: 186},
     {artist: 'DJ Gollum feat. Scarlet', track: 'All The Things She Said', youtube: 'WLD8yAhoQDA?start=40', duration: 282},
     {artist: 'Gigi D\'Agostino', track: 'The Riddle', youtube: 'KR92DOYS-_Y?start=5', duration: 149},
     {artist: 'Jeany Kiss & Sunray feat Gemma B.', track: 'My Heart Beats Like A Drum', youtube: 'CrUUE8QCOHk?start=50', duration: 230},
     {artist: 'Megastylez vs. DJ Restlezz feat. Euphorizon', track: 'Our Revolution', youtube: 'AetLRG98M-U', duration: 230},
-    {artist: 'Alan Walker, K-391, Tungevaag, Mangoo', track: 'Play', youtube: 'YQRHrco73g4', duration: 193},
+    {artist: 'Da Tweekaz', track: 'Game of Thrones', youtube: 'DQlYoREuGLQ', duration: 240},
+    {artist: 'Alan Walker, K-391, Tungevaag, Mangoo', track: 'Play', youtube: 'YQRHrco73g4', duration: 170},
     {artist: 'Crapman', track: 'Uh La La La', youtube: 'SqeOjAUdIxQ', duration: 175},
     {artist: 'Harris & Ford vs. Gordon & Doyle feat. Lisah', track: 'Das Geht Boom', youtube: 'U-H1SgBYJ1Y', duration: 210},
     {artist: 'Darude', track: 'Sandstorm', youtube: 'y6120QOlsfU', duration: 223},
     {artist: 'Empyre One', track: 'Angeline', youtube: 'FJReeFn9swY', duration: 181},
-    {artist: 'Special D', track: 'Come With Me', youtube: 'HJEoNtN7j04?start=11', duration: 143},
+    {artist: 'Special D', track: 'Come With Me', youtube: 'HJEoNtN7j04?start=11', duration: 147},
     {artist: 'Scooter', track: 'Nessaja', youtube: 'wquCCFvbNhI', duration: 210},
     {artist: 'Italobrothers', track: 'This Is Nightlife', youtube: 'sYcUv68nFUw?start=5', duration: 160},
-    {artist: 'Crystal Lake', track: 'Handzup Motherfuckers', youtube: 'YXI4GVtVPyU', duration: 163}
+    {artist: 'Crystal Lake', track: 'Handzup Motherfuckers', youtube: 'YXI4GVtVPyU', duration: 163},
+    {artist: 'Da Tweekaz ft. David Spekter', track: 'Circle Of Life', youtube: '5OLbC4fkjTE', duration: 344},
+    {artist: 'Dj Gollum feat. Akustikrausch', track: 'Benzin im Blut', youtube: 'dp35BFDL6gA', duration: 270},
+    {artist: 'Showtek', track: 'FTS', youtube: 'zOIWGT3oIs4?start=60', duration: 221},
+    {artist: 'DJ Gollum & DJ Cap', track: 'Shining Star', youtube: 'e2Hk7hMzXMs', duration: 232},
+    {artist: 'Alex M vs Marc van Damme feat Jorg Schmid', track: 'Died In Your Arms', youtube: 'rrFcJeR0zG0?start=45', duration: 300},
+    {artist: 'DualXess ft. PeachTree', track: 'Bis es kracht', youtube: 'ssupIBHG30c', duration: 201}
   ];
 
-  private static genres: Array<string> = [ 'Hard \'n Heavy', 'Mainstream & Party', 'Electronic & Techno'];
+  private static albumSuggestions: Array<Video> = [
+    {artist: 'Linkin Park', track: 'Meteora', youtube: 'pV_76Nc1Ue8', duration: 2197},
+    {artist: 'Five Finger Death Punch', track: 'American Capitalist', youtube: 'KLSA1N7qVIs', duration: 2413},
+    {artist: 'In Flames', track: 'I, The Mask', youtube: 'XQTr9UhU6_A', duration: 3300}
+  ];
+
+  private static genres: Array<string> = [ 'Rock & Metal', 'Mainstream & Party', 'Electronic & Techno', 'Albums'];
 
   constructor() {
   }
@@ -122,6 +140,8 @@ export class VideoProvider {
         return this.mainstreamSuggestions;
       case this.genres[2]:
         return this.electroSuggetsions;
+      case this.genres[3]:
+        return this.albumSuggestions;
       default:
         return this.musicSuggestions;
     }
