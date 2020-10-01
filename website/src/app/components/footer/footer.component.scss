@@ -1,7 +1,7 @@
 @import "../common.scss";
 
 footer {
-  background: $blue;
+  background: var(--blue);
   padding: 0.5rem 1rem;
   color: #f2f2f2;
 
@@ -21,7 +21,7 @@ footer {
     align-items: center;
     justify-content: center;
 
-    @media screen and (max-width: 576px) {
+    @include sm {
       .date {
         padding-left: 0;
       }
@@ -31,7 +31,7 @@ footer {
 
   .links {
     a {
-      color: #f2f2f2;
+      color: var(--white);
       display: block;
       padding: 14px 16px;
       text-decoration: none;
@@ -39,8 +39,8 @@ footer {
     }
 
     a:hover {
-      background: #f2f2f2;
-      color: $blue;
+      background: var(--white);
+      color: var(--blue);
     }
 
 

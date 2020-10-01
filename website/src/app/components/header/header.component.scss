@@ -1,14 +1,14 @@
 @import "../common.scss";
 
 header {
-  background: $blue;
+  background: var(--blue);
   padding: 1rem;
   text-transform: uppercase;
   min-height: 50px;
 
   a {
     display: block;
-    color: $white;
+    color: var(--white);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -44,9 +44,9 @@ header {
   /* Style the dropdown content (hidden by default) */
   .dropdownContent {
     position: absolute;
-    background-color: $blue;
+    background-color: var(--blue);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
   }
 
@@ -60,11 +60,22 @@ header {
   }
 
   .navbar a:hover, .dropdownContent a:hover {
-    background-color: $white;
-    color: $blue;
+    background-color: var(--white);
+    color: var(--blue);
   }
 
+  .active {
+    text-decoration: underline;
+    text-underline: aliceblue;
+    font-weight: bold;
+  }
 
+  .link-text {
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+
+  /* todo: check why 1300px and what part of the header is affected*/
   @media screen and (max-width: 1300px) {
     .navbar {
       position: relative;
@@ -82,7 +93,6 @@ header {
 
 
     .navbar.show {
-
       a {
         position: relative;
         //display: flex;
@@ -96,16 +106,4 @@ header {
 
   }
 
-  /* ######################################### */
-
-  .active {
-    text-decoration: underline;
-    text-underline: aliceblue;
-    font-weight: bold;
-  }
-
-  .link-text {
-    padding-left: 10px;
-    padding-right: 15px;
-  }
 }

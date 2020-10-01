@@ -6,26 +6,26 @@
   }
 
   &.info {
-    color: $blue;
+    color: var(--blue);
 
     h1 {
-      color: $blue;
+      color: var(--blue);
     }
   }
 
   &.warning {
-    color: #FFC107;
+    color: var(--warning);
 
     h1 {
-      color: #FFC107;
+      color: var(--warning);
     }
   }
 
   &.error {
-    color: #D84315;
+    color: var(--error);
 
     h1 {
-      color: #D84315;
+      color: var(--error);
     }
   }
 

@@ -27,19 +27,19 @@
   }
 
   .blue {
-    background: $blue;
-    color: #f8f8f8;
+    background: var(--blue);
+    color: var(--light-white);
   }
 
   .light {
-    background: #f8f8f8;
-    color: $blue;
+    background: var(--light-white);
+    color: var(--blue);
   }
 
   .dark {
-    color: #666666;
+    color: var(--beast-gray);
     a {
-      color: #666666;
+      color: var(--beast-gray);
     }
   }
 
@@ -99,8 +99,7 @@
   }
 
   // NON-MOBILE ADAPTIVE STYLING
-  @media only screen and  (min-width: 768px) {
-
+  @include md {
     section {
       padding: 3rem 0;
     }
@@ -138,8 +137,8 @@
     }
 
     .card {
-      background: #f8f8f8;
-      color: $blue;
+      background: var(--light-white);
+      color: var(--blue);
       min-height: 500px;
 
       .card-title {

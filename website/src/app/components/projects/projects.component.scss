@@ -1,7 +1,7 @@
 @import "../common.scss";
 .projects {
   h1 {
-    color: $blue;
+    color: var(--blue);
     font-weight: bolder;
     text-align: center;
   }
@@ -28,7 +28,7 @@
 
   .info {
     order: 2;
-    color: $white;
+    color: var(--white);
 
     h2 {
       margin: 0;
@@ -41,11 +41,11 @@
     }
 
     .blue-section {
-      background: $blue;
+      background: var(--blue);
     }
 
     .gray-section {
-      background: #666666;
+      background: var(--beast-gray);
     }
 
     .blue-section, .gray-section {
@@ -110,7 +110,7 @@
     }
 
     a {
-      color: $white;
+      color: var(--white);
       text-decoration: none;
 
       &:hover {

@@ -4,7 +4,7 @@
 
   .interpret {
     font-weight: lighter;
-    color: #f8f8f8;
+    color: var(--light-white);
   }
 
   .track {
@@ -36,7 +36,7 @@
 
     .video-options {
       padding: 5px;
-      color: $blue;
+      color: var(--blue);
       background: #eee;
       margin-bottom: 3px;
       text-align: center;
@@ -60,7 +60,7 @@
     }
 
     .even {
-      background: $blue;
+      background: var(--blue);
     }
 
     .odd {
@@ -68,19 +68,19 @@
     }
 
     .active {
-      background: $white;
-      color: $blue;
+      background: var(--white);
+      color: var(--blue);
 
       .interpret, .icon, .move {
         color: #588bc2;
       }
 
       .track {
-        color: $blue;
+        color: var(--blue);
       }
 
       .entry-left .icon {
-        color: $blue; // different color on active selection
+        color: var(--blue); // different color on active selection
       }
     }
 
@@ -94,7 +94,7 @@
     .move {
       position: absolute;
       right: 10px;
-      color: $white;
+      color: var(--white);
     }
 
     .entry-left {
@@ -107,7 +107,7 @@
 
       .icon {
         align-self: center;
-        color: #f8f8f8;
+        color: var(--light-white);
       }
 
 
@@ -140,7 +140,7 @@
   }
 
   .blue-text{
-    color: $blue;
+    color: var(--blue);
   }
 
   .scaling {
@@ -169,9 +169,9 @@
       min-width: 190px;
       margin-bottom: 10px;
       border: none;
-      border-bottom: 2px solid $blue;
+      border-bottom: 2px solid var(--blue);
       font-size: 18px;
-      color: $blue;
+      color: var(--blue);
 
       &:focus {
         background: #fbfbfb;
@@ -194,12 +194,12 @@
     }
 
     h4 {
-      color: $blue;
+      color: var(--blue);
       text-transform: uppercase;
     }
 
     h5 {
-      color: $blue;
+      color: var(--blue);
       text-transform: uppercase;
     }
 
@@ -213,9 +213,9 @@
       min-width: 25px !important;
       width: 33.33%;
       padding: 5px;
-      background-color: $white;
+      background-color: var(--white);
       opacity: 1;
-      color: $blue;
+      color: var(--blue);
       font-weight: 700;
     }
 
@@ -224,16 +224,16 @@
       min-width: 25px !important;
       width: 33.3%;
       padding: 5px;
-      background-color: $blue;
-      color: $white;
+      background-color: var(--blue);
+      color: var(--white);
       font-weight: 700;
     }
   }
 
   .tab-content {
-    background: $blue;
+    background: var(--blue);
     padding: 15px 50px;
-    color: $white;
+    color: var(--white);
     border-radius: 4px;
   }
 
@@ -304,7 +304,7 @@
   .cdk-drag-preview {
     box-sizing: border-box;
     background: rgba(33, 150, 243, 0.54); // color of material toggles, mat-blue
-    color: $white;
+    color: var(--white);
     padding-left: 45px;
     border-radius: 4px;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),

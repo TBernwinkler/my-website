@@ -16,7 +16,10 @@
   </mat-tab>
   <mat-tab label="{{'importExport.tab3.label' | translate}}">
       <h5 translate>importExport.tab3.headline</h5>
-      <label translate>music.addVideo.videoId</label>
+      <!-- TODO: Add a select box to potentially override existing lists (e.g. override existing list, add new list -->
+      <!-- TODO: Add either a select box or a text field to choose a title for the custom list -->
+      <!-- TODO: Add proper translation for form element labels -->
+      <label translate>Genre / Titel</label>
       <input [(ngModel)]="importName" name="importName" type="text" required="required">
       <textarea [(ngModel)]="importString"></textarea>
     <button type="button" (click)="importTracks()">

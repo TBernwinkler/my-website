@@ -16,7 +16,7 @@
     cursor: pointer;
 
     &:hover {
-      color: $blue;
+      color: var(--blue);
       text-decoration: underline;
     }
   }

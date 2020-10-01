@@ -1,19 +1,63 @@
-// breakpoints
-// min-width: 576px
-// min-width: 768px
-// min-width: 992px
-// min-width: 1200px
+/* GENERAL STYLES */
 
-body, html {
+/* CSS VARIABLES */
+:root {
+  /* COLORS */
+  --blue: #2C5F96;
+  --white: #f2f2f2;
+  --light-white: #f8f8f8;
+  --beast-gray: #666666;
+
+  --warning: FFC107;
+  --error: D84315;
+}
+
+/* SCSS VARIABLES */
+/* BREAKPOINTS */
+$screen-small: 576px;
+$screen-medium: 768px;
+$screen-large: 992px;
+$screen-xl: 1200px;
+
+/* BREAKPOINT MIXINS */
+// MOBILE
+@mixin sm {
+  @media (min-width: #{$screen-small}) {
+    @content;
+  }
+}
+
+// TABLET
+@mixin md {
+  @media (min-width: #{$screen-medium}) {
+    @content;
+  }
+}
+
+// LAPTOP
+@mixin lg {
+  @media (min-width: #{$screen-large}) {
+    @content;
+  }
+}
+
+// DESKTOP
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+html, body {
   margin: 0;
   background: #eaeaea;
   scroll-behavior: smooth;
+  height: 100%;
 
-  @media only screen and (min-width: 992px) {
+  @include lg {
     .container {
-      padding: 0 15%; //top+bottom right+left
+      padding: 0 15%;
     }
-
   }
 }
 
@@ -21,8 +65,9 @@ body {
   // styling option: open-sans
   // https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans
   // https://stackoverflow.com/questions/49878988/how-to-import-a-new-font-into-a-project-angular-5
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;;
   font-size: 17px;
+  margin: 0;
 }
 
 a {
@@ -55,6 +100,3 @@ a {
   color: crimson;
   font-style: italic;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
