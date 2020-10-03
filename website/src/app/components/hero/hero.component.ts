@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IconProp} from '@fortawesome/fontawesome-svg-core';
 import {NameIconPair} from '../../models/nameIconPair';
 import {Renditions} from '../../models/renditions';
 
