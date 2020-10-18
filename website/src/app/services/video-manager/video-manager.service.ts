@@ -9,8 +9,8 @@ export class VideoManagerService {
 
   constructor() { }
 
-  private activeVideoList: Array<Video>;
-  private availableVideoLists: Array<{genre: string, videos: Array<Video>}>
+  private activeVideoList: Array<Video> = [];
+  private availableVideoLists: Array<{genre: string, videos: Array<Video>}> = [];
 
   /**
    * This method initializes the service in case, it has not been used yet.
@@ -20,10 +20,11 @@ export class VideoManagerService {
    * @private
    */
   private initialize(): void {
-    if (this.availableVideoLists instanceof Array && this.availableVideoLists.length === 0) {
+    if (!(this.availableVideoLists instanceof Array) || this.availableVideoLists.length === 0) {
       const genres: string[] = VideoProvider.getGenres();
       for (const genre of genres) {
-        this.availableVideoLists.push({genre, videos: VideoProvider.provideGenreTracks(genre)})
+        const videos = VideoProvider.provideGenreTracks(genre);
+        this.availableVideoLists.push({genre, videos});
       }
       this.activeVideoList = VideoProvider.provideGenreTracks('default');
     }
@@ -34,10 +35,22 @@ export class VideoManagerService {
    * In case, genres are not available yet, initialization is triggered and necessary data is loaded
    */
   public getActiveVideoList(): Array<Video> {
-    if (this.activeVideoList instanceof Array && this.activeVideoList.length === 0) {
-      this.initialize();
-    }
+    this.initialize(); // relevant conditions are checked in initialize
     return this.activeVideoList;
+  }
+
+  /**
+   * This video provides the latest list of available genres. This inlcudes
+   * - hard coded default genres
+   * - overridden genres
+   * - additionally added genres
+   * All changes are lost on page reload
+   */
+  public getGenres(): Array<string> {
+    this.initialize(); // relevant conditions are checked in initialize
+    const genres = [];
+    this.availableVideoLists.forEach(entry => genres.push(entry.genre));
+    return genres;
   }
 
   /**
@@ -47,8 +60,11 @@ export class VideoManagerService {
    * @param genre The genre, i.e. video list to switch to
    */
   public changeActiveGenre(genre: string): Array<Video> {
-    if (!genre) {
-      this.activeVideoList = [];
+    if (genre) {
+      const idx = this.availableVideoLists.findIndex(entry => entry.genre === genre);
+      if (idx >= 0) {
+        this.activeVideoList = this.availableVideoLists[idx].videos;
+      }
     }
     return this.activeVideoList;
   }
