@@ -1,9 +1,9 @@
 <div [ngClass]="{'dialog info': level === dialogLevel.Info,
                  'dialog warning':  level === dialogLevel.Warning,
                  'dialog error' : level === dialogLevel.Error}">
-  <h1 mat-dialog-title>{{data.headline}}</h1>
+  <h1 class="headline" mat-dialog-title>{{data.headline | translate}}</h1>
   <div mat-dialog-content>
-    <p [class.manual-line-break]="data.message.indexOf('\n') !== -1">{{data.message}}</p>
+    <p class="dialog-content" [class.manual-line-break]="data.message.indexOf('\n') !== -1">{{data.message | translate}}</p>
   </div>
   <div mat-dialog-actions>
     <button mat-button [mat-dialog-close] cdkFocusInitial>OK</button>

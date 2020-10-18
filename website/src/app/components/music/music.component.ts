@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {
-  faArrowsAlt, faBook,
+  faArrowsAlt,
+  faBook,
   faMinus,
   faMusic,
   faPauseCircle,
@@ -10,14 +11,11 @@ import {
   faStepForward,
   faVolumeUp
 } from '@fortawesome/free-solid-svg-icons';
-import {DialogLevel, Video} from '../../models';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {DialogService} from '../../services/dialog/dialog.service';
-import {ImportExportComponent} from '../import-export/import-export.component';
-import {VideoProvider} from '../../models/video-provider';
-import {NameIconPair} from '../../models/nameIconPair';
-import {Renditions} from '../../models/renditions';
+import {DialogService} from '@app/services/dialog/dialog.service';
+import {ImportExportComponent} from '@app/components/sub-components';
+import {DialogLevel, NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
 
 
 @Component({
@@ -108,6 +106,7 @@ export class MusicComponent implements OnInit {
     el.scrollIntoView();
   }
 
+  // todo: consider a music player component and a add video component, both using the service instead of the music.component
   handleToggle(toggle: MatSlideToggleChange, id: string) {
     if (id === 'autoplay') {
       if (!this.autoplay) {
@@ -330,6 +329,7 @@ export class MusicComponent implements OnInit {
   }
 
   updateOnImport(musicSuggestions) {
+    // todo: rework this according to documentation
     this.musicSuggestions = musicSuggestions;
     // UPDATE LIST OF SONGS FOR POTENTIAL REMOVAL
     this.trackList.splice(0, this.trackList.length);

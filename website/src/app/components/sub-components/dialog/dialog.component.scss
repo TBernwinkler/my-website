@@ -1,8 +1,23 @@
-@import "../common.scss";
+@import "../../common";
 
 .dialog {
+
+  .headline {
+    border-bottom: 1px solid;
+    text-align: center;
+    margin: 0;
+  }
+
+  .dialog-content {
+    text-align: justify;
+  }
+
   .manual-line-break {
     white-space: pre
+  }
+
+  .mat-dialog-actions {
+    flex-direction: column;
   }
 
   &.info {

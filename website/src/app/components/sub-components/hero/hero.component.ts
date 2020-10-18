@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NameIconPair} from '../../models/nameIconPair';
-import {Renditions} from '../../models/renditions';
+import {NameIconPair} from '../../../models/nameIconPair';
+import {Renditions} from '../../../models/renditions';
 
 @Component({
   selector: 'app-hero',

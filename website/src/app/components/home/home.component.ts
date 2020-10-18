@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {faHeart, faArrowCircleUp, faMusic, faLaptopCode, faStar} from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faArrowCircleUp, faHeart, faLaptopCode, faMusic, faStar} from '@fortawesome/free-solid-svg-icons';
 import {faStar as faStarEmpty} from '@fortawesome/free-regular-svg-icons';
 import {ActivatedRoute, Router} from '@angular/router';
-import {NameIconPair} from '../../models/nameIconPair';
-import {Renditions} from '../../models/renditions';
+import {NameIconPair, Renditions} from '@app/models';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NameIconPair} from '../../models/nameIconPair';
-import {Renditions} from '../../models/renditions';
+import {Component, OnInit} from '@angular/core';
+import {NameIconPair, Renditions} from '@app/models';
 import {HttpClient} from '@angular/common/http';
 
 @Component({

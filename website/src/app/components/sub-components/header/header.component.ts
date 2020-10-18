@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { AppComponent } from '@app/app.component';
 import { faHome, faMusic, faProjectDiagram, faAddressBook, faBars, faLanguage, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
     // This also includes software projects and music (i.e. song recommendations)."
   }
 
-
+  // todo: consider introducing an active-page.service.ts
   selectPage(name) {
     this.isHome = (name === 'home');
     this.isMusic = (name === 'music');

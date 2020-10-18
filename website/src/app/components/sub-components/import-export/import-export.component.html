@@ -1,0 +1,77 @@
+<div class="import-export">
+  <mat-tab-group (selectedTabChange)="handleTabChange($event)">
+    <mat-tab label="{{'importExport.tab1.label' | translate}}">
+      <p class="tab-content">
+        {{'importExport.tab1.paragraph' | translate}}
+      </p>
+    </mat-tab>
+    <mat-tab class="tab-content" label="{{'importExport.tab2.label' | translate}}">
+      <h5 translate>importExport.tab2.headline</h5>
+      <mat-form-field class="full-width" color="accent">
+        <mat-label>{{'importExport.tab2.selectLabel' | translate}}</mat-label>
+        <mat-select (selectionChange)="changeTrackList($event)">
+          <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab label="{{'importExport.tab3.label' | translate}}">
+      <div class="tab-form">
+        <h5 translate>importExport.tab3.headline1</h5>
+        <mat-form-field class="full-width" color="accent">
+          <mat-label>{{'importExport.tab3.importSelect1' | translate}}</mat-label>
+          <mat-select [(ngModel)]="selectedImportOption" (selectionChange)="checkImportSelection()">
+            <mat-option *ngFor="let importOption of importOptions" [value]="importOption">
+              {{importOption | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="sub-selection--top" *ngIf="selectedImportOption === importOption1">
+          <mat-label>{{'importExport.tab3.importSelect2' | translate}}</mat-label>
+          <mat-form-field class="full-width" color="accent">
+            <mat-select [(ngModel)]="selectedGenre" (selectionChange)="checkImportSelection()">
+              <mat-option *ngFor="let genre of genres" [value]="genre">
+                {{genre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="sub-selection--top" *ngIf="selectedImportOption === importOption2">
+          <label>{{'importExport.tab3.importListLabel' | translate}}</label>
+          <input [(ngModel)]="importName" name="importName" type="text" required="required" minlength="4"
+                 (input)="checkImportSelection()" placeholder="{{'importExport.tab3.importListPlaceholder' | translate}}">
+        </div>
+        <div class="sub-selection--bottom" *ngIf="!missingRequirement">
+          <h5 translate>importExport.tab3.headline2</h5>
+          <textarea [(ngModel)]="importString"></textarea>
+          <button type="button" (click)="importTracks()">
+            {{'importExport.tab3.buttonLabel' | translate}}
+            <fa-icon class="spaced-around" [icon]="faUpload" size="lg"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab class="tab-content" label="{{'importExport.tab4.label' | translate}}">
+      <h5 translate>importExport.tab4.headline</h5>
+      <p class="double">
+        <app-checkbox
+          [boxChecked]="exportPreview"
+          [labelText]="'importExport.tab4.checkboxLabel' | translate"
+          (boxChanged)="updatePreviewSelection($event)">
+        </app-checkbox>
+      </p>
+
+      <div *ngIf="exportPreview">
+        <h5 translate>importExport.tab4.previewHeadline</h5>
+        <textarea #preview [(ngModel)]="exportString"></textarea>
+
+        <p class="link" (click)="copyToClipboard(preview)">
+          {{'importExport.tab4.previewDescription' | translate}}
+          <fa-icon class="spaced-around" [icon]="faClipboard" size="lg"></fa-icon>
+        </p>
+      </div>
+      <button type="button" (click)="exportTracks()">{{'importExport.tab4.buttonLabel' | translate}}
+        <fa-icon class="spaced-around" [icon]="faDownload" size="lg"></fa-icon>
+      </button>
+    </mat-tab>
+  </mat-tab-group>
+</div>

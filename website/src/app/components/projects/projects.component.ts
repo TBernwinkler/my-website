@@ -13,12 +13,8 @@ import {
   faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
-import {Project} from '../../models/project';
-import {ProjectProvider} from '../../models/project-provider';
-import {ProjectStatus} from '../../models/project-status';
+import {NameIconPair, Project, ProjectProvider, ProjectStatus, Renditions} from '@app/models';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
-import {NameIconPair} from '../../models/nameIconPair';
-import {Renditions} from '../../models/renditions';
 
 @Component({
   selector: 'app-projects',
@@ -42,7 +38,7 @@ export class ProjectsComponent implements OnInit {
   // PROJECT DATA
   statusList: Array<{icon: IconProp, class: string, status: ProjectStatus}>;
   data: Array<Project>;
-  // hero component
+  // HERO COMPONENT
   headline: Array<NameIconPair> = [
     {name: 'projects.hero.headline', icon: null}
   ];

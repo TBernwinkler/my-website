@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {faLaughBeam, faPaw, faTired, faUserAstronaut} from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faTired} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-not-found',

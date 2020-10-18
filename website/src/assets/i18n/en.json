@@ -146,8 +146,22 @@
     },
     "tab3": {
       "label": "Import",
-      "headline": "Import by copying JSON into the textarea",
-      "buttonLabel": "Import"
+      "headline1": "Replace or create a new list",
+      "headline2": "Import videos by copying valid JSON into the textarea (as provided by an exported file)",
+      "importSelect1": "Import Options",
+      "importSelect1Option1": "Override Existing List",
+      "importSelect1Option2": "Create New List",
+      "importSelect2": "Pick a list to replace",
+      "importListLabel": "Custom Video List Name",
+      "importListPlaceholder": "My List",
+      "buttonLabel": "Import",
+      "import": {
+        "importErrorHeadline": "Import Error",
+        "missingCategoryName": "Missing input category name! Please enter a name for the genre/category you are about to import",
+        "missingImportContent": "Empty input string! Please enter your tracks prior to clicking the import button",
+        "emptyImportList": "Could not find any videos to import",
+        "invalidFormat": "The tracks provided are not in correct JSON format"
+      }
     },
     "tab4": {
       "label": "Export",

@@ -128,11 +128,11 @@ export class VideoProvider {
   constructor() {
   }
 
-  static provideTracks() {
+  public static provideTracks() {
     return this.musicSuggestions;
   }
 
-  static provideGenreTracks(genre: string) {
+  public static provideGenreTracks(genre: string) {
     switch (genre) {
       case this.genres[0]:
         return this.musicSuggestions;
@@ -147,7 +147,7 @@ export class VideoProvider {
     }
   }
 
-  static getGenres() {
+  public static getGenres() {
     return this.genres;
   }
 

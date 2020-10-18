@@ -146,8 +146,22 @@
     },
     "tab3": {
       "label": "Import",
-      "headline": "Der Import erfolgt über das Kopieren des Inhalts der exportierten Datei in das Textfeld",
-      "buttonLabel": "Importieren"
+      "headline1": "Liste ersetzen oder neue erstellen",
+      "headline2": "Kopiere die zu importierenden Videos im JSON Format in das Textfeld (z.B. Inhalt einer exportierten Datei)",
+      "importSelect1": "Import Optionen",
+      "importSelect1Option1": "Bestehende Liste überschreiben",
+      "importSelect1Option2": "Neue Liste erstellen",
+      "importSelect2": "Wähle die zu ersetzende Liste",
+      "importListLabel": "Name der neuen Liste",
+      "importListPlaceholder": "Meine Liste",
+      "buttonLabel": "Importieren",
+      "import": {
+        "importErrorHeadline": "Import Fehler",
+        "missingCategoryName": "Der Name der Kategorie fehlt! Bitte gib einen Namen für das Genre/die Kategorie für den Import an",
+        "missingImportContent": "Es konnte kein zu importierender Inhalt gefunden werden! Bitte gib die Videos im Textfeld vor dem Importieren an",
+        "emptyImportList": "Es konnten keine zu importierenden Videos gefunden werden",
+        "invalidFormat": "Die angegebenen Videos sind nicht richtig formatiert. Bitte gib alles im JSON Format an"
+      }
     },
     "tab4": {
       "Label": "Export",
