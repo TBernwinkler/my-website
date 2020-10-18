@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {DialogService} from '@app/services/dialog/dialog.service';
+import {DialogService} from '@app/services';
 import {ImportExportComponent} from '@app/components/sub-components';
 import {DialogLevel, NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
 

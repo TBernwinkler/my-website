@@ -2,10 +2,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DialogLevel, Video} from '@app/models';
 import {saveAs} from 'file-saver';
 import {faClipboard, faDownload, faUpload} from '@fortawesome/free-solid-svg-icons';
-import {DialogService} from '@app/services/dialog/dialog.service';
+import {DialogService, VideoManagerService} from '@app/services';
 import {MatTabChangeEvent} from '@angular/material/tabs';
 import {MatSelectChange} from '@angular/material/select';
-import {VideoManagerService} from '@app/services/video-manager/video-manager.service';
 
 @Component({
   selector: 'app-import-export',
