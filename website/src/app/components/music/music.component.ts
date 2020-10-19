@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {
   faArrowsAlt,
   faBook,
@@ -13,9 +13,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {DialogService} from '@app/services';
+import {DialogService, VideoManagerService} from '@app/services';
 import {ImportExportComponent} from '@app/components/sub-components';
 import {DialogLevel, NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
+import {Subscription} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -24,7 +26,7 @@ import {DialogLevel, NameIconPair, Renditions, Video, VideoProvider} from '@app/
   styleUrls: ['./music.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class MusicComponent implements OnInit {
+export class MusicComponent implements OnInit, OnDestroy {
 
   private addVideoErrorDialogHeadline = 'Could not add video'; // translate
   @ViewChild('videoPlayback', {static: false}) videoPlayback: ElementRef<HTMLElement>;
@@ -47,7 +49,7 @@ export class MusicComponent implements OnInit {
   inputTrack = '';
   inputDurationMin = 0;
   inputDurationSec = 90;
-  musicSuggestions: Array<Video> = VideoProvider.provideTracks();
+  musicSuggestions: Array<Video>;
   trackList: Array<{name: string, value: string}> = [];
   selectedTracks: Array<string> = [];
   // ICONS
@@ -77,19 +79,52 @@ export class MusicComponent implements OnInit {
     extraLarge: 'music/audio.jpg'
   };
   imageSource = 'https://www.pexels.com/@snapwire';
+  private subscriptions: Array<Subscription> = [];
 
-  constructor(private dialogService: DialogService) { }
+  constructor(private route: ActivatedRoute, private dialogService: DialogService, private videoManagerService: VideoManagerService) { }
 
+  /**
+   * Initialization of the component
+   * - Makes sure to receive all updates of the video manager service to provide up to date videos
+   * - Sets the initial video list
+   */
   ngOnInit() {
+    this.subscriptions.push(this.videoManagerService.getListChangeEmitter()
+      .subscribe(suggestions => this.updateMusicSuggestions(suggestions)));
+    this.subscriptions.push(this.route.queryParams.subscribe(params => {
+      const genreIds: Array<string> = ['rock', 'mainstream', 'techno', 'albums'];
+      const genre = params?.genre;
+      if (genre && genreIds.indexOf(genre) >= 0) {
+        const genres = this.videoManagerService.getGenres();
+        this.videoManagerService.changeActiveGenre(genres[genreIds.indexOf(genre)]);
+      }
+    }));
+    this.musicSuggestions = this.videoManagerService.getActiveVideoList();
     this.activeVideo = this.musicSuggestions[0];
 
+    // this can be removed in future once the rework is finished
     this.musicSuggestions.forEach(entry => {
       this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
     });
     this.updateTrackExport();
   }
 
+  /**
+   * Destructor takes care of all subscriptions to avoid memory leaks
+   */
+  ngOnDestroy() {
+    this.subscriptions.forEach(item => item.unsubscribe());
+  }
+
   // GENERAL PART
+  /**
+   * Loads the current video list every time, it has been changed in the video manager service
+   * @param suggestions The updated list of videos to display
+   */
+  public updateMusicSuggestions(suggestions: Array<Video>): void {
+    this.musicSuggestions = suggestions;
+  }
+
   isMobile(): boolean {
     return window.innerWidth < this.switchWidth;
   }

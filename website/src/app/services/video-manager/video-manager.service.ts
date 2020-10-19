@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Video} from '@app/models';
 import {VideoProvider} from '@app/models/video-provider';
 
@@ -9,8 +9,16 @@ export class VideoManagerService {
 
   constructor() { }
 
+  public activeListChange: EventEmitter<Array<Video>> = new EventEmitter();
   private activeVideoList: Array<Video> = [];
   private availableVideoLists: Array<{genre: string, videos: Array<Video>}> = [];
+
+  /**
+   * Returns the event emitter to make it possible to subscribe to it from the music component
+   */
+  public getListChangeEmitter(): EventEmitter<Array<Video>> {
+    return this.activeListChange;
+  }
 
   /**
    * This method initializes the service in case, it has not been used yet.
@@ -27,6 +35,7 @@ export class VideoManagerService {
         this.availableVideoLists.push({genre, videos});
       }
       this.activeVideoList = VideoProvider.provideGenreTracks('default');
+      this.activeListChange.emit(this.activeVideoList);
     }
   }
 
@@ -66,6 +75,7 @@ export class VideoManagerService {
         this.activeVideoList = this.availableVideoLists[idx].videos;
       }
     }
+    this.activeListChange.emit(this.activeVideoList);
     return this.activeVideoList;
   }
 
@@ -97,14 +107,30 @@ export class VideoManagerService {
    * @param genre The genre the video is expected to be associated with
    * @param video The video, that should be added to an existing list
    */
-  public addVideoToGenre(genre: string, video: Video): Array<Video> {
+  public addVideoToGenre(genre: string, video: Video): void {
     const idx = this.availableVideoLists.findIndex(entry => entry.genre === genre);
-    if (idx >= 0) {
+    if (idx >= 0 && this.availableVideoLists instanceof Array && this.availableVideoLists.length > idx) {
       if (video.duration > 0 && video.artist && video.track && video.youtube) {
         this.availableVideoLists[idx].videos.push(video);
       }
-      return this.availableVideoLists[idx].videos;
+      this.activeVideoList = this.availableVideoLists[idx].videos;
+    } else {
+      this.initialize();
     }
-    return this.getActiveVideoList();
+    this.activeListChange.emit(this.activeVideoList);
+  }
+
+  /**
+   * Removes an existing video from the currently active genre and returns the list of remaining videos
+   * @param videos A list of YouTube ids representing the videos to be removed from the active video list
+   */
+  public removeVideosFromGenre(videos: Array<string>): void {
+    if (videos instanceof Array && videos.length > 0) {
+      videos.forEach(del => {
+        const idx = this.activeVideoList.findIndex(entry => entry.youtube === del);
+        this.activeVideoList.splice(idx, 1);
+      });
+    }
+    this.activeListChange.emit(this.activeVideoList);
   }
 }
