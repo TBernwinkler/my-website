@@ -1,1 +1,14 @@
-<p>delete-video works!</p>
+<div class="delete-video">
+  <h4 translate>music.removeVideo.label</h4>
+  <span translate>music.removeVideo.description</span>
+  <mat-form-field class="full-width" color="accent">
+    <mat-label translate>music.removeVideo.selectLabel</mat-label>
+    <mat-select [(ngModel)]="selectedTracks" multiple>
+      <mat-option *ngFor="let track of trackList" [value]="track.value"
+                  [disabled]="isSelected(trackList.indexOf(track))">{{track.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <label>&nbsp;</label>
+  <button type="button" (click)="removeVideosFromActiveList()" translate>music.removeVideo.buttonLabel</button>
+</div>

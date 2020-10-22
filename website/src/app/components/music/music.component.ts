@@ -43,8 +43,6 @@ export class MusicComponent implements OnInit, OnDestroy {
   activeIndex = -1;
 
   musicSuggestions: Array<Video>;
-  trackList: Array<{name: string, value: string}> = [];
-  selectedTracks: Array<string> = [];
   // ICONS
   faPlayCircle = faPlayCircle;
   faPauseCircle = faPauseCircle;
@@ -99,9 +97,6 @@ export class MusicComponent implements OnInit, OnDestroy {
     this.activeVideo = this.musicSuggestions[0];
 
     // this can be removed in future once the rework is finished
-    this.musicSuggestions.forEach(entry => {
-      this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
-    });
     this.updateTrackExport();
   }
 
@@ -128,10 +123,6 @@ export class MusicComponent implements OnInit, OnDestroy {
   // #################################
   // ############ DESKTOP ############
   // #################################
-  isSelected(index: number): boolean {
-    const selection = VideoProvider.getNthTrackElement(index);
-    return !selection || index < 1 ? index === 0 : selection.classList.contains(this.classActive);
-  }
 
   scrollToElement(el: HTMLElement) {
     el.scrollIntoView();
@@ -293,28 +284,6 @@ export class MusicComponent implements OnInit, OnDestroy {
     }
   }
 
-  // EDIT MUSIC SUGGESTION LIST
-
-  handleRemoveVideosFromSuggestions() {
-    if (this.selectedTracks.length > 0) {
-      // REMOVE VIDEO TO THE LEFT
-      this.selectedTracks.forEach(entry => {
-        const idx = this.musicSuggestions.indexOf(this.musicSuggestions.find(
-          suggestion => suggestion.youtube === entry));
-        this.musicSuggestions.splice(idx, 1);
-      });
-
-      // REMOVE ITEMS FROM SELECT BOX
-      this.selectedTracks.forEach(entry => {
-        const idx = this.trackList.indexOf(this.trackList.find(
-          track => track.value === entry));
-        this.trackList.splice(idx, 1);
-      });
-      this.updateTrackExport();
-    }
-    this.selectedTracks = [];
-  }
-
   updateOnImport(musicSuggestions) {
     // todo: rework this according to documentation
     // this.musicSuggestions = musicSuggestions;
@@ -331,6 +300,12 @@ export class MusicComponent implements OnInit, OnDestroy {
     // this.autoplay = false;
     // this.changeActiveVideo(0, null);
   }
+
+  isSelected(index: number): boolean {
+    const selection = VideoProvider.getNthTrackElement(index);
+    return !selection || index < 1 ? index === 0 : selection.classList.contains(this.classActive);
+  }
+
 
   private updateTrackExport() {
     if (this.importExport) {

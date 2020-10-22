@@ -84,20 +84,7 @@
       <div class="flex-container scaling">
         <div class="flex-section">
           <app-add-video></app-add-video>
-
-          <h4 translate>music.removeVideo.label</h4>
-          <span translate>music.removeVideo.description</span>
-          <mat-form-field class="full-width" color="accent">
-            <mat-label translate>music.removeVideo.selectLabel</mat-label>
-            <mat-select [(ngModel)]="selectedTracks" multiple>
-              <mat-option *ngFor="let track of trackList" [value]="track.value"
-                          [disabled]="isSelected(trackList.indexOf(track))">{{track.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <label>&nbsp;</label>
-          <button type="button" (click)="handleRemoveVideosFromSuggestions()" translate>music.removeVideo.buttonLabel</button>
-
+          <app-delete-video></app-delete-video>
         </div>
         <div class="flex-section" #descriptions>
           <h4 translate>music.infoSection.autoplayHeadline</h4>

@@ -151,7 +151,7 @@ export class VideoProvider {
     return this.genres;
   }
 
-  static getNthTrackElement(index: number) {
+  public static getNthTrackElement(index: number) {
     return document.querySelector('#cdk-drop-list-0 > div:nth-child(' + (index + 1) + ') > div');
   }
 
