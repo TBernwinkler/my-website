@@ -19,7 +19,6 @@ import {
   FooterComponent,
   HeaderComponent,
   HeroComponent,
-  ImportExportComponent,
   TopButtonComponent
 } from '@app/components/sub-components';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -30,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
+import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,9 @@ import {MatInputModule} from '@angular/material/input';
     ImportExportComponent,
     CheckboxComponent,
     HeroComponent,
-    TopButtonComponent
+    TopButtonComponent,
+    AddVideoComponent,
+    DeleteVideoComponent
   ],
   imports: [
     BrowserModule,

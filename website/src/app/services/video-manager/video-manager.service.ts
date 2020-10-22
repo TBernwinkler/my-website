@@ -103,21 +103,15 @@ export class VideoManagerService {
   }
 
   /**
-   * Adds a new video to an existing genre and returns an existing list, that is mapped to the genre name
-   * @param genre The genre the video is expected to be associated with
+   * Adds a new video to the currently active video list
+   * This list is automatically updated in the music component due to subscription
    * @param video The video, that should be added to an existing list
    */
-  public addVideoToGenre(genre: string, video: Video): void {
-    const idx = this.availableVideoLists.findIndex(entry => entry.genre === genre);
-    if (idx >= 0 && this.availableVideoLists instanceof Array && this.availableVideoLists.length > idx) {
-      if (video.duration > 0 && video.artist && video.track && video.youtube) {
-        this.availableVideoLists[idx].videos.push(video);
-      }
-      this.activeVideoList = this.availableVideoLists[idx].videos;
-    } else {
-      this.initialize();
+  public addVideoToActiveList(video: Video): void {
+    if (video.duration > 0 && video.artist && video.track && video.youtube) {
+      this.activeVideoList.push(video);
+      this.activeListChange.emit(this.activeVideoList);
     }
-    this.activeListChange.emit(this.activeVideoList);
   }
 
   /**

@@ -13,9 +13,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {DialogService, VideoManagerService} from '@app/services';
-import {ImportExportComponent} from '@app/components/sub-components';
-import {DialogLevel, NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
+import {VideoManagerService} from '@app/services';
+import {ImportExportComponent} from '@app/components/sub-components/music';
+import {NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 
@@ -28,12 +28,9 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class MusicComponent implements OnInit, OnDestroy {
 
-  private addVideoErrorDialogHeadline = 'Could not add video'; // translate
   @ViewChild('videoPlayback', {static: false}) videoPlayback: ElementRef<HTMLElement>;
   @ViewChild('importExportComponent', {static: false}) importExport: ImportExportComponent;
   baseUrl = 'https://www.youtube-nocookie.com/embed/';
-  regularYouTubeBaseUrl = 'https://www.youtube.com/watch?v=';
-  youTubeShareBaseUrl = 'https://youtu.be/';
   classActive = 'active';
   switchWidth = 768;
   activeVideo: Video;
@@ -44,11 +41,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   interval;
   previous = 0;
   activeIndex = -1;
-  inputVideoId = '';
-  inputInterpret = '';
-  inputTrack = '';
-  inputDurationMin = 0;
-  inputDurationSec = 90;
+
   musicSuggestions: Array<Video>;
   trackList: Array<{name: string, value: string}> = [];
   selectedTracks: Array<string> = [];
@@ -81,7 +74,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   imageSource = 'https://www.pexels.com/@snapwire';
   private subscriptions: Array<Subscription> = [];
 
-  constructor(private route: ActivatedRoute, private dialogService: DialogService, private videoManagerService: VideoManagerService) { }
+  constructor(private route: ActivatedRoute, private videoManagerService: VideoManagerService) { }
 
   /**
    * Initialization of the component
@@ -89,8 +82,10 @@ export class MusicComponent implements OnInit, OnDestroy {
    * - Sets the initial video list
    */
   ngOnInit() {
+    // automatically load the video list suggestions whenever it is changed
     this.subscriptions.push(this.videoManagerService.getListChangeEmitter()
       .subscribe(suggestions => this.updateMusicSuggestions(suggestions)));
+    // automatically load the right video list based on a URL query parameter
     this.subscriptions.push(this.route.queryParams.subscribe(params => {
       const genreIds: Array<string> = ['rock', 'mainstream', 'techno', 'albums'];
       const genre = params?.genre;
@@ -99,6 +94,7 @@ export class MusicComponent implements OnInit, OnDestroy {
         this.videoManagerService.changeActiveGenre(genres[genreIds.indexOf(genre)]);
       }
     }));
+    // Initial assignment
     this.musicSuggestions = this.videoManagerService.getActiveVideoList();
     this.activeVideo = this.musicSuggestions[0];
 
@@ -141,7 +137,7 @@ export class MusicComponent implements OnInit, OnDestroy {
     el.scrollIntoView();
   }
 
-  // todo: consider a music player component and a add video component, both using the service instead of the music.component
+
   handleToggle(toggle: MatSlideToggleChange, id: string) {
     if (id === 'autoplay') {
       if (!this.autoplay) {
@@ -298,50 +294,6 @@ export class MusicComponent implements OnInit, OnDestroy {
   }
 
   // EDIT MUSIC SUGGESTION LIST
-  addNewVideo() {
-    if (this.inputVideoId && this.inputInterpret && this.inputTrack && this.inputDurationSec > 0) {
-      if (!this.inputDurationMin || this.inputDurationMin <= 0) {
-        this.inputDurationMin = 0;
-      }
-      const duration = 60 * this.inputDurationMin + this.inputDurationSec;
-      if (this.inputVideoId.startsWith(this.regularYouTubeBaseUrl)) {
-        this.inputVideoId = this.inputVideoId.replace(this.regularYouTubeBaseUrl, '');
-      }
-      if (this.inputVideoId.startsWith(this.youTubeShareBaseUrl)) {
-        this.inputVideoId = this.inputVideoId.replace(this.youTubeShareBaseUrl, '');
-        if (this.inputVideoId.indexOf('?t=') !== -1) {
-          this.inputVideoId = this.inputVideoId.replace('?t=', '?start=');
-        }
-      }
-      this.musicSuggestions.push({
-        artist: this.inputInterpret,
-        track: this.inputTrack,
-        youtube: this.inputVideoId,
-        duration
-      });
-      this.inputInterpret = '';
-      this.inputTrack = '';
-      this.inputVideoId = '';
-      this.inputDurationSec = 0;
-      this.inputDurationMin = 0;
-      this.updateTrackExport();
-    } else {
-      let dialogMessage = '';
-      if (!this.inputVideoId) {
-        dialogMessage = '- Missing video id\n';
-      }
-      if (!this.inputInterpret) {
-        dialogMessage += '- Missing interpret\n';
-      }
-      if (!this.inputTrack) {
-        dialogMessage += '- Missing track\n';
-      }
-      if (!this.inputDurationSec) {
-        dialogMessage += '- Missing video duration';
-      }
-      this.dialogService.openDialog(this.addVideoErrorDialogHeadline, dialogMessage, DialogLevel.Error);
-    }
-  }
 
   handleRemoveVideosFromSuggestions() {
     if (this.selectedTracks.length > 0) {
@@ -365,19 +317,19 @@ export class MusicComponent implements OnInit, OnDestroy {
 
   updateOnImport(musicSuggestions) {
     // todo: rework this according to documentation
-    this.musicSuggestions = musicSuggestions;
-    // UPDATE LIST OF SONGS FOR POTENTIAL REMOVAL
-    this.trackList.splice(0, this.trackList.length);
-    this.musicSuggestions.forEach(entry => {
-      this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
-    });
-    // DISABLE PLAY ALL AND RESET HIGHLIGHTING
-    if (!this.counterPaused) {
-      this.playPauseVideoCounter();
-    }
-    this.playAll = false;
-    this.autoplay = false;
-    this.changeActiveVideo(0, null);
+    // this.musicSuggestions = musicSuggestions;
+    // // UPDATE LIST OF SONGS FOR POTENTIAL REMOVAL
+    // this.trackList.splice(0, this.trackList.length);
+    // this.musicSuggestions.forEach(entry => {
+    //   this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
+    // });
+    // // DISABLE PLAY ALL AND RESET HIGHLIGHTING
+    // if (!this.counterPaused) {
+    //   this.playPauseVideoCounter();
+    // }
+    // this.playAll = false;
+    // this.autoplay = false;
+    // this.changeActiveVideo(0, null);
   }
 
   private updateTrackExport() {

@@ -1,0 +1,19 @@
+<div class="add-video">
+  <h4 translate>{{'music.addVideo.label' | translate}}</h4>
+  <form>
+    <label translate>music.addVideo.videoId</label>
+    <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
+    <label translate>music.addVideo.interpret</label>
+    <input [(ngModel)]="inputInterpret" name="inputInterpret" type="text" required="required">
+    <label translate>music.addVideo.track</label>
+    <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
+    <label translate>music.addVideo.videoDuration</label>
+    <span class="number-inputs">
+              <input [(ngModel)]="inputDurationMin" name="inputDurationMin" type="number" min="0" max="300"><span class="blue-text"> min </span>
+              <input [(ngModel)]="inputDurationSec" name="inputDurationSec" type="number" min="1" max="18000" required="required"><span class="blue-text"> sec</span>
+            </span>
+
+    <label>&nbsp;</label>
+    <button type="button" (click)="addNewVideo()" translate>music.addVideo.buttonLabel</button>
+  </form>
+</div>
