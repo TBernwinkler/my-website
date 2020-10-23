@@ -84,7 +84,11 @@ export class VideoProvider {
     {artist: 'Avril Lavigne', track: 'Sk8ter Boy', youtube: 'TIy3n2b7V9k?start=7', duration: 213},
     {artist: 'Avicii', track: 'Wake Me Up', youtube: 'IcrbM1l_BoI', duration: 272},
     {artist: 'Alan Walker', track: 'Faded', youtube: '60ItHLz5WEA', duration: 207},
-    {artist: 'Captain Jack', track: 'Captain Jack', youtube: 'QVlGeYrnTHQ', duration: 248}
+    {artist: 'Captain Jack', track: 'Captain Jack', youtube: 'QVlGeYrnTHQ', duration: 248},
+    {artist: 'Wham', track: 'Wake Me Up Before You Go-Go', youtube: 'pIgZ7gMze7A', duration: 233},
+    {artist: 'Katrina & The Waves', track: 'Walking On Sunshine', youtube: 'iPUmE-tne5U', duration: 228},
+    {artist: 'Ed Sheeran', track: 'Shape of You', youtube: 'JGwWNGJdvx8', duration: 240},
+    {artist: 'Midnight Oil', track: 'Beds Are Burning', youtube: 'ejorQVy3m8E?start=15', duration: 270}
   ];
 
   private static electroSuggetsions: Array<Video> = [
@@ -114,16 +118,24 @@ export class VideoProvider {
     {artist: 'Showtek', track: 'FTS', youtube: 'zOIWGT3oIs4?start=60', duration: 221},
     {artist: 'DJ Gollum & DJ Cap', track: 'Shining Star', youtube: 'e2Hk7hMzXMs', duration: 232},
     {artist: 'Alex M vs Marc van Damme feat Jorg Schmid', track: 'Died In Your Arms', youtube: 'rrFcJeR0zG0?start=45', duration: 300},
-    {artist: 'DualXess ft. PeachTree', track: 'Bis es kracht', youtube: 'ssupIBHG30c', duration: 201}
+    {artist: 'DualXess ft. PeachTree', track: 'Bis es kracht', youtube: 'ssupIBHG30c', duration: 201},
+    {artist: 'Topmodelz', track: 'When You\'Re Looking Like That', youtube: 'HD6eFW4YSMo?start=30', duration: 265},
+    {artist: 'Marc Korn vs. Trusted Playaz feat. Sanja', track: 'Call Me', youtube: 'I_HbmCqN9W4?start=20', duration: 280},
+    {artist: 'DJ Gollum & Empyre One vs. NICCO', track: 'Rockstar', youtube: 'RLRWCnT1mY4?start=13', duration: 194}
+
   ];
 
   private static albumSuggestions: Array<Video> = [
     {artist: 'Linkin Park', track: 'Meteora', youtube: 'pV_76Nc1Ue8', duration: 2197},
     {artist: 'Five Finger Death Punch', track: 'American Capitalist', youtube: 'KLSA1N7qVIs', duration: 2413},
-    {artist: 'In Flames', track: 'I, The Mask', youtube: 'XQTr9UhU6_A', duration: 3300}
+    {artist: 'In Flames', track: 'I, The Mask', youtube: 'XQTr9UhU6_A', duration: 3300},
+    {artist: 'DJEkkiMusic', track: 'Old School Hands Up 2017', youtube: 'rnLblVeQhvQ', duration: 4413},
+    {artist: 'DJEkkiMusic', track: 'Old School Hands Up 2016', youtube: 'HCt3tqT_IZg', duration: 5754},
+    {artist: 'DJFlyBeat', track: 'Techno Mashup 2014', youtube: 'BwL0P0kR1Mc', duration: 0},
+    {artist: 'Denstylerz Media', track: 'Hands Up Mix 2020#24', youtube: 'FNoNc22UZN4', duration: 3325},
   ];
 
-  private static genres: Array<string> = [ 'Rock & Metal', 'Mainstream & Party', 'Electronic & Techno', 'Albums'];
+  private static genres: Array<string> = [ 'Rock & Metal', 'Mainstream & Party', 'Electronic & Techno', 'Albums & Mixes'];
 
   constructor() {
   }
