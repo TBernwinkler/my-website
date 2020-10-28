@@ -30,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
 import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@a
     MatDialogModule,
     MatButtonModule,
     MatTooltipModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
