@@ -2,6 +2,25 @@
 
 .import-export {
 
+  /* Styles for tab labels */
+  .mat-tab-label {
+    min-width: 25px !important;
+    width: 33.33%;
+    padding: 5px;
+    background-color: var(--white);
+    opacity: 1;
+    color: var(--blue);
+  }
+  /* Styles for the active tab label */
+  .mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    width: 33.3%;
+    padding: 5px;
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+
   textarea {
     width: 98%;
     min-height: 150px;
@@ -21,10 +40,6 @@
     }
   }
 
-  .checkbox-wrapper {
-
-  }
-
   .sub-selection {
     background: var(--light-white);
     margin: 0 25px;
@@ -42,16 +57,24 @@
 
   .tab-content {
     background: var(--blue);
-    padding: 15px 50px;
+    padding: 25px 50px;
     color: var(--white);
-    border-radius: 4px;
+    margin: 0;
   }
 
   .tab-form {
     margin: 20px;
   }
 
-  h5,  {
+  .select-wrapper {
+    width: 25%;
+  }
+
+  .checkbox-wrapper {
+    margin: 10px;
+  }
+
+  h5 {
     margin: 20px 10px;
   }
 

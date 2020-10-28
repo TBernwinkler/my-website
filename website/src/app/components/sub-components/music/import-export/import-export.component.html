@@ -7,24 +7,30 @@
     </mat-tab>
     <mat-tab class="tab-content" label="{{'importExport.tab2.label' | translate}}">
       <h5 translate>importExport.tab2.headline</h5>
-      <mat-form-field class="full-width" color="accent">
-        <mat-label>{{'importExport.tab2.selectLabel' | translate}}</mat-label>
-        <mat-select (selectionChange)="changeTrackList($event)">
-          <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="full-width">
+        <mat-form-field class="select-wrapper" color="accent">
+          <mat-label>{{'importExport.tab2.selectLabel' | translate}}</mat-label>
+          <mat-select (selectionChange)="changeTrackList($event)">
+            <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
     </mat-tab>
     <mat-tab label="{{'importExport.tab3.label' | translate}}">
       <div class="tab-form">
         <h5 translate>importExport.tab3.headline1</h5>
-        <mat-form-field class="full-width" color="accent">
-          <mat-label>{{'importExport.tab3.importSelect1' | translate}}</mat-label>
-          <mat-select [(ngModel)]="selectedImportOption" (selectionChange)="checkImportSelection()">
-            <mat-option *ngFor="let importOption of importOptions" [value]="importOption">
-              {{importOption | translate}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="full-width">
+          <mat-form-field class="select-wrapper" color="accent">
+            <mat-label>{{'importExport.tab3.importSelect1' | translate}}</mat-label>
+            <mat-select [(ngModel)]="selectedImportOption" (selectionChange)="checkImportSelection()">
+              <mat-option *ngFor="let importOption of importOptions" [value]="importOption">
+                {{importOption | translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
         <div class="sub-selection--top" *ngIf="selectedImportOption === importOption1">
           <mat-label>{{'importExport.tab3.importSelect2' | translate}}</mat-label>
           <mat-form-field class="full-width" color="accent">
@@ -52,7 +58,7 @@
     </mat-tab>
     <mat-tab class="tab-content" label="{{'importExport.tab4.label' | translate}}">
       <h5 translate>importExport.tab4.headline</h5>
-      <p class="double">
+      <p class="checkbox-wrapper">
         <app-checkbox
           [boxChecked]="exportPreview"
           [labelText]="'importExport.tab4.checkboxLabel' | translate"

@@ -29,7 +29,7 @@
           </button>
         </p>
       </div>
-
+      <!-- todo: active/inactive styling and icon-->
       <div cdkDropList (cdkDropListDropped)="drop($event)">
         <div *ngFor="let suggestion of musicSuggestions" class="block" cdkDrag>
           <div [ngClass]="{ 'active': isSelected(musicSuggestions.indexOf(suggestion)), 'even': musicSuggestions.indexOf(suggestion)%2===0, 'odd': musicSuggestions.indexOf(suggestion)%2!==0}">
@@ -80,7 +80,6 @@
         </p>
       </div>
 
-<!--       <-- todo: active/inactive styling and icon-->
       <div class="flex-container scaling">
         <div class="flex-section">
           <app-add-video></app-add-video>
@@ -102,13 +101,7 @@
           <h4 translate>music.importExport.headline</h4>
           <p translate>music.importExport.description</p>
 
-          <app-import-export #importExportComponent
-                             *ngIf="!isMobile()"
-                             [musicSuggestions]="musicSuggestions"
-                             (tracksImported)="updateOnImport($event)">
-          </app-import-export>
-
-
+          <app-import-export #importExportComponent *ngIf="!isMobile()"></app-import-export>
         </div>
       </div>
     </div>

@@ -178,6 +178,7 @@
       }
     }
 
+    // FURTHER STYLE ADJUSTMENTS IN PW-52, PW-55, PW-48
     input[type=text], .number-inputs {
       width: 45%;
     }
@@ -193,41 +194,11 @@
       min-width: 50px;
     }
 
-    h4 {
-      color: var(--blue);
-      text-transform: uppercase;
-    }
-
-    h5 {
-      color: var(--blue);
-      text-transform: uppercase;
-    }
-
     button {
       margin-top: 5px;
       margin-bottom: 10px;
     }
 
-    /* Styles for tab labels */
-    .mat-tab-label {
-      min-width: 25px !important;
-      width: 33.33%;
-      padding: 5px;
-      background-color: var(--white);
-      opacity: 1;
-      color: var(--blue);
-      font-weight: 700;
-    }
-
-    /* Styles for the active tab label */
-    .mat-tab-label.mat-tab-label-active {
-      min-width: 25px !important;
-      width: 33.3%;
-      padding: 5px;
-      background-color: var(--blue);
-      color: var(--white);
-      font-weight: 700;
-    }
   }
 
   .full-width {

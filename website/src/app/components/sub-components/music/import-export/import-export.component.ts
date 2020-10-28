@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {DialogLevel, Video} from '@app/models';
 import {saveAs} from 'file-saver';
 import {faClipboard, faDownload, faUpload} from '@fortawesome/free-solid-svg-icons';
@@ -9,48 +9,49 @@ import {MatSelectChange} from '@angular/material/select';
 @Component({
   selector: 'app-import-export',
   templateUrl: './import-export.component.html',
-  styleUrls: ['./import-export.component.scss']
+  styleUrls: ['./import-export.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ImportExportComponent implements OnInit {
-
-  private importErrorDialogHeadline = 'importExport.tab3.import.importErrorHeadline';
-  @Input() musicSuggestions: Array<Video>;
-  @Output() tracksImported = new EventEmitter();
-
+  // ICONS
   faClipboard = faClipboard;
   faUpload = faUpload;
   faDownload = faDownload;
-
+  // GENERAL COMPONENT VARIABLES
   highlightFirstTab = true;
   exportPreview = false;
   exportString = '';
   importName = '';
   importString = '';
-  genres: Array<string> = [];
-
+  genres = []; // used in HTML select
+  // IMPORT SPECIFIC VARIABLES
   importOption1 = 'importExport.tab3.importSelect1Option1';
   importOption2 = 'importExport.tab3.importSelect1Option2';
   importOptions: Array<string>;
   selectedImportOption = '';
   selectedGenre = '';
   missingRequirement = true;
+  private importErrorDialogHeadline = 'importExport.tab3.import.importErrorHeadline';
 
   constructor(private dialogService: DialogService, private videoManagerService: VideoManagerService) {
   }
 
   ngOnInit() {
+    this.importOptions = [this.importOption1, this.importOption2];
     this.genres = this.videoManagerService.getGenres();
-    this.importOptions = [
-      this.importOption1,
-      this.importOption2
-    ];
   }
 
   handleTabChange(event: MatTabChangeEvent) {
     this.highlightFirstTab = event.index === 0;
+    if (3 === event.index) {
+      this.updateTrackExport();
+    }
   }
 
-  /* IMPORT */
+  /* ##################
+   * ##### IMPORT #####
+   * ##################
+   */
   checkImportSelection(): void {
     const requirementOption1 = this.selectedImportOption === this.importOption1 && this.selectedGenre !== '';
     const requirementOption2 = this.selectedImportOption === this.importOption2 && this.importName !== '';
@@ -85,10 +86,14 @@ export class ImportExportComponent implements OnInit {
         if (Object.keys(userInput).length > 0) {
           const userMusicSuggestions = userInput as Array<Video>;
           if (userMusicSuggestions instanceof Array && userMusicSuggestions.length > 0) {
-            this.videoManagerService.addGenre(this.importName, userMusicSuggestions, this.selectedGenre?.length > 0)
+            this.videoManagerService.addGenre(this.importName, userMusicSuggestions, this.selectedGenre?.length > 0);
             this.genres = this.videoManagerService.getGenres();
-            this.musicSuggestions = userMusicSuggestions;
-            this.tracksImported.emit(this.musicSuggestions);
+            // RESET
+            this.importString = '';
+            this.selectedImportOption = '';
+            this.selectedGenre = '';
+            this.importName = '';
+            this.missingRequirement = true;
           } else {
             this.displayImportError('importExport.tab3.import.emptyImportList');
           }
@@ -113,10 +118,11 @@ export class ImportExportComponent implements OnInit {
     this.dialogService.openDialog(this.importErrorDialogHeadline, dialogMessage, DialogLevel.Error);
   }
 
-  /* EXPORT */
-
+  /* ##################
+   * ##### EXPORT #####
+   * ##################
+   */
   copyToClipboard(inputElement) {
-    console.log(inputElement);
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
@@ -124,13 +130,10 @@ export class ImportExportComponent implements OnInit {
 
   updatePreviewSelection(boxChecked) {
     this.exportPreview = boxChecked;
-    if (this.exportPreview) {
-      this.updateTrackExport();
-    }
   }
 
   updateTrackExport() {
-    this.exportString = JSON.stringify(this.musicSuggestions, null, 2);
+    this.exportString = JSON.stringify(this.videoManagerService.getActiveVideoList(), null, 2);
   }
 
   exportTracks() {
@@ -140,8 +143,7 @@ export class ImportExportComponent implements OnInit {
   changeTrackList(event: MatSelectChange) {
     const genre = event.source.value;
     if (genre) {
-      this.musicSuggestions = this.videoManagerService.changeActiveGenre(genre);
-      this.tracksImported.emit(this.musicSuggestions);
+      this.videoManagerService.changeActiveGenre(genre);
     }
   }
 

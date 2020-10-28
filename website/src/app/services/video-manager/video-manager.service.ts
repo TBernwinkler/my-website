@@ -68,7 +68,7 @@ export class VideoManagerService {
    * (b) return the list of videos based on the selected genre
    * @param genre The genre, i.e. video list to switch to
    */
-  public changeActiveGenre(genre: string): Array<Video> {
+  public changeActiveGenre(genre: string): void {
     if (genre) {
       const idx = this.availableVideoLists.findIndex(entry => entry.genre === genre);
       if (idx >= 0) {
@@ -76,7 +76,6 @@ export class VideoManagerService {
       }
     }
     this.activeListChange.emit(this.activeVideoList);
-    return this.activeVideoList;
   }
 
   /**
