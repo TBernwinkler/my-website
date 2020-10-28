@@ -95,9 +95,6 @@ export class MusicComponent implements OnInit, OnDestroy {
     // Initial assignment
     this.musicSuggestions = this.videoManagerService.getActiveVideoList();
     this.activeVideo = this.musicSuggestions[0];
-
-    // this can be removed in future once the rework is finished
-    this.updateTrackExport();
   }
 
   /**
@@ -284,33 +281,9 @@ export class MusicComponent implements OnInit, OnDestroy {
     }
   }
 
-  updateOnImport(musicSuggestions) {
-    // todo: rework this according to documentation
-    // this.musicSuggestions = musicSuggestions;
-    // // UPDATE LIST OF SONGS FOR POTENTIAL REMOVAL
-    // this.trackList.splice(0, this.trackList.length);
-    // this.musicSuggestions.forEach(entry => {
-    //   this.trackList.push({name: entry.artist + ' - ' + entry.track, value: entry.youtube});
-    // });
-    // // DISABLE PLAY ALL AND RESET HIGHLIGHTING
-    // if (!this.counterPaused) {
-    //   this.playPauseVideoCounter();
-    // }
-    // this.playAll = false;
-    // this.autoplay = false;
-    // this.changeActiveVideo(0, null);
-  }
-
   isSelected(index: number): boolean {
     const selection = VideoProvider.getNthTrackElement(index);
     return !selection || index < 1 ? index === 0 : selection.classList.contains(this.classActive);
-  }
-
-
-  private updateTrackExport() {
-    if (this.importExport) {
-      this.importExport.updateTrackExport();
-    }
   }
 
 }
