@@ -115,7 +115,7 @@ export class LegalComponent implements OnInit {
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Projects',
+      page: 'Contact',
       creator: 'Kaboompics.com',
       imageName: 'Contact Background',
       imageUrl: 'contact/hero-576.jpg',
@@ -124,11 +124,20 @@ export class LegalComponent implements OnInit {
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Projects',
+      page: 'Contact',
       creator: 'Jens Johnsson',
       imageName: 'Direction',
       imageUrl: 'contact/contact1200.jpg',
       source: 'https://www.pexels.com/photo/mountains-nature-arrow-guide-66100/',
+      license: 'Pexels Creative Commons or Creative Commons Zero',
+      licenseLink: 'https://www.pexels.com/creative-commons-images'
+    },
+    {
+      page: '404',
+      creator: 'khairul nizam',
+      imageName: 'Comic',
+      imageUrl: '404/comic.jpg',
+      source: 'https://www.pexels.com/photo/doodle-comic-art-sketch-16516',
       license: 'Pexels Creative Commons or Creative Commons Zero',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     }

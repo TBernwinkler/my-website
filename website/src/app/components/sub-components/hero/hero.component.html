@@ -1,7 +1,6 @@
 <div class="hero-component">
-  <div [style.background-position]="imageOrientation"
-    [style.background-image]="'url(/assets/img/' + getRendition() + ')'"
-       class="bg-image" matTooltip="{{imageSource}}"></div>
+  <div [style.background-position]="imageOrientation" [style.background-image]="'url(/assets/img/' + getRendition() + ')'" class="bg-image">
+  </div>
   <div class="heading">
     <h1>
       <ng-container *ngFor="let element of headline">
