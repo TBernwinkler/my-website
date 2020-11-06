@@ -12,8 +12,8 @@
            [dataSource]="imageReferences" multiTemplateDataRows
            class="reference-table mat-elevation-z8">
       <ng-container matColumnDef="{{column.columnName}}" *ngFor="let column of columnDefinitions">
-        <th mat-header-cell *matHeaderCellDef> {{column.columnLabel}} </th>
-        <td mat-cell *matCellDef="let element"> {{element[column.columnName]}} </td>
+        <th mat-header-cell *matHeaderCellDef> {{column.columnLabel | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column.columnName] | translate}} </td>
       </ng-container>
 
       <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
@@ -22,13 +22,13 @@
           <div class="element-detail"
                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
             <div class="reference-image">
-              <img src="assets/img/{{element.imageUrl}}" alt="{{element.imageName}}">
+              <img src="assets/img/{{element.imageUrl}}" alt="{{element.imageName | translate}}">
             </div>
             <div class="reference-text">
-              <h4> {{element.page}} -- {{element.imageName}}</h4>
+              <h4> {{element.page | translate}} -- {{element.imageName | translate}}</h4>
               <p><span class="indicator">Creator: </span>{{element.creator}}</p>
               <p><span class="indicator">Original Image: </span><a href="{{element.source}}">{{element.source}}</a> </p>
-              <p><span class="indicator">License: </span><a href="{{element.licenseLink}}">{{element.license}}</a> </p>
+              <p><span class="indicator">License: </span><a href="{{element.licenseLink}}">{{element.license | translate}}</a> </p>
             </div>
           </div>
         </td>

@@ -244,9 +244,71 @@
     "message": "Hinterlasse eine Nachricht",
     "submit": "Absenden"
   },
+  "legal": {
+    "imageReferences": {
+      "columnNames": {
+        "page": "Seite",
+        "imageName": "Bild",
+        "creator": "Autor",
+        "license": "Lizenz"
+      },
+      "entrance": {
+        "imageName": "Eingang",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "zoomedCode": {
+        "imageName": "Herangezoomter Code",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "audio": {
+        "imageName": "Audio",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "network": {
+        "imageName": "Netzwerk",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "diagram": {
+        "imageName": "Diagramm",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "markup": {
+        "imageName": "Quelltext",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "transiteLogo": {
+        "imageName": "Transite Logo",
+        "license": "MIT Lizenz"
+      },
+      "scansiteLogo": {
+        "imageName": "Scansite Logo",
+        "license": "MIT Lizenz"
+      },
+      "biodappsLogo": {
+        "imageName": "BioDApps Logo",
+        "license": "MIT Lizenz"
+      },
+      "android": {
+        "imageName": "Android",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "contactBackground": {
+        "imageName": "Kontakt Hintergrundbild",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "direction": {
+        "imageName": "Wegweiser",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      },
+      "comic": {
+        "imageName": "Comic",
+        "license": "Pexels Lizenz oder Creative Commons Zero Lizenz"
+      }
+    }
+  },
   "footer": {
     "legal": "Impressum",
     "lastUpdate": "Letzte Aktualisierung",
-    "lastUpdateDate": "28. Oktober 2020"
+    "lastUpdateDate": "06. November 2020"
   }
 }

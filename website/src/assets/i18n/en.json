@@ -244,9 +244,71 @@
     "message": "Leave a message",
     "submit": "Submit"
   },
+  "legal": {
+    "imageReferences": {
+      "columnNames": {
+        "page": "Page",
+        "imageName": "Image",
+        "creator": "Creator",
+        "license": "License"
+      },
+      "entrance": {
+        "imageName": "Entrance",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "zoomedCode": {
+        "imageName": "Zoomed Code",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "audio": {
+        "imageName": "Audio",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "network": {
+        "imageName": "Network",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "diagram": {
+        "imageName": "Diagram",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "markup": {
+        "imageName": "Markup",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "transiteLogo": {
+        "imageName": "Transite Logo",
+        "license": "MIT License"
+      },
+      "scansiteLogo": {
+        "imageName": "Scansite Logo",
+        "license": "MIT License"
+      },
+      "biodappsLogo": {
+        "imageName": "BioDApps Logo",
+        "license": "MIT License"
+      },
+      "android": {
+        "imageName": "Android",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "contactBackground": {
+        "imageName": "Contact Background",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "direction": {
+        "imageName": "Direction",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      },
+      "comic": {
+        "imageName": "Comic",
+        "license": "Pexels Creative Commons or Creative Commons Zero"
+      }
+    }
+  },
   "footer": {
     "legal": "Legal Information",
     "lastUpdate": "Last updated",
-    "lastUpdateDate": "28 October 2020"
+    "lastUpdateDate": "06 November 2020"
   }
 }

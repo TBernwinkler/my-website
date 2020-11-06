@@ -16,129 +16,130 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class LegalComponent implements OnInit {
 
-  // todo: remove image tooltips, add translations
   columnDefinitions: Array<{columnName: string, columnLabel: string}> =
     [
-      {columnName: 'page', columnLabel: 'Page'}, {columnName: 'imageName', columnLabel: 'Image Name'},
-      {columnName: 'creator', columnLabel: 'Creator'}, {columnName: 'license', columnLabel: 'License'}
+      {columnName: 'page', columnLabel: 'legal.imageReferences.columnNames.page'},
+      {columnName: 'imageName', columnLabel: 'legal.imageReferences.columnNames.imageName'},
+      {columnName: 'creator', columnLabel: 'legal.imageReferences.columnNames.creator'},
+      {columnName: 'license', columnLabel: 'legal.imageReferences.columnNames.license'}
     ];
   columnNames: Array<string> = ['page', 'imageName', 'creator', 'license']
   imageReferences: Array<ImageReference> = [
     {
-      page: 'Home',
+      page: 'header.home',
       creator: 'Pixabay',
-      imageName: 'Entrance',
+      imageName: 'legal.imageReferences.entrance.imageName',
       imageUrl: 'home/entrance-576.jpg',
       source: 'https://www.pexels.com/photo/bedroom-door-entrance-guest-room-271639/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.entrance.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Home',
+      page: 'header.home',
       creator: 'Negative Space',
-      imageName: 'Zoomed Code',
+      imageName: 'legal.imageReferences.zoomedCode.imageName',
       imageUrl: 'home/zoomed-code-280.jpg',
       source: 'https://www.pexels.com/photo/office-working-app-computer-97077/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.zoomedCode.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Home',
+      page: 'header.home',
       creator: 'Snapwire',
-      imageName: 'Audio',
+      imageName: 'legal.imageReferences.audio.imageName',
       imageUrl: 'home/audio-280.jpg',
       source: 'https://www.pexels.com/photo/audio-e-guitars-guitars-music-6966/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.audio.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Home',
+      page: 'header.home',
       creator: 'Brett Sayles',
-      imageName: 'Network',
+      imageName: 'legal.imageReferences.network.imageName',
       imageUrl: 'home/network-280.jpg',
       source: 'https://www.pexels.com/photo/blur-close-up-device-electronics-1597776/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.network.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'Christina Morillo',
-      imageName: 'Diagram',
+      imageName: 'legal.imageReferences.diagram.imageName',
       imageUrl: 'projects/diagram576.jpg',
       source: 'https://www.pexels.com/de-de/foto/briefe-buchstaben-diagramm-festhalten-1181311/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.diagram.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'Markus Spiske',
-      imageName: 'Markup',
+      imageName: 'legal.imageReferences.markup.imageName',
       imageUrl: 'projects/markup576.jpg',
       source: 'https://www.pexels.com/photo/creative-internet-computer-display-2004161/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.markup.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'Yaffe Lab at MIT',
-      imageName: 'Transite Logo',
+      imageName: 'legal.imageReferences.transiteLogo.imageName',
       imageUrl: 'projects/transite-logo.svg',
       source: 'https://transite.mit.edu/img/logo_wide.svg',
-      license: 'MIT License',
+      license: 'legal.imageReferences.transiteLogo.license',
       licenseLink: 'https://en.wikipedia.org/wiki/MIT_License'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'Yaffe Lab at MIT',
-      imageName: 'Scansite Logo',
+      imageName: 'legal.imageReferences.scansiteLogo.imageName',
       imageUrl: 'projects/logo-scansite.png',
       source: 'https://scansite4.mit.edu/4.0/img/logo_scansite.png',
-      license: 'MIT License',
+      license: 'legal.imageReferences.scansiteLogo.license',
       licenseLink: 'https://en.wikipedia.org/wiki/MIT_License'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'UAS Oberösterreich, Universtiy of Salzburg',
-      imageName: 'BioDApps Logo',
+      imageName: 'legal.imageReferences.biodappsLogo.imageName',
       imageUrl: 'projects/biodapps-logo.png',
       source: 'https://pbwww.che.sbg.ac.at/wp-content/uploads/2014/09/logo_coming_soon.png',
-      license: 'MIT License',
+      license: 'legal.imageReferences.biodappsLogo.license',
       licenseLink: 'https://en.wikipedia.org/wiki/MIT_License'
     },
     {
-      page: 'Projects',
+      page: 'header.projects',
       creator: 'Noah Erickson',
-      imageName: 'Android',
+      imageName: 'legal.imageReferences.android.imageName',
       imageUrl: 'projects/android576.jpg',
       source: 'https://www.pexels.com/photo/creative-internet-computer-display-2004161/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.android.logo',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Contact',
+      page: 'header.contact',
       creator: 'Kaboompics.com',
-      imageName: 'Contact Background',
+      imageName: 'legal.imageReferences.contactBackground.imageName',
       imageUrl: 'contact/hero-576.jpg',
       source: 'https://www.pexels.com/photo/blank-paper-with-pen-and-coffee-cup-on-wood-table-6357/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.contactBackground.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
-      page: 'Contact',
+      page: 'header.contact',
       creator: 'Jens Johnsson',
-      imageName: 'Direction',
+      imageName: 'legal.imageReferences.direction.imageName',
       imageUrl: 'contact/contact1200.jpg',
       source: 'https://www.pexels.com/photo/mountains-nature-arrow-guide-66100/',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.direction.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     },
     {
       page: '404',
       creator: 'khairul nizam',
-      imageName: 'Comic',
+      imageName: 'legal.imageReferences.comic.imageName',
       imageUrl: '404/comic.jpg',
       source: 'https://www.pexels.com/photo/doodle-comic-art-sketch-16516',
-      license: 'Pexels Creative Commons or Creative Commons Zero',
+      license: 'legal.imageReferences.comic.license',
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     }
   ];
