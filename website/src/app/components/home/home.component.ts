@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {faArrowCircleUp, faHeart, faLaptopCode, faMusic, faStar} from '@fortawesome/free-solid-svg-icons';
 import {faStar as faStarEmpty} from '@fortawesome/free-regular-svg-icons';
-import {ActivatedRoute, Router} from '@angular/router';
 import {NameIconPair, Renditions} from '@app/models';
 
 @Component({
@@ -32,21 +31,8 @@ export class HomeComponent implements OnInit {
   imageSource = 'https://www.pexels.com/@pixabay';
   imageOrientation = 'center';
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+  constructor() { }
 
-  ngOnInit() {
-    // AS I DO NOT HAVE ACCESS TO THE APACHE SERVER OF MY HOSTING PROVIDER, I NEED TO REDIRECT PAGES IN A DIFFERENT WAY
-    // TO AVOID PAGE NOT ON REFRESH
-
-    let redirect = '';
-    this.activatedRoute.queryParams.subscribe(params => {
-      redirect = params.redirect;
-
-      if (redirect === 'music' || redirect === 'projects' || redirect === 'contact' || redirect === 'legal') {
-        this.router.navigate([redirect]);
-      }
-    });
-  }
+  ngOnInit() {}
 
 }

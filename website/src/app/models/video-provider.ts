@@ -6,7 +6,8 @@ export class VideoProvider {
     {artist: 'Parkway Drive', track: 'Prey', youtube: 'WL_8ZY89dP4?start=5', duration: 255},
     {artist: 'In Flames', track: 'Take This Life', youtube: 'GRiC35zeziU?start=7', duration: 221},
     {artist: 'Beartooth', track: 'Body Bag', youtube: '81CakcFEH0U', duration: 230},
-    {artist: 'Sabaton', track: 'Primo Victoria', youtube: 'qVHyl0P_P-M', duration: 229},
+    {artist: 'Godsmack', track: 'When Legends Rise', youtube: 'J9jKQulDRCQ', duration: 173},
+    {artist: 'Sabaton', track: 'Primo Victoria', youtube: 'UQ-Fb90GBhE', duration: 250},
     {artist: 'Trivium', track: 'Anthem (We Are Fire)', youtube: 'Lp8p5OPtEe0?start=12', duration: 241},
     {artist: 'Eluveitie', track: 'Inis Mona', youtube: 'iijKLHCQw5o', duration: 254},
     {artist: 'Rise Against', track: 'Savior', youtube: 'e8X3ACToii0', duration: 244},
@@ -38,15 +39,16 @@ export class VideoProvider {
     {artist: 'A Day To Remember', track: 'All I Want', youtube: 'Pn-6eOxnEMI', duration: 215},
     {artist: 'Killswitch Engange', track: 'In Due Time', youtube: 'HANCzu70us4?start=8', duration: 218},
     {artist: 'The Offspring', track: 'You\'re Gonna Go Far, Kid', youtube: 'ql9-82oV2JE?start=18', duration: 175},
-    {artist: 'Lucenzo & Don Omar', track: 'Danza Kuduro', youtube: 'rUFgacK8sZ0?start=37', duration: 196},
     {artist: 'The Rasmus', track: 'In The Shadows', youtube: '_ao2u7F_Qzg', duration: 210},
     {artist: 'Good Charlotte', track: 'The Anthem', youtube: 'desJKYvdq9A', duration: 173},
-    {artist: 'Godsmack', track: 'When Legends Rise', youtube: 'J9jKQulDRCQ', duration: 173},
     {artist: 'Halestorm', track: 'I Miss The Misery', youtube: 'YpJAmlnBxoA', duration: 192},
     {artist: 'Paramore', track: 'Ignorance', youtube: 'I_56FINrt04', duration: 220},
     {artist: 'The Pretty Reckless', track: 'Make Me Wanna Die', youtube: 'txBfhpm1jI0', duration: 232},
     {artist: 'Korpiklaani', track: 'A Man With A Plan', youtube: 'bc0sJvtKrRM', duration: 178},
-    {artist: 'Avenged Sevenfold', track: 'Hail To The King', youtube: 'DelhLppPSxY', duration: 305}
+    {artist: 'Avenged Sevenfold', track: 'Hail To The King', youtube: 'DelhLppPSxY', duration: 305},
+    {artist: 'Young Guns', track: 'I Was Born, I Have Lived, I Will Surely Die', youtube: '-PIwPdNYd84?start=8', duration: 230},
+    {artist: 'Sharky Sharky', track: 'Sharky Life Forever', youtube: 'hxDVD7zblQw', duration: 210},
+    {artist: 'Feuerschwanz', track: 'Schubsetanz', youtube: 'jWXsSwAMSHA', duration: 198}
   ];
 
   private static mainstreamSuggestions: Array<Video> = [
@@ -121,7 +123,8 @@ export class VideoProvider {
     {artist: 'DualXess ft. PeachTree', track: 'Bis es kracht', youtube: 'ssupIBHG30c', duration: 201},
     {artist: 'Topmodelz', track: 'When You\'Re Looking Like That', youtube: 'HD6eFW4YSMo?start=30', duration: 265},
     {artist: 'Marc Korn vs. Trusted Playaz feat. Sanja', track: 'Call Me', youtube: 'I_HbmCqN9W4?start=20', duration: 280},
-    {artist: 'DJ Gollum & Empyre One vs. NICCO', track: 'Rockstar', youtube: 'RLRWCnT1mY4?start=13', duration: 194}
+    {artist: 'DJ Gollum & Empyre One vs. NICCO', track: 'Rockstar', youtube: 'RLRWCnT1mY4?start=13', duration: 194},
+    {artist: 'DJ Gollum & DJ Cap', track: 'Good Stuff', youtube: 'EA7LAoYWTlk', duration: 240}
 
   ];
 
@@ -129,10 +132,16 @@ export class VideoProvider {
     {artist: 'Linkin Park', track: 'Meteora', youtube: 'pV_76Nc1Ue8', duration: 2197},
     {artist: 'Five Finger Death Punch', track: 'American Capitalist', youtube: 'KLSA1N7qVIs', duration: 2413},
     {artist: 'In Flames', track: 'I, The Mask', youtube: 'XQTr9UhU6_A', duration: 3300},
+    {artist: 'Metal Music', track: 'For Work', youtube: 'Lmp2zJ7UNPM', duration: 6035},
+    {artist: 'Hard Rock', track: 'For Work', youtube: 'VhkxTQkuHGk', duration: 7386},
+    {artist: 'Epic Music', track: 'July 2020', youtube: 'su1m_2wzdU4', duration: 3336},
+    {artist: 'DJFlyBeat', track: 'Techno Mashup 2014', youtube: 'BwL0P0kR1Mc', duration: 3507},
+    {artist: 'S3RL', track: 'Happy Hardcore Mix', youtube: 'bYro4P0ORs0', duration: 4100},
+    {artist: 'Maltrus', track: 'Old School Techno', youtube: 'DFfpLiQ3oBY', duration: 3714},
+    {artist: 'CX Music', track: 'Hard Noises', youtube: 'jDlczwHRMYo', duration: 4774},
+    {artist: 'Denstylerz Media', track: 'Hands Up Mix 2020#24', youtube: 'FNoNc22UZN4', duration: 3325},
     {artist: 'DJEkkiMusic', track: 'Old School Hands Up 2017', youtube: 'rnLblVeQhvQ', duration: 4413},
     {artist: 'DJEkkiMusic', track: 'Old School Hands Up 2016', youtube: 'HCt3tqT_IZg', duration: 5754},
-    {artist: 'DJFlyBeat', track: 'Techno Mashup 2014', youtube: 'BwL0P0kR1Mc', duration: 0},
-    {artist: 'Denstylerz Media', track: 'Hands Up Mix 2020#24', youtube: 'FNoNc22UZN4', duration: 3325},
   ];
 
   private static genres: Array<string> = [ 'Rock & Metal', 'Mainstream & Party', 'Electronic & Techno', 'Albums & Mixes'];
