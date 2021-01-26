@@ -1,29 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {ImageReference} from '@app/models/image-reference';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-legal',
   templateUrl: './legal.component.html',
   styleUrls: ['./legal.component.scss'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ])
-  ]
 })
-export class LegalComponent implements OnInit {
+export class LegalComponent {
 
-  columnDefinitions: Array<{columnName: string, columnLabel: string}> =
-    [
-      {columnName: 'page', columnLabel: 'legal.imageReferences.columnNames.page'},
-      {columnName: 'imageName', columnLabel: 'legal.imageReferences.columnNames.imageName'},
-      {columnName: 'creator', columnLabel: 'legal.imageReferences.columnNames.creator'},
-      {columnName: 'license', columnLabel: 'legal.imageReferences.columnNames.license'}
-    ];
-  columnNames: Array<string> = ['page', 'imageName', 'creator', 'license']
   imageReferences: Array<ImageReference> = [
     {
       page: 'header.home',
@@ -143,11 +127,7 @@ export class LegalComponent implements OnInit {
       licenseLink: 'https://www.pexels.com/creative-commons-images'
     }
   ];
-  expandedElement: ImageReference | null;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

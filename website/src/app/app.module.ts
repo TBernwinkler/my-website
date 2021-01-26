@@ -31,6 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
 import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
 import {MatTableModule} from '@angular/material/table';
+import { AccordionComponent } from './components/sub-components/accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatTableModule} from '@angular/material/table';
     HeroComponent,
     TopButtonComponent,
     AddVideoComponent,
-    DeleteVideoComponent
+    DeleteVideoComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

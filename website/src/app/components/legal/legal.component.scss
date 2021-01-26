@@ -1,68 +1,49 @@
 @import "../common.scss";
 
+.content-space {
+  padding-bottom: 0;
+}
+
 .legal-component {
-  padding: 2rem 10rem;
-  border-radius: 5px;
   background: var(--white);
   color: var(--blue);
-  margin: 1rem 15%;
   position: relative;
+
+  p.legal-text {
+    padding: 1rem;
+  }
+
+
+  h2 {
+    text-align: center;
+  }
 
   a:hover {
     text-decoration: underline;
-  }
-
-  .reference-table {
-    width: 100%
-  }
-
-  .mat-header-cell {
-    text-transform: capitalize;
-  }
-
-  tr.detail-row {
-    height: 0;
-  }
-
-  tr.element-row:not(.example-expanded-row):hover {
-    background: whitesmoke;
-  }
-
-  tr.element-row:not(.example-expanded-row):active {
-    background: #efefef;
-  }
-
-  .element-row td {
-    border-bottom-width: 0;
   }
 
   .element-detail {
     overflow: hidden;
     display: flex;
     align-items: center;
+    flex-direction: column;
   }
 
-  .reference-image {
-    width: 200px;
-    padding: 1rem 2rem;
-    position: relative;
+  @include md {
+    padding: 2rem;
+    border-radius: 5px;
+    margin: 1rem 15%;
 
-    img {
-      width: 100%;
-      border-radius: 1rem;
+    h2 {
+      text-align: left;
     }
   }
 
-  .reference-text {
-    padding: .5rem;
+  @include xl {
+    padding: 2rem 10rem;
 
-    span.indicator {
-      display: inline-block;
-      font-weight: bold;
-      color: var(--beast-gray);
-      width: 120px;
+    .element-detail {
+      flex-direction: row;
     }
   }
-
-  //todo: change to mobile first approach and add media queries
 }
