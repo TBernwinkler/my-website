@@ -93,6 +93,7 @@
     "trackList": {
       "autoplay": "Autoplay",
       "playAll": "Play All",
+      "expandVideo": "Expand Video",
       "noAutoplay": "Unfortunately, autoplay is not supported on mobile devices :(",
       "shuffle": "Shuffle",
       "info": "Info"

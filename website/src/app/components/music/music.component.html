@@ -9,32 +9,35 @@
   <div class="flex-container">
     <div class="track-list">
       <div class="video-options">
-        <div class="non-mobile-view">
+        <div class="option-category">
+          <button (click)="scrollToElement(descriptions)">
+            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon> {{'music.trackList.info' | translate}}
+          </button>
+          <button (click)="triggerShuffle()">
+            <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
+          </button>
+        </div>
+        <div class="non-mobile-view option-category">
           <mat-slide-toggle color="primary" [(ngModel)]="autoplay" (change)="handleToggle('autoplay')">
             {{'music.trackList.autoplay' | translate}}
           </mat-slide-toggle>
           <mat-slide-toggle color="primary" [(ngModel)]="playAll" (change)="handleToggle('playAll')">
             {{'music.trackList.playAll' | translate}}
           </mat-slide-toggle>
+          <mat-slide-toggle color="primary" [(ngModel)]="expandVideo">
+          {{'music.trackList.expandVideo' | translate}}
+        </mat-slide-toggle>
         </div>
         <div class="mobile-view">
           <p translate>music.trackList.noAutoplay</p>
         </div>
-        <p>
-          <button (click)="triggerShuffle()">
-            <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
-          </button>
-          <button (click)="scrollToElement(descriptions)">
-            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon> {{'music.trackList.info' | translate}}
-          </button>
-        </p>
       </div>
 
       <app-track-list #trackListComponent [musicSuggestions]="musicSuggestions" (changeSelection)="changeVideoByClick($event)"></app-track-list>
 
     </div>
     <div class="content-area" #contentArea>
-      <div class="active-video">
+      <div class="active-video" [ngClass]="{'expanded': expandVideo}">
         <div class="iframe-container">
           <iframe #videoPlayback [src]="baseUrl + activeVideo.youtube | safe"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

@@ -37,6 +37,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   activeVideo: Video;
   autoplay = false;
   playAll = false;
+  expandVideo = false;
   counterPaused = false;
   remainingTime = 0;
   interval;
