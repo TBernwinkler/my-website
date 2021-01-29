@@ -9,17 +9,17 @@
   <div class="flex-container">
     <div class="track-list">
       <div class="video-options">
-        <ng-container *ngIf="!isMobile(); else mobileMessage">
-          <mat-slide-toggle color="primary" [(ngModel)]="autoplay" (change)="handleToggle($event, 'autoplay')">
+        <div class="non-mobile-view">
+          <mat-slide-toggle color="primary" [(ngModel)]="autoplay" (change)="handleToggle('autoplay')">
             {{'music.trackList.autoplay' | translate}}
           </mat-slide-toggle>
-          <mat-slide-toggle color="primary" [(ngModel)]="playAll" (change)="handleToggle($event, 'playAll')">
+          <mat-slide-toggle color="primary" [(ngModel)]="playAll" (change)="handleToggle('playAll')">
             {{'music.trackList.playAll' | translate}}
           </mat-slide-toggle>
-        </ng-container>
-        <ng-template #mobileMessage>
+        </div>
+        <div class="mobile-view">
           <p translate>music.trackList.noAutoplay</p>
-        </ng-template>
+        </div>
         <p>
           <button (click)="triggerShuffle()">
             <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
@@ -29,38 +29,19 @@
           </button>
         </p>
       </div>
-      <!-- todo: active/inactive styling and icon-->
-      <div cdkDropList (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let suggestion of musicSuggestions" class="block" cdkDrag>
-          <div [ngClass]="{ 'active': isSelected(musicSuggestions.indexOf(suggestion)), 'even': musicSuggestions.indexOf(suggestion)%2===0, 'odd': musicSuggestions.indexOf(suggestion)%2!==0}">
-            <div class="selection-wrapper">
-              <div class="entry-left" (click)="changeVideoByClick(musicSuggestions.indexOf(suggestion), video)">
-                <div class="flex-container">
-                  <div class="icon">
-                    <fa-icon class="spaced-around" [icon]="isSelected(musicSuggestions.indexOf(suggestion)) ? faVolumeUp : faPlayCircle" size="lg"></fa-icon>
-                  </div>
-                  <div class="details">
-                    <p class="interpret">{{suggestion.artist}}</p>
-                    <p class="track">{{suggestion.track}}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="flex-expand" cdkDragHandle>
-                <div class="icon move">
-                  <fa-icon class="spaced-around" [icon]="faArrowsAlt" size="lg"></fa-icon>
-                </div>
-              </div>
-            </div>
-          </div>
+
+      <app-track-list #trackListComponent [musicSuggestions]="musicSuggestions" (changeSelection)="changeVideoByClick($event)"></app-track-list>
+
+    </div>
+    <div class="content-area" #contentArea>
+      <div class="active-video">
+        <div class="iframe-container">
+          <iframe #videoPlayback [src]="baseUrl + activeVideo.youtube | safe"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
         </div>
       </div>
-    </div>
-    <div class="active-video" #video>
-      <div class="iframe-container">
-        <iframe #videoPlayback [src]="baseUrl + activeVideo.youtube | safe"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
+
       <div class="center">
         <h1>{{activeVideo.artist}}
           <fa-icon class="spaced-around" [icon]="faMinus" size="lg"></fa-icon>
@@ -101,7 +82,7 @@
           <h4 translate>music.importExport.headline</h4>
           <p translate>music.importExport.description</p>
 
-          <app-import-export #importExportComponent *ngIf="!isMobile()"></app-import-export>
+          <app-import-export #importExportComponent class="non-mobile-view"></app-import-export>
         </div>
       </div>
     </div>

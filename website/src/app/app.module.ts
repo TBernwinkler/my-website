@@ -32,6 +32,7 @@ import {MatInputModule} from '@angular/material/input';
 import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
 import {MatTableModule} from '@angular/material/table';
 import { AccordionComponent } from './components/sub-components/accordion/accordion.component';
+import { TrackListComponent } from './components/sub-components/track-list/track-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AccordionComponent } from './components/sub-components/accordion/accord
     TopButtonComponent,
     AddVideoComponent,
     DeleteVideoComponent,
-    AccordionComponent
+    AccordionComponent,
+    TrackListComponent
   ],
   imports: [
     BrowserModule,

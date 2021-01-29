@@ -4,10 +4,13 @@
 :root {
   /* COLORS */
   --blue: #2C5F96;
+  --medium-blue: #588bc2;
   --light-blue: #B2ECFF;
   --white: #f2f2f2;
   --light-white: #f8f8f8;
   --beast-gray: #666666;
+  --medium-gray: #999999;
+  --light-gray: #cccccc;
 
   --warning: #FFC107;
   --error: #D84315;
@@ -28,7 +31,7 @@ $screen-xl: 1200px;
   }
 }
 
-// TABLET
+// TABLET or LANDSCAPE
 @mixin md {
   @media (min-width: #{$screen-medium}) {
     @content;

@@ -1,0 +1,79 @@
+.entry {
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+  padding: 1rem 0;
+  position: relative;
+
+  &:nth-child(odd) {
+    background: #999;
+  }
+
+  &:nth-child(even) {
+    background: var(--blue);
+  }
+
+  .click-to-play, .click-to-drag {
+    color: var(--light-white);
+    width: 70px;
+    text-align: center;
+
+    fa-icon {
+      padding: 25px;
+    }
+  }
+
+  .click-to-play {
+    cursor: pointer;
+  }
+
+  .click-to-drag {
+    cursor: grab;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  .details {
+    width: calc(100% - 140px);
+  }
+
+  p.interpret, p.track {
+    margin: 0;
+  }
+
+  p.interpret {
+    font-weight: lighter;
+    color: var(--light-white);
+  }
+
+  p.track {
+    color: var(--light-gray);
+  }
+
+  &.active {
+    background: var(--white);
+
+    p.interpret {
+      color: var(--medium-blue);
+    }
+
+    p.track {
+      color: var(--blue);
+    }
+
+    .click-to-play, .click-to-drag {
+      color: var(--blue);
+    }
+  }
+
+
+  &.cdk-drag-preview {
+    background: var(--light-white);
+    color: var(--beast-gray);
+
+    .click-to-play, .click-to-drag {
+      color: var(--medium-gray);
+    }
+  }
+}

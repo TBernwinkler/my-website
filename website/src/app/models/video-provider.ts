@@ -173,7 +173,7 @@ export class VideoProvider {
   }
 
   public static getNthTrackElement(index: number) {
-    return document.querySelector('#cdk-drop-list-0 > div:nth-child(' + (index + 1) + ') > div');
+    return document.querySelector('#cdk-drop-list-0 > div:nth-child(' + (index + 1) + ')');
   }
 
 }
