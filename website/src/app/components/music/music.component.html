@@ -10,11 +10,13 @@
     <div class="track-list">
       <div class="video-options">
         <div class="option-category">
-          <button (click)="scrollToElement(descriptions)">
-            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon> {{'music.trackList.info' | translate}}
+          <button class="option-button" (click)="scrollToElement(descriptions)">
+            <fa-icon class="spaced-around" [icon]="faBook" size="lg"></fa-icon>
+            {{'music.trackList.info' | translate}}
           </button>
-          <button (click)="triggerShuffle()">
-            <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon> {{'music.trackList.shuffle' | translate}}
+          <button class="option-button" (click)="triggerShuffle()">
+            <fa-icon class="spaced-around" [icon]="faRandom" size="lg"></fa-icon>
+            {{'music.trackList.shuffle' | translate}}
           </button>
         </div>
         <div class="non-mobile-view option-category">
@@ -25,15 +27,16 @@
             {{'music.trackList.playAll' | translate}}
           </mat-slide-toggle>
           <mat-slide-toggle color="primary" [(ngModel)]="expandVideo">
-          {{'music.trackList.expandVideo' | translate}}
-        </mat-slide-toggle>
+            {{'music.trackList.expandVideo' | translate}}
+          </mat-slide-toggle>
         </div>
         <div class="mobile-view">
           <p translate>music.trackList.noAutoplay</p>
         </div>
       </div>
 
-      <app-track-list #trackListComponent [musicSuggestions]="musicSuggestions" (changeSelection)="changeVideoByClick($event)"></app-track-list>
+      <app-track-list #trackListComponent [musicSuggestions]="musicSuggestions"
+                      (changeSelection)="changeVideoByClick($event)"></app-track-list>
 
     </div>
     <div class="content-area" #contentArea>
@@ -64,28 +67,39 @@
         </p>
       </div>
 
-      <div class="flex-container scaling">
+      <div class="flex-container">
+        <app-add-video class="button-action"></app-add-video>
+        <app-delete-video class="button-action"></app-delete-video>
+      </div>
+      <div class="customize">
+        <h4 translate>music.importExport.headline</h4>
+        <p translate>music.importExport.description</p>
+        <app-import-export #importExportComponent class="non-mobile-view"></app-import-export>
+      </div>
+      <div class="flex-container wrapped" #descriptions>
         <div class="flex-section">
-          <app-add-video></app-add-video>
-          <app-delete-video></app-delete-video>
-        </div>
-        <div class="flex-section" #descriptions>
           <h4 translate>music.infoSection.autoplayHeadline</h4>
           <p translate>music.infoSection.autoplayDescription</p>
+        </div>
+        <div class="flex-section">
           <h4 translate>music.infoSection.playAllHeadline</h4>
           <p translate>music.infoSection.playAllDescription</p>
-          <h4 translate>music.infoSection.reorderVideosHeadline</h4>
-          <p translate>music.infoSection.reorderVideosDescription</p>
+        </div>
+        <div class="flex-section">
           <h4 translate>music.infoSection.addDeleteHeadline</h4>
           <p translate>music.infoSection.addDeleteDescription</p>
+        </div>
+        <div class="flex-section">
+          <h4 translate>Shuffle [todo]</h4>
+          <p translate>Shuffle description [todo]</p>
+        </div>
+        <div class="flex-section">
+          <h4 translate>music.infoSection.reorderVideosHeadline</h4>
+          <p translate>music.infoSection.reorderVideosDescription</p>
+        </div>
+        <div class="flex-section">
           <h4 translate>music.infoSection.temporaryHeadline</h4>
           <p translate>music.infoSection.temporaryDescription</p>
-        </div>
-        <div class="flex-section wide">
-          <h4 translate>music.importExport.headline</h4>
-          <p translate>music.importExport.description</p>
-
-          <app-import-export #importExportComponent class="non-mobile-view"></app-import-export>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
 
-    button {
+    .option-button {
       margin: 0 5px;
       width: 45%;
     }
@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: column;
   }
-
 
   .content-area {
     width: 90%;
@@ -41,58 +40,12 @@
     }
   }
 
-  .scaling {
-    flex-wrap: wrap;
-  }
-
   .flex-section {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    min-width: 40%;
 
-    label {
-      // maybe change this? only required for text labels? distinction possible?
-      display: inline-block;
-      text-transform: uppercase;
-      min-width: 200px;
-      width: 50%;
-      padding-right: 5px;
-      margin: 10px 0;
-      color: #999;
-    }
-
-    input[type=text], input[type=number] {
-      display: inline-block;
-      min-width: 190px;
-      margin-bottom: 10px;
-      border: none;
-      border-bottom: 2px solid var(--blue);
-      font-size: 18px;
-      color: var(--blue);
-
-      &:focus {
-        background: #fbfbfb;
-      }
-    }
-
-    // FURTHER STYLE ADJUSTMENTS IN PW-52, PW-55, PW-48
-    input[type=text], .number-inputs {
-      width: 45%;
-    }
-
-    .number-inputs {
-      display: flex;
-      flex-wrap: nowrap;
-    }
-
-    input[type=number] {
-      text-align: center;
-      max-width: 16.5%;
-      min-width: 50px;
-    }
-
-    button {
+    .option-button {
       margin-top: 5px;
       margin-bottom: 10px;
     }
@@ -112,10 +65,6 @@
       width: 95%;
       margin-left: 0;
       margin-right: 0;
-
-      .number-inputs {
-        display: inline-block;
-      }
     }
   }
 
@@ -124,7 +73,16 @@
     .flex-container {
       flex-direction: row;
 
-      button {
+      &.wrapped {
+        flex-wrap: wrap;
+      }
+
+      .button-action {
+        width: 45%;
+        margin: 0 1.25%;
+      }
+
+      .option-button {
         width: auto;
         margin: 0.25rem 0.5rem 0.25rem 0;
       }
@@ -155,10 +113,8 @@
       }
     }
 
-
-    // todo: do I need this?
     .flex-section {
-      padding: 25px 25px 0 25px;
+      margin: 1rem 2.5% 0 2.5%;
     }
 
     .content-area {
@@ -171,6 +127,11 @@
           padding: 0;
         }
       }
+    }
+
+    .customize {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
     }
 
     .mobile-view {
@@ -191,6 +152,5 @@
       }
     }
   }
-
 
 }

@@ -1,0 +1,8 @@
+<div class="input-group">
+  <input [id]="inputId" [name]="inputId" class="input-field" [(ngModel)]="inputValue" [type]="inputType"
+         [placeholder]="labelText|translate" [required]="isRequired" [min]="inputType === 'number' ? numberMinimum : ''">
+  <label for="{{inputId}}" class="input-label" translate>
+    {{labelText}}
+    <fa-icon class="float-top" *ngIf="isRequired" [icon]="faAsterisk" size="xs" ></fa-icon>
+  </label>
+</div>

@@ -18,9 +18,11 @@ import {
   DialogComponent,
   FooterComponent,
   HeaderComponent,
-  HeroComponent,
-  TopButtonComponent
+  HeroComponent
 } from '@app/components/sub-components';
+import {
+  TopButtonComponent
+} from '@app/components/base-elements'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -32,7 +34,8 @@ import {MatInputModule} from '@angular/material/input';
 import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
 import {MatTableModule} from '@angular/material/table';
 import { AccordionComponent } from './components/sub-components/accordion/accordion.component';
-import { TrackListComponent } from './components/sub-components/track-list/track-list.component';
+import { TrackListComponent } from './components/sub-components/music/track-list/track-list.component';
+import { InputGroupComponent } from './components/base-elements/text-input/input-group.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { TrackListComponent } from './components/sub-components/track-list/track
     AddVideoComponent,
     DeleteVideoComponent,
     AccordionComponent,
-    TrackListComponent
+    TrackListComponent,
+    InputGroupComponent
   ],
   imports: [
     BrowserModule,

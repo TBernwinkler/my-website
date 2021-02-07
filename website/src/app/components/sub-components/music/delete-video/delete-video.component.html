@@ -1,6 +1,6 @@
 <div class="delete-video">
   <h4 translate>music.removeVideo.label</h4>
-  <span translate>music.removeVideo.description</span>
+  <p translate>music.removeVideo.description</p>
   <mat-form-field class="full-width" color="accent">
     <mat-label translate>music.removeVideo.selectLabel</mat-label>
     <mat-select [(ngModel)]="selectedTracks" multiple>
@@ -9,6 +9,5 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <label>&nbsp;</label>
   <button type="button" (click)="removeVideosFromActiveList()" translate>music.removeVideo.buttonLabel</button>
 </div>

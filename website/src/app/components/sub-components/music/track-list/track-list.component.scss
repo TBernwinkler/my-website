@@ -6,7 +6,7 @@
   position: relative;
 
   &:nth-child(odd) {
-    background: #999;
+    background: var(--medium-gray);
   }
 
   &:nth-child(even) {

@@ -1,19 +1,29 @@
 <div class="add-video">
   <h4 translate>{{'music.addVideo.label' | translate}}</h4>
   <form>
-    <label translate>music.addVideo.videoId</label>
-    <input [(ngModel)]="inputVideoId" name="inputVideoId" type="text" required="required">
-    <label translate>music.addVideo.interpret</label>
-    <input [(ngModel)]="inputInterpret" name="inputInterpret" type="text" required="required">
-    <label translate>music.addVideo.track</label>
-    <input [(ngModel)]="inputTrack" name="inputTrack" type="text" required="required">
-    <label translate>music.addVideo.videoDuration</label>
-    <span class="number-inputs">
-              <input [(ngModel)]="inputDurationMin" name="inputDurationMin" type="number" min="0" max="300"><span class="blue-text"> min </span>
-              <input [(ngModel)]="inputDurationSec" name="inputDurationSec" type="number" min="1" max="18000" required="required"><span class="blue-text"> sec</span>
-            </span>
+    <app-input-group #videoIdInput inputId="videoIdInput" labelText="music.addVideo.videoId"
+                     [isRequired]="true" inputType="text">
+    </app-input-group>
+    <app-input-group #interpretInput inputId="interpretInput" labelText="music.addVideo.interpret"
+                     [isRequired]="true" inputType="text">
+    </app-input-group>
+    <app-input-group #trackInput inputId="trackInput" labelText="music.addVideo.track"
+                     [isRequired]="true" inputType="text">
+    </app-input-group>
 
-    <label>&nbsp;</label>
+    <div class="duration-group">
+      <span class="number-input-label">Video Duration</span>
+      <app-input-group class="number-input" #videoLenHourInput inputId="videoLenHourInput" labelText="hours"
+                       [isRequired]="false" inputType="number" defaultValue="0">
+      </app-input-group>
+      <app-input-group class="number-input" #videoLenMinInput inputId="videoLenMinInput" labelText="minutes"
+                       [isRequired]="false" inputType="number" defaultValue="3">
+      </app-input-group>
+      <app-input-group class="number-input" #videoLenSecInput inputId="videoLenSecInput" labelText="seconds"
+                       [isRequired]="false" inputType="number" defaultValue="0">
+      </app-input-group>
+    </div>
+
     <button type="button" (click)="addNewVideo()" translate>music.addVideo.buttonLabel</button>
   </form>
 </div>
