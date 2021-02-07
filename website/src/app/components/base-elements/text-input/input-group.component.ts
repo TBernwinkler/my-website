@@ -28,9 +28,4 @@ export class InputGroupComponent implements OnInit {
     this.inputValue = this.defaultValue;
   }
 
-  // not sure if this is required in future; will be checked in the next steps
-  getInputValue(): string {
-    return this.inputValue;
-  }
-
 }
