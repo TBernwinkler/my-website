@@ -108,8 +108,9 @@
       "interpret": "Künstler",
       "track": "Track",
       "videoDuration": "Videodauer",
-      "minutes": "Min",
-      "seconds": "Sek",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden",
       "buttonLabel": "Video Hinzufügen"
     },
     "removeVideo": {
@@ -128,7 +129,8 @@
       "addDeleteHeadline": "Videos Hinzufügen und Löschen",
       "addDeleteDescription": "Es ist möglich, neue Videos zur Liste hinzuzufügen. Dabei müssen alle Eingabefelder ausgefüllt werden. Beim ersten Feld kann sowohl die Video ID als auch die ganze YouTube URL eingegeben werden. Hier reicht es von deinem Browser Fenster den Link oder im YouTube Abschnitt zum Teilen von Videos den Einbettungscode zu kopieren. Sogar \"Starten bei\" von YouTube wird unterstützt.",
       "temporaryHeadline": "Änderungen sind nur vorübergehend",
-      "temporaryDescription": "Es ist möglich die Liste der Lieder nach eigenem Geschmack anzupassen. Jedoch sind alle Änderungen (neue Lieder, entfernte, Umsortierungen, ...) nur so lange verfügbar, bis die Seite neu geladen wird. Es wird alles ausschließlich an deinem Computer gespeichert. Es werden keine Daten an einen Server übertragen."
+      "temporaryDescription": "Es ist möglich die Liste der Lieder nach eigenem Geschmack anzupassen. Jedoch sind alle Änderungen (neue Lieder, entfernte, Umsortierungen, ...) nur so lange verfügbar, bis die Seite neu geladen wird. Es wird alles ausschließlich an deinem Computer gespeichert. Es werden keine Daten an einen Server übertragen.",
+      "shuffleDescription": "Sobald 'Zufällig anordnen' angeklickt wird, werden die Videos in der Liste durchgemischt und an zufällige Positionen verschoben. Wenn 'Alle abspielen' aktiv ist, wird die bestehende Wiedergabe unterbrochen und das erste Video der neuen Liste wird als aktiv gesetzt."
     },
     "importExport": {
       "headline": "Individuelle, wiederverwendbare Videoliste",

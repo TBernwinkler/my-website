@@ -108,8 +108,9 @@
       "interpret": "Interpret",
       "track": "Track",
       "videoDuration": "Video duration",
-      "minutes": "min",
-      "seconds": "sec",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds",
       "buttonLabel": "Add Video"
     },
     "removeVideo": {
@@ -128,7 +129,8 @@
       "addDeleteHeadline": "Add and Delete Videos",
       "addDeleteDescription": "It is possible to add new videos. All input fields are mandatory. It is possible to use video IDs or entire YouTube links. Just copy the the link in your browser or go to the youtube share section and copy the embed code. Even \"Start at\" from YouTube is supported.",
       "temporaryHeadline": "Changes are temporary",
-      "temporaryDescription": "It is possible to add your own track, if necessary data is provided. However, once you add your own videos, they will only be available for you and only as long as your browser window is open. Everything is stored on your computer. No data is transferred to any server."
+      "temporaryDescription": "It is possible to add your own track, if necessary data is provided. However, once you add your own videos, they will only be available for you and only as long as your browser window is open. Everything is stored on your computer. No data is transferred to any server.",
+      "shuffleDescription": "Once you click shuffle, the tracks of the current video list are placed to random positions. If 'play all' is active, the playback will reset and the first video in the new list is automatically selected."
     },
     "importExport": {
       "headline": "Custom Reusable Video List",
