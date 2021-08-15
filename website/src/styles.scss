@@ -1,4 +1,8 @@
-/* GENERAL STYLES */
+/* IMPORTS & LIBRARIES */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'theme/custom-theme';
+
 
 /* CSS VARIABLES */
 :root {
@@ -8,7 +12,7 @@
   --light-blue: #B2ECFF;
   --white: #f2f2f2;
   --light-white: #f8f8f8;
-  --beast-gray: #666666;
+  --dark-gray: #666666;
   --medium-gray: #999999;
   --light-gray: #cccccc;
 
@@ -52,6 +56,8 @@ $screen-xl: 1200px;
   }
 }
 
+
+/* GENERAL STYLES */
 html, body {
   margin: 0;
   background: #eaeaea;
@@ -66,10 +72,7 @@ html, body {
 }
 
 body {
-  // styling option: open-sans
-  // https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans
-  // https://stackoverflow.com/questions/49878988/how-to-import-a-new-font-into-a-project-angular-5
-  font-family: Roboto, "Helvetica Neue", sans-serif;;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 17px;
   margin: 0;
 }
@@ -87,6 +90,23 @@ h5 {
 a {
   text-decoration: none;
 }
+
+
+button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+fa-icon.spaced-around {
+  padding: 0 10px;
+}
+
 
 .content-space {
   margin: 0 auto;

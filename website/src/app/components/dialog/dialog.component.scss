@@ -1,0 +1,50 @@
+@import 'src/styles';
+
+.dialog {
+
+  .headline {
+    border-bottom: 1px solid;
+    text-align: center;
+    margin: 0;
+  }
+
+  .dialog-content {
+    text-align: justify;
+  }
+
+  .manual-line-break {
+    white-space: pre
+  }
+
+  .mat-dialog-actions {
+    flex-direction: column;
+  }
+
+  &.info {
+    color: var(--blue);
+
+    h1 {
+      color: var(--blue);
+    }
+  }
+
+  &.warning {
+    color: var(--warning);
+
+    h1 {
+      color: var(--warning);
+    }
+  }
+
+  &.error {
+    color: var(--error);
+
+    h1 {
+      color: var(--error);
+    }
+  }
+
+  button {
+    padding: 0;
+  }
+}

@@ -1,9 +1,0 @@
-@import "../../../common.scss";
-
-.delete-video {
-  @include lg() {
-    mat-form-field {
-      margin-right: 2rem;
-    }
-  }
-}

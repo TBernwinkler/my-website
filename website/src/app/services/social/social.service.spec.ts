@@ -3,10 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { SocialService } from './social.service';
 
 describe('SocialService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: SocialService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(SocialService);
+  });
 
   it('should be created', () => {
-    const service: SocialService = TestBed.get(SocialService);
     expect(service).toBeTruthy();
   });
 });
