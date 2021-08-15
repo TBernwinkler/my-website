@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {DialogLevel} from '@app/models';
 import {DialogComponent} from '@app/components';
 import {MatDialog} from '@angular/material/dialog';

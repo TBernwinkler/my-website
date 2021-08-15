@@ -46,7 +46,7 @@ export class AddVideoComponent implements OnInit {
 
     const processedVideoId = this.preprocessInput(inputVideoId, inputInterpret, inputTrack,
       inputDurationSec, inputDurationMin, inputDurationHour);
-    if (inputVideoId !== null) {
+    if (processedVideoId) {
       const video: Video = {
         artist: inputInterpret,
         track: inputTrack,

@@ -8,17 +8,13 @@ import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 })
 export class InputGroupComponent implements OnInit {
 
-  @Input()
-  inputId: string = '';
-  @Input()
-  labelText: string = '';
-  @Input()
-  isRequired = false;
+  @Input() inputId: string = '';
+  @Input() labelText: string = '';
+  @Input() isRequired = false;
+  @Input() inputType = 'text';
+  @Input() defaultValue = '';
+
   faAsterisk = faAsterisk;
-  @Input()
-  inputType = 'text';
-  @Input()
-  defaultValue = '';
   inputValue: string = '';
   numberMinimum = 0;
 

@@ -89,7 +89,8 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatTabsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }
 

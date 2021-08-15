@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {faTired} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,12 +6,9 @@ import {faTired} from '@fortawesome/free-solid-svg-icons';
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.scss']
 })
-export class PageNotFoundComponent implements OnInit {
+export class PageNotFoundComponent {
   faTired = faTired;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,19 +1,17 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Video, VideoProvider} from '@app/models';
-import {faArrowsAlt, faPlayCircle, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import {faArrowsAlt, faPlayCircle, faVolumeUp} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-track-list',
   templateUrl: './track-list.component.html',
   styleUrls: ['./track-list.component.scss']
 })
-export class TrackListComponent implements OnInit {
+export class TrackListComponent {
 
-  @Input()
-  musicSuggestions: Array<Video> = [];
-  @Output()
-  changeSelection: EventEmitter<number> = new EventEmitter();
+  @Input() musicSuggestions: Array<Video> = [];
+  @Output() changeSelection: EventEmitter<number> = new EventEmitter();
   classActive = 'active';
 
   faVolumeUp = faVolumeUp;
@@ -21,10 +19,6 @@ export class TrackListComponent implements OnInit {
   faArrowsAlt = faArrowsAlt;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 
   /**
    * Updates the musicSuggestions list according to the repositioning of displayed events
