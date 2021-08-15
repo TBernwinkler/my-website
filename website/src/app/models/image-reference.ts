@@ -6,4 +6,5 @@ export interface ImageReference {
   creator: string;
   license: string;
   licenseLink: string;
+  active?: boolean;
 }

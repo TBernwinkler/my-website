@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SafePipe} from './pipes/safe/safe.pipe';
+import {SafePipe} from '@app/pipes/safe/safe.pipe';
 import {
   ContactComponent,
   HomeComponent,
@@ -12,18 +12,19 @@ import {
   PageNotFoundComponent,
   ProjectsComponent
 } from '@app/pages';
-import {AccordionComponent} from './components/accordion/accordion.component';
-import {CheckboxComponent} from './components/checkbox/checkbox.component';
-import {DialogComponent} from './components/dialog/dialog.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HeaderComponent} from './components/header/header.component';
-import {HeroComponent} from './components/hero/hero.component';
-import {AddVideoComponent} from './components/music-components/add-video/add-video.component';
-import {DeleteVideoComponent} from './components/music-components/delete-video/delete-video.component';
-import {ImportExportComponent} from './components/music-components/import-export/import-export.component';
-import {TrackListComponent} from './components/music-components/track-list/track-list.component';
-import {InputGroupComponent} from './components/base-components/input-group/input-group.component';
-import {TopButtonComponent} from './components/base-components/top-button/top-button.component';
+import {
+  AccordionComponent,
+  AddVideoComponent,
+  CheckboxComponent,
+  DeleteVideoComponent,
+  DialogComponent,
+  FooterComponent,
+  HeaderComponent,
+  HeroComponent,
+  ImportExportComponent,
+  TrackListComponent
+} from '@app/components';
+import {InputGroupComponent, TopButtonComponent} from '@app/components/base-components';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';

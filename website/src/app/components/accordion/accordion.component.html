@@ -1,9 +1,9 @@
 
 <div class="accordion">
   <div *ngFor="let reference of imageReferences">
-    <input type="radio" name="acc" [id]="reference.imageName | translate" [checked]="reference === imageReferences[0]">
+    <input (click)="changeSelection(reference)" type="radio" name="acc" [id]="reference.imageName | translate" [checked]="reference === imageReferences[0]">
     <label [attr.for]="reference.imageName |translate">
-      <fa-icon class="line-start" [icon]="faCaretDown"></fa-icon>{{reference.creator|translate}}
+      <fa-icon class="line-start" [icon]="reference.active ? faCaretDown : faCaretRight"></fa-icon>{{reference.creator|translate}}
       <fa-icon class="center-piece" [icon]="faAngleDoubleRight"></fa-icon>{{reference.imageName|translate}}
     </label>
     <div class="panel">

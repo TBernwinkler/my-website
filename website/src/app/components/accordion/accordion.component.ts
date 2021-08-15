@@ -1,25 +1,37 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ImageReference} from '@app/models/image-reference';
-import {faAngleDoubleRight, faCaretDown} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDoubleRight, faCaretDown, faCaretRight} from '@fortawesome/free-solid-svg-icons';
+import {AppComponent} from "@app/app.component";
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })
-export class AccordionComponent {
-
-  @Input()
-  imageReferences: Array<ImageReference> = [];
+export class AccordionComponent implements OnInit {
+  // data to display
+  @Input() imageReferences: Array<ImageReference> = [];
+  // icons
   faCaretDown = faCaretDown;
+  faCaretRight = faCaretRight;
   faAngleDoubleRight = faAngleDoubleRight;
 
-  constructor() {
+  constructor(public app: AppComponent) {
   }
 
-  isFirstEntry(reference: ImageReference): boolean {
-    const firstEntry = this.imageReferences[0];
-    return reference.imageName === firstEntry.imageName && reference.imageUrl === firstEntry.imageUrl;
+  ngOnInit(): void {
+    this.imageReferences[0].active = true;
   }
+
+  changeSelection(selection: ImageReference): void {
+    this.imageReferences.map(entry => entry.active = false);
+    if (selection) {
+      const entry = this.imageReferences.find(entry => entry === selection);
+      if (entry) {
+        entry.active = true;
+      }
+    }
+  }
+
 
 }
