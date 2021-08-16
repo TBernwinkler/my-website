@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {
   faBook,
-  faMinus,
+  faMicrophoneAlt,
   faMusic,
   faPauseCircle,
   faPlayCircle,
@@ -48,7 +48,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   // ICONS
   faPlayCircle = faPlayCircle;
   faPauseCircle = faPauseCircle;
-  faMinus = faMinus;
+  faMicrophoneAlt = faMicrophoneAlt;
   faMusic = faMusic;
   faStepForward = faStepForward;
   faStepBackward = faStepBackward;
@@ -86,7 +86,7 @@ export class MusicComponent implements OnInit, OnDestroy {
       .subscribe((suggestions: Video[]) => this.updateMusicSuggestions(suggestions)));
     // automatically load the right video list based on a URL query parameter
     this.subscriptions.push(this.route.queryParams.subscribe(params => {
-      const genreIds: Array<string> = ['rock', 'mainstream', 'techno', 'albums'];
+      const genreIds: Array<string> = ['rock', 'mainstream', 'techno', 'albums', 'personal'];
       const genre = params?.genre;
       if (genre && genreIds.indexOf(genre) >= 0) {
         const genres = this.videoManagerService.getGenres();
