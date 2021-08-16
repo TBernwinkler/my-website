@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {SocialSharing} from '../../models/social-sharing';
+import {SocialSharing} from '@app/models';
 
 @Injectable({
   providedIn: 'root'

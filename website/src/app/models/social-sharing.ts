@@ -1,4 +1,4 @@
-export class SocialSharing {
+export interface SocialSharing {
 
   page: string;
   ogTitle: string;

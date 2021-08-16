@@ -1,71 +1,72 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from '@app/app-routing.module';
-import {AppComponent} from '@app/app.component';
-import {ContactComponent, HomeComponent, LegalComponent, MusicComponent, PageNotFoundComponent, ProjectsComponent} from '@app/components';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-// import ngx-translate and the http loader
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {SafePipe} from '@app/pipes';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {SafePipe} from '@app/pipes/safe/safe.pipe';
 import {
+  ContactComponent,
+  HomeComponent,
+  LegalComponent,
+  MusicComponent,
+  PageNotFoundComponent,
+  ProjectsComponent
+} from '@app/pages';
+import {
+  AccordionComponent,
+  AddVideoComponent,
   CheckboxComponent,
+  DeleteVideoComponent,
   DialogComponent,
   FooterComponent,
   HeaderComponent,
-  HeroComponent
-} from '@app/components/sub-components';
-import {
-  TopButtonComponent
-} from '@app/components/base-elements'
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatInputModule} from '@angular/material/input';
-import {AddVideoComponent, DeleteVideoComponent, ImportExportComponent} from '@app/components/sub-components/music';
-import {MatTableModule} from '@angular/material/table';
-import { AccordionComponent } from './components/sub-components/accordion/accordion.component';
-import { TrackListComponent } from './components/sub-components/music/track-list/track-list.component';
-import { InputGroupComponent } from './components/base-elements/text-input/input-group.component';
+  HeroComponent,
+  ImportExportComponent,
+  TrackListComponent
+} from '@app/components';
+import {InputGroupComponent, TopButtonComponent} from '@app/components/base-components';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSelectModule} from "@angular/material/select";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatInputModule} from "@angular/material/input";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ContactComponent,
-    LegalComponent,
-    MusicComponent,
-    HomeComponent,
-    ProjectsComponent,
     SafePipe,
-    PageNotFoundComponent,
-    DialogComponent,
-    ImportExportComponent,
+    HomeComponent,
+    MusicComponent,
+    ProjectsComponent,
+    ContactComponent,
+    AccordionComponent,
     CheckboxComponent,
+    DialogComponent,
+    FooterComponent,
+    HeaderComponent,
     HeroComponent,
-    TopButtonComponent,
     AddVideoComponent,
     DeleteVideoComponent,
-    AccordionComponent,
+    ImportExportComponent,
     TrackListComponent,
-    InputGroupComponent
+    InputGroupComponent,
+    TopButtonComponent,
+    LegalComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule,
-
-    // ngx-translate and the loader module
+    // TRANSLATIONS
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -74,18 +75,18 @@ import { InputGroupComponent } from './components/base-elements/text-input/input
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
+    FontAwesomeModule,
     FormsModule,
-    DragDropModule,
+    BrowserAnimationsModule,
+    // MATERIAL LIBs
     MatFormFieldModule,
-    MatSelectModule,
-    MatTabsModule,
     MatDialogModule,
     MatButtonModule,
-    MatTooltipModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     MatInputModule,
-    MatTableModule
+    DragDropModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -93,11 +94,7 @@ import { InputGroupComponent } from './components/base-elements/text-input/input
 })
 export class AppModule { }
 
-// required for compilation
-// make sure the correct path based on the web server directory is set
+// DEFINE PATH AND FILE TYPE FOR TRANSLATIONS
 export function HttpLoaderFactory(http: HttpClient) {
-  // PROD
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
-  // LOCAL
-  // return new TranslateHttpLoader(http);
 }

@@ -1,0 +1,164 @@
+@import 'src/styles';
+
+.home-component {
+
+  h2{
+    margin-bottom: 2rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .subline {
+    margin: 0 10% 2rem 10%;
+    width: 80%;
+  }
+
+  .blue, .light {
+    h2 {
+      padding-top: 2rem;
+    }
+  }
+
+  .blue {
+    background: var(--blue);
+    color: var(--light-white);
+  }
+
+  .light {
+    background: var(--light-white);
+    color: var(--blue);
+  }
+
+  .dark {
+    color: var(--dark-gray);
+    a {
+      color: var(--dark-gray);
+    }
+  }
+
+  .light-blue {
+    color: var(--light-blue);
+  }
+
+  .space-around {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .half-size {
+    p {
+      margin-top: 0;
+    }
+    text-align: left;
+  }
+
+  .wrapper {
+    margin-left: 25%;
+    margin-right: 20%;
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+  .center-justify {
+    text-align: justify;
+  }
+
+  .triplet ul {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+
+  .lang-entry {
+    margin-left: 5px;
+  }
+
+  .card-content {
+    padding: 10%;
+    line-height: 1.5;
+  }
+
+  .center-block {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+
+  // NON-MOBILE ADAPTIVE STYLING
+  @include md {
+    section {
+      padding: 3rem 0;
+    }
+
+    .wrapper {
+      margin: inherit;
+    }
+
+    .triplet {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        margin: inherit;
+      }
+
+      &.light .central p {
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.blue {
+        li {
+          width: 31%;
+        }
+      }
+    }
+
+    .center-justify {
+      text-align: center;
+    }
+
+    .bottom-feeder {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--light-white);
+      color: var(--blue);
+      min-height: 500px;
+
+      .card-title {
+        margin-top: 0;
+      }
+    }
+
+    .space-around {
+      padding-bottom: 2rem;
+      display: flex;
+      padding-left: 18%;
+    }
+
+
+    .half-size {
+      margin-left: 10%;
+      padding: 0 2.5rem;
+      width: 50%;
+    }
+  }
+}
+
+

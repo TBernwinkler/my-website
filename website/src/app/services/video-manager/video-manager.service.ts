@@ -28,7 +28,7 @@ export class VideoManagerService {
    * @private
    */
   private initialize(): void {
-    if (!(this.availableVideoLists instanceof Array) || this.availableVideoLists.length === 0) {
+    if (this.availableVideoLists.length === 0) {
       const genres: string[] = VideoProvider.getGenres();
       for (const genre of genres) {
         const videos = VideoProvider.provideGenreTracks(genre);
@@ -57,7 +57,7 @@ export class VideoManagerService {
    */
   public getGenres(): Array<string> {
     this.initialize(); // relevant conditions are checked in initialize
-    const genres = [];
+    const genres: Array<string> = [];
     this.availableVideoLists.forEach(entry => genres.push(entry.genre));
     return genres;
   }
@@ -118,7 +118,7 @@ export class VideoManagerService {
    * @param videos A list of YouTube ids representing the videos to be removed from the active video list
    */
   public removeVideosFromGenre(videos: Array<string>): void {
-    if (videos instanceof Array && videos.length > 0) {
+    if (videos.length > 0) {
       videos.forEach(del => {
         const idx = this.activeVideoList.findIndex(entry => entry.youtube === del);
         this.activeVideoList.splice(idx, 1);

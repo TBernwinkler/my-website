@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+  </head>
+  <body>
+    <h1 style="color: #2C5F96;margin-left: 25px">Automated Info Message From Contact Form</h1>
+    <p style="color: #2C5F96; margin-left: 25px;" >A user on your website filled in the following data of your contact form</p>
+    <img style="margin-left: 25px;margin-bottom: 10px" src="http://thom4s.bplaced.net/assets/img/home/entrance-576.jpg" width="500px">
+
+    <table width="500px" cellpadding="10" style="color: #2C5F96; margin-left: 25px;">
+        <thead style="background: #bababa">
+            <th>Label</th>
+            <th>Value</th>
+        </thead>
+        <tbody style="background: #dddddd;">
+            <tr>
+                <td>First Name</td>
+                <td>{{this.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{this.lastName}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{this.email}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{this.phone}}</td>
+            </tr>
+            <tr>
+                <td>Reason</td>
+                <td>{{this.reason}}</td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td>{{this.message}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="color: #2C5F96; margin-top: 50px; margin-left: 50px;">Cheers,</p>
+    <p style="color: #2C5F96; font-family: 'Comic Sans MS', 'Comic Sans', cursive; margin-left: 50px;">Your automated email service</p>
+</body>
+</html>
+
+    
+  
+
