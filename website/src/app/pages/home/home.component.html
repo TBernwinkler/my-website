@@ -1,0 +1,233 @@
+<div class="content home-component">
+
+  <app-hero [headline]="headline"
+            [description]="description"
+            [images]="images"
+            [imageSource]="imageSource"
+            [imageOrientation]="imageOrientation">
+  </app-hero>
+
+  <section class="light">
+    <h2 class="center" translate>home.technicalChallenges.headline</h2>
+    <p class="dark center subline center-justify" translate>home.technicalChallenges.subline</p>
+    <div class="full-size space-around">
+      <div class="half-size">
+        <p translate>home.technicalChallenges.entry1</p>
+        <p class="dark" translate>home.technicalChallenges.entry2</p>
+        <p translate>home.technicalChallenges.entry3</p>
+        <p class="dark" translate>home.technicalChallenges.entry4</p>
+      </div>
+      <div class="half-size">
+        <p translate>home.technicalChallenges.entry5</p>
+        <p class="dark" translate>home.technicalChallenges.entry6</p>
+        <p translate>home.technicalChallenges.entry7</p>
+        <p translate class="dark">home.technicalChallenges.entry8</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section-b" class="triplet blue">
+    <div class="container">
+      <ul>
+        <li>
+          <div class="card">
+            <img srcset="assets/img/home/zoomed-code-280.jpg 280w, assets/img/home/zoomed-code-440.jpg 440w, assets/img/home/zoomed-code-800.jpg 800w" alt="zoomed code image">
+            <div class="card-content">
+              <h3 class="card-title" translate>home.cards.first.headline</h3>
+              <fa-icon [icon]="faHeart" size="lg"></fa-icon>
+              <p class="justify" translate>home.cards.first.content</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <img srcset="assets/img/home/audio-280.jpg 280w, assets/img/home/audio-440.jpg 440w, assets/img/home/audio-800.jpg 800w" alt="music image">
+            <div class="card-content">
+              <h3 class="card-title" translate>home.cards.second.headline</h3>
+              <fa-icon [icon]="faMusic" size="lg"></fa-icon>
+              <p class="justify" translate>home.cards.second.content</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <img srcset="assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w" alt="time-travel image">
+            <div class="card-content">
+              <h3 class="card-title" translate>header.projects</h3>
+              <fa-icon [icon]="faLaptopCode" size="lg"></fa-icon>
+              <p class="justify" translate>home.cards.third.content</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="triplet light">
+    <div class="container center">
+      <h2 translate>home.languages.headline</h2>
+      <p class="subline center-justify" translate>home.languages.subline</p>
+      <ul>
+        <li class="wrapper justify">
+          <h4 translate>home.languages.entry-l1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-l6</span>
+          </p>
+        </li>
+        <li class="wrapper justify central">
+          <h4 translate>home.languages.entry-m1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m6</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m7</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-m8</span>
+          </p>
+        </li>
+        <li class="wrapper justify">
+          <h4 translate>home.languages.entry-r1</h4>
+          <p class="dark" >
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r2</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r3</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r4</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r5</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStarEmpty" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r6</span>
+          </p>
+          <p>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r7</span>
+          </p>
+          <p class="dark">
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <fa-icon [icon]="faStar" size="sm"></fa-icon>
+            <span class="lang-entry" translate>home.languages.entry-r8</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="center blue">
+    <h2 translate>home.technologies.headline</h2>
+    <p class="light-blue subline center-justify" translate>home.technologies.subline</p>
+    <div class="wrapper center-justify bottom-feeder">
+      <p translate>home.technologies.entry1</p>
+      <p class="light-blue" translate>home.technologies.entry2</p>
+      <p translate>home.technologies.entry3</p>
+      <p class="light-blue" translate>home.technologies.entry4</p>
+      <p translate>home.technologies.entry5</p>
+      <p class="light-blue" translate>home.technologies.entry6</p>
+      <p translate>home.technologies.entry7</p>
+      <p class="light-blue" translate>home.technologies.entry8</p>
+      <p translate>home.technologies.entry9</p>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="center light">
+    <h2 translate>header.contact</h2>
+    <p class="dark subline center-justify"> {{'home.contact.subline1' | translate}}<a routerLink="/contact">{{'home.contact.subline2' | translate}}</a></p>
+    <div class="center-block">
+      <p class="wrapper">{{'home.contact.purpose' | translate}} <fa-icon [icon]="faArrowCircleUp" size="lg"></fa-icon></p>
+      <p><span translate>home.contact.madeWith1</span><fa-icon [icon]="faHeart" size="lg"></fa-icon><span translate>home.contact.madeWith2</span></p>
+      <app-top-button>
+      </app-top-button>
+    </div>
+  </div>
+
+  <!--    <p>json+ld</p>-->
+  <!--    <p>social sharing stuff with open graph meta tags</p>-->
+  <!--    <p>get final files using ng build --prod</p>-->
+</div>
+
+
+

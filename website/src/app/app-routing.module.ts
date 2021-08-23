@@ -1,6 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent, ContactComponent, MusicComponent, ProjectsComponent, LegalComponent, PageNotFoundComponent} from './components';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {
+  ContactComponent,
+  HomeComponent,
+  LegalComponent,
+  MusicComponent,
+  PageNotFoundComponent,
+  ProjectsComponent
+} from '@app/pages';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

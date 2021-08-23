@@ -7,7 +7,7 @@ export class ProjectProvider {
 
   private static projects: Array<Project> = [
     {
-      imageSrc: null,
+      imageSrc: '',
       imageSrcSet: 'assets/img/projects/markup576.jpg 576w, assets/img/projects/markup768.jpg 768w, ' +
         'assets/img/projects/markup992.jpg 992w, assets/img/projects/markup1200.jpg 1200w',
       imageAlt: 'network image',
@@ -21,7 +21,7 @@ export class ProjectProvider {
       link: 'http://thom4s.bplaced.net',
       linkIcon: 'faGlobeEurope',
       github: 'https://github.com/TBernwinkler/my-website',
-      partner: null,
+      partner: '',
       audience: [
         {name: 'recruiting', icon: faCommentsDollar},
         {name: 'userPC', icon: faDesktop},
@@ -31,19 +31,19 @@ export class ProjectProvider {
     },
     {
       imageSrc: 'assets/img/projects/transite-logo.svg',
-      imageSrcSet: null,
+      imageSrcSet: '',
       imageAlt: 'Transite logo',
       title: 'projects.project2.title',
       description: 'projects.project2.description',
       technologies:
       [
-        {name: 'R', icon: null},
-        {name: 'Bash', icon: null}
+        {name: 'R'},
+        {name: 'Bash'}
       ],
       status: ProjectStatus.Done,
       link: 'https://transite.mit.edu',
       linkIcon: 'faGlobeAmericas',
-      github: null,
+      github: '',
       partner: 'Massachusetts Institute of Technology',
       audience: [
         {name: 'researcher', icon: faFlask}
@@ -51,12 +51,12 @@ export class ProjectProvider {
     },
     {
       imageSrc: 'assets/img/projects/logo-scansite.png',
-      imageSrcSet: null,
+      imageSrcSet: '',
       imageAlt: 'Scansite logo',
       title: 'projects.project3.title',
       description: 'projects.project3.description',
       technologies: [
-        {name: 'Maven', icon: null},
+        {name: 'Maven'},
         {name: 'Java', icon: faJava},
         {name: 'HTML', icon: faHtml5},
         {name: 'CSS', icon: faCss3Alt},
@@ -73,7 +73,7 @@ export class ProjectProvider {
     },
     {
       imageSrc: 'assets/img/projects/biodapps-logo.png',
-      imageSrcSet: null,
+      imageSrcSet: '',
       imageAlt: 'BioDApps logo',
       title: 'projects.project4.title',
       description: 'projects.project4.description',
@@ -83,55 +83,55 @@ export class ProjectProvider {
           {name: 'Anguar', icon: faAngular}
         ],
       status: ProjectStatus.Pending,
-      link: null,
+      link: '',
       linkIcon: 'faGlobeEurope',
-      github: null,
+      github: '',
       partner: 'University of Salzburg',
       audience: [
         {name: 'researcher', icon: faFlask}
       ]
     },
     {
-      imageSrc: null,
+      imageSrc: '',
       imageSrcSet: 'assets/img/home/network-280.jpg 280w, assets/img/home/network-440.jpg 440w, assets/img/home/network-800.jpg 800w',
-      imageAlt: null,
+      imageAlt: '',
       title: 'projects.project5.title',
       description: 'projects.project5.description',
       technologies:
         [
-          {name: 'Maven', icon: null},
+          {name: 'Maven'},
           {name: 'Java', icon: faJava},
-          {name: 'Spring', icon: null},
+          {name: 'Spring'},
           {name: 'Angular', icon: faAngular}
         ],
       status: ProjectStatus.Pending,
-      link: null,
+      link: '',
       linkIcon: 'faGlobeEurope',
       github: 'https://github.com/TBernwinkler/programming-test',
-      partner: null,
+      partner: '',
       audience: [
         {name: 'recruiting', icon: faCommentsDollar },
         {name: 'developer', icon: faLaptopCode}
       ]
     },
     {
-      imageSrc: null,
+      imageSrc: '',
       imageSrcSet: 'assets/img/projects/android576.jpg 576w, assets/img/projects/android768.jpg 768w, ' +
         'assets/img/projects/android992.jpg 992w, assets/img/projects/android1200.jpg 1200w',
-      imageAlt: null,
+      imageAlt: '',
       title: 'projects.project6.title',
       description: 'projects.project6.description',
       technologies:
         [
           {name: 'Android', icon: faAndroid},
           {name: 'Java', icon: faJava},
-          {name: 'XML', icon: null}
+          {name: 'XML'}
         ],
       status: ProjectStatus.Planned,
-      link: null,
+      link: '',
       linkIcon: 'faGlobeEurope',
-      github: null,
-      partner: null,
+      github: '',
+      partner: '',
       audience: [
         {name: 'userAndroid', icon: faAndroid}
       ]
