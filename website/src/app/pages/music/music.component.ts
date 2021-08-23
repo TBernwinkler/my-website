@@ -12,9 +12,11 @@ import {
 import {VideoManagerService} from '@app/services';
 import {ImportExportComponent} from '@app/components';
 import {NameIconPair, Renditions, Video, VideoProvider} from '@app/models';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
-import {TrackListComponent} from "@app/components/music-components/track-list/track-list.component";
+import {TrackListComponent} from '@app/components/music-components/track-list/track-list.component';
+import {Store} from '@ngrx/store';
+import {AppState} from '@app/app.state';
 
 
 @Component({
@@ -45,6 +47,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   activeIndex = -1;
 
   musicSuggestions: Array<Video> = [];
+  videos: Observable<Video[]>;
   // ICONS
   faPlayCircle = faPlayCircle;
   faPauseCircle = faPauseCircle;
@@ -73,7 +76,9 @@ export class MusicComponent implements OnInit, OnDestroy {
   imageSource = 'https://www.pexels.com/@snapwire';
   private subscriptions: Array<Subscription> = [];
 
-  constructor(private route: ActivatedRoute, private videoManagerService: VideoManagerService) { }
+  constructor(private route: ActivatedRoute, private videoManagerService: VideoManagerService, private store: Store<AppState>) {
+    this.videos = store.select('videos');
+  }
 
   /**
    * Initialization of the component
@@ -94,7 +99,7 @@ export class MusicComponent implements OnInit, OnDestroy {
       }
     }));
     // Initial assignments
-    this.musicSuggestions = this.videoManagerService.getActiveVideoList();
+    this.refresh();
     this.activeVideo = this.musicSuggestions[0];
   }
 
@@ -105,6 +110,11 @@ export class MusicComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(item => item.unsubscribe());
   }
 
+  private refresh() {
+    this.videos.subscribe(videoList => {
+      this.musicSuggestions = [...videoList];
+    }).unsubscribe();
+  }
 
   // ############################
   // #### MUSIC PLAYER LOGIC ####
@@ -301,6 +311,7 @@ export class MusicComponent implements OnInit, OnDestroy {
    * @private
    */
   private changeActiveVideo(index: number, video: HTMLElement | null) {
+    this.refresh();
     if (index < 0 || index > this.musicSuggestions.length) {
       return;
     }

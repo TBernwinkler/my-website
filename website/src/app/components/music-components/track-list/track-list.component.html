@@ -1,11 +1,11 @@
 <div cdkDropList (cdkDropListDropped)="drop($event)">
-  <div *ngFor="let suggestion of musicSuggestions" class="entry" [ngClass]="{'active': isSelected(musicSuggestions.indexOf(suggestion))}" cdkDrag>
-    <div class="click-to-play" (click)="changeVideoByClick(musicSuggestions.indexOf(suggestion))">
-      <fa-icon [icon]="isSelected(musicSuggestions.indexOf(suggestion)) ? faVolumeUp : faPlayCircle" size="lg"></fa-icon>
+  <div *ngFor="let video of videos | async; let i = index" class="entry" [ngClass]="{'active': isSelected(i)}" cdkDrag>
+    <div class="click-to-play" (click)="changeVideoByClick(i)">
+      <fa-icon [icon]="isSelected(i) ? faVolumeUp : faPlayCircle" size="lg"></fa-icon>
     </div>
     <div class="details">
-      <p class="interpret">{{suggestion.artist}}</p>
-      <p class="track">{{suggestion.track}}</p>
+      <p class="interpret">{{video.artist}}</p>
+      <p class="track">{{video.track}}</p>
     </div>
     <div class="click-to-drag" cdkDragHandle>
       <fa-icon class="spaced-around" [icon]="faArrowsAlt" size="lg"></fa-icon>

@@ -1,7 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Video, VideoProvider} from '@app/models';
 import {faArrowsAlt, faPlayCircle, faVolumeUp} from '@fortawesome/free-solid-svg-icons';
+import {AppState} from '@app/app.state';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import * as VideoActions from '@app/actions/video.action'
 
 @Component({
   selector: 'app-track-list',
@@ -9,24 +13,40 @@ import {faArrowsAlt, faPlayCircle, faVolumeUp} from '@fortawesome/free-solid-svg
   styleUrls: ['./track-list.component.scss']
 })
 export class TrackListComponent {
-
-  @Input() musicSuggestions: Array<Video> = [];
+  musicSuggestions: Array<Video> = [];
+  // will directly interact with redux
   @Output() changeSelection: EventEmitter<number> = new EventEmitter();
+  // should be done in a pipe check
   classActive = 'active';
+  videos: Observable<Video[]>;
 
   faVolumeUp = faVolumeUp;
   faPlayCircle = faPlayCircle;
   faArrowsAlt = faArrowsAlt;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    this.videos = store.select('videos');
+    this.refresh();
+  }
+
+  private refresh() {
+    this.videos.subscribe(videoList => {
+      this.musicSuggestions = [...videoList];
+    }).unsubscribe();
+  }
 
   /**
-   * Updates the musicSuggestions list according to the repositioning of displayed events
+   * Updates the video list according to the repositioning of displayed events
    * after dragging and dropping
    * @param event The event that provides information about moving an element.
    */
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.musicSuggestions, event.previousIndex, event.currentIndex);
+    const newList = [...this.musicSuggestions];
+    // Need to clear the list to update order. Any other way JSON content would still be the same
+    this.store.dispatch(new VideoActions.ClearVideos());
+    this.store.dispatch(new VideoActions.AddVideos(newList));
+    this.refresh();
   }
 
 

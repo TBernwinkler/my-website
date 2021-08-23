@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ImageReference} from '@app/models/image-reference';
 import {faAngleDoubleRight, faCaretDown, faCaretRight} from '@fortawesome/free-solid-svg-icons';
-import {AppComponent} from "@app/app.component";
+import {AppComponent} from '@app/app.component';
 
 @Component({
   selector: 'app-accordion',

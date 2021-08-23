@@ -25,20 +25,24 @@ import {
   TrackListComponent
 } from '@app/components';
 import {InputGroupComponent, TopButtonComponent} from '@app/components/base-components';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {FormsModule} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatDialogModule} from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
-import {MatSelectModule} from "@angular/material/select";
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import {MatInputModule} from "@angular/material/input";
-import {DragDropModule} from "@angular/cdk/drag-drop";
-import {MatTabsModule} from "@angular/material/tabs";
+import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTabsModule} from '@angular/material/tabs';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from '@app/video.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -74,6 +78,15 @@ import {MatTabsModule} from "@angular/material/tabs";
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
+    }),
+    StoreModule.forRoot({
+      // @ts-ignore payload type differences
+      videos: reducer
+    }),
+    // Instrumentation must be imported after importing StoreModule (config is optional)
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
     }),
     FontAwesomeModule,
     FormsModule,

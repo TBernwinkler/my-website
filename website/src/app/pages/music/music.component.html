@@ -35,8 +35,8 @@
         </div>
       </div>
 
-      <app-track-list #trackListComponent [musicSuggestions]="musicSuggestions"
-                      (changeSelection)="changeVideoByClick($event)"></app-track-list>
+      <app-track-list #trackListComponent (changeSelection)="changeVideoByClick($event)">
+      </app-track-list>
 
     </div>
     <div class="content-area" #contentArea>
