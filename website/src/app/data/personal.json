@@ -1,5 +1,11 @@
 [
   {
+    "artist": "MindaRyn",
+    "track": "Like Flames",
+    "youtube": "q8TGietS5Q0?start=6",
+    "duration": 246
+  },
+  {
     "artist": "In Flames",
     "track": "Free Fall",
     "youtube": "qj7sammYKTc",
@@ -240,6 +246,12 @@
     "duration": 227
   },
   {
+    "artist": "Eskimo Callboy",
+    "track": "Hypa Hypa",
+    "youtube": "75Mw8r5gW8E",
+    "duration": 212
+  },
+  {
     "artist": "Heaven Shall Burn",
     "track": "Black Tears",
     "youtube": "-PtfyRjkn40?start=18",
@@ -288,6 +300,18 @@
     "duration": 178
   },
   {
+    "artist": "Feuerschwanz",
+    "track": "Ding (Seed Cover)",
+    "youtube": "WmlshlqXD54",
+    "duration": 215
+  },
+  {
+    "artist": "Axis of Awesome",
+    "track": "Four Chord Song",
+    "youtube": "5pidokakU4I?start=5",
+    "duration": 319
+  },
+  {
     "artist": "Young Guns",
     "track": "I Was Born, I Have Lived, I Will Surely Die",
     "youtube": "-PIwPdNYd84?start=8",
@@ -304,12 +328,6 @@
     "track": "One For The Money",
     "youtube": "xxIsmbVZuSI",
     "duration": 198
-  },
-  {
-    "artist": "MindaRyn",
-    "track": "Like Fire",
-    "youtube": "XOakklcybSY",
-    "duration": 248
   },
   {
     "artist": "Black Clover",
@@ -337,7 +355,7 @@
   },
   {
     "artist": "MindaRyn",
-    "track": "Like Fire (English)",
+    "track": "Like Flames (English)",
     "youtube": "1JMSeRPamGo",
     "duration": 248
   }
